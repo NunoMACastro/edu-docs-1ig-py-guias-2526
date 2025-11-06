@@ -302,10 +302,12 @@ d = {                                     # cria dicionário com duas chaves
     "idade": 16
 }         
 
-altura_inexistente = d.get("altura")      # devolve None (não existe a chave)
-altura_com_default = d.get("altura", "desconhecida")  # devolve "desconhecida" se não existir
+# get - aceder com valor por defeito
+nome_d = d.get("nome", "Desconhecido")    # acede a "nome" -> "Ana"
+curso_d = d.get("curso", "Não definido")  # tenta aceder a "curso", não existe -> devolve "Não definido"
+
+
 d["idade"] = 17                           # atualiza valor da chave "idade"
-d.update({"curso": "PI", "cidade": "Viseu"})  # insere/atualiza múltiplos pares
 cidade_removida = d.pop("cidade")         # remove e devolve o valor em "cidade"
 chaves = list(d.keys())                   # lista das chaves atuais
 valores_d = list(d.values())              # lista dos valores atuais
@@ -355,6 +357,9 @@ print("Caras:", caras)                       # ex.: ["pera","uva"]
 # - Itera com loops aninhados e/ou enumerate conforme a estrutura.
 # =============================================================================
 
+
+# Lista de listas (matriz)
+##################################
 matriz = [                                # lista de listas (3x3)
     [1, 2, 3],                            # 1.ª linha
     [4, 5, 6],                            # 2.ª linha
@@ -365,35 +370,87 @@ linhas = []
 for linha in matriz:                      # percorre cada sublista
     linhas.append(linha)                  # acumula a linha (só para exemplo)
 
-turma = {                                 # dicionário de listas paralelas
-    "nomes": ["Ana", "Bruno", "Carla"],   # nomes por índice
-    "notas": [16, 12, 18],                # notas no mesmo índice
-}
-pares_nome_nota = []                      
-for i_t in range(len(turma["nomes"])):    # percorre índices válidos
-    pares_nome_nota.append((turma["nomes"][i_t], turma["notas"][i_t]))  # combina por índice
-media_turma = sum(turma["notas"]) / len(turma["notas"])  # média aritmética
+# Adicionar nova linha
+nova_linha = [10, 11, 12]                 # nova linha a adicionar
+matriz.append(nova_linha)                  # adiciona ao fim da matriz
 
-alunos = [                                # lista de dicionários (registos)
-    {"nome": "Ana", "nota": 16, "faltas": 1},
-    {"nome": "Bruno", "nota": 12, "faltas": 3},
-    {"nome": "Carla", "nota": 18, "faltas": 0},
+
+# Dicionário com listas
+##################################
+
+turmas = {                                # dicionário de listas
+    "10A": ["Ana", "Bruno", "Carla"],
+    "10B": ["Diogo", "Eva", "Fábio"],
+}
+alunos_10A = turmas["10A"]                # acede à lista de alunos da turma 10A
+
+# Percorrer dicionário de listas
+for turma, alunos in turmas.items():      # percorre (chave, valor) Cada turma vai para a variável 'turma', a lista de alunos para 'alunos'
+    print(f"Turma {turma}:")               # imprime o nome da turma
+    for aluno in alunos:                   # percorre a lista de alunos
+        print(" -", aluno)                 # imprime cada aluno
+
+# Inserir novo aluno na turma 10B
+turmas["10B"].append("Gabriela")          # adiciona "Gabriela" à lista da turma 10B
+
+# Inserir nova turma
+turmas["10C"] = ["Helena", "Igor"]        # cria nova entrada no dicionário
+
+
+# Dicionário de dicionários
+##################################
+
+notas = {                                 # dicionário de dicionários
+    "Ana": {"Matemática": 18, "Português": 16},
+    "Bruno": {"Matemática": 14, "Português": 15},
+}
+nota_ana_matematica = notas["Ana"]["Matemática"]  # acede à nota de Matemática da Ana -> 18
+
+# Percorrer dicionário de dicionários
+for aluno, disciplinas in notas.items():   # percorre (aluno, dicionário de disciplinas)
+    print(f"Notas de {aluno}:")            # imprime o nome do aluno
+    # A variável 'disciplinas' é um dicionário com pares (disciplina, nota)
+    # Vamos usar novo for para percorrer esse dicionário interno
+    for disciplina, nota in disciplinas.items():  # percorre (disciplina, nota)
+        print(f" - {disciplina}: {nota}")  # imprime cada disciplina e nota 
+
+# Adicionar nova nota
+notas["Ana"]["Inglês"] = 17                # adiciona nova disciplina e nota para Ana
+notas["Bruno"]["Inglês"] = 14               # adiciona nova disciplina e nota para Bruno
+
+# Adicionar novo aluno
+notas["Carla"] = {"Matemática": 19, "Português": 18}  # cria nova entrada para Carla
+
+# Calcular média de um aluno
+
+aluno_alvo = input("Nome do aluno para média? ")  # lê nome do aluno
+soma_notas = 0                            # acumulador para a soma das notas
+num_disciplinas = 0                       # contador de disciplinas
+for disciplina, nota in notas[aluno_alvo].items():  # percorre as disciplinas e notas do aluno
+    soma_notas += nota                     # acumula a nota
+    num_disciplinas += 1                  # incrementa o contador
+media_aluno = soma_notas / num_disciplinas  # calcula a média
+print(f"Média de {aluno_alvo}: {media_aluno:.2f}")  
+
+# Lista de dicionários
+##################################
+
+alunos = [                                # lista de dicionários
+    {"nome": "Ana", "idade": 16},
+    {"nome": "Bruno", "idade": 17},
 ]
-aprovados = []                            
-for reg in alunos:                        # percorre cada dicionário (aluno)
-    if reg["nota"] >= 10:                 # condição de aprovação
-        aprovados.append(reg["nome"])     # adiciona o nome do aprovado
+idade_bruno = alunos[1]["idade"]          # acede à idade do segundo aluno -> 17
 
-liga = {                                  # dicionário de dicionários (tabela de equipas)
-    "Andorinhas FC": {"vitorias": 10, "derrotas": 5, "empates": 3, "pontos": 33},
-    "Meh FC":        {"vitorias": 9,  "derrotas": 7, "empates": 2, "pontos": 29},
-}
-melhor_equipa = None                      # inicializa melhor equipa
-max_pontos = -1                           # guarda o máximo encontrado
-for equipa, stats in liga.items():        # percorre (nome_equipa, estatísticas)
-    if stats["pontos"] > max_pontos:      # verifica se há novo máximo
-        max_pontos = stats["pontos"]      # atualiza máximo
-        melhor_equipa = equipa            # regista a equipa correspondente
+# Percorrer lista de dicionários
+for aluno in alunos:                      # percorre cada dicionário na lista
+    nome_aluno = aluno["nome"]            # acede ao nome
+    idade_aluno = aluno["idade"]          # acede à idade
+    print(f"{nome_aluno} tem {idade_aluno} anos")  # imprime informação do aluno
+
+# Adicionar novo aluno
+novo_aluno = {"nome": "Carla", "idade": 16}  # cria novo dicionário
+alunos.append(novo_aluno)                 # adiciona à lista    
+
 
 
 # =============================================================================
