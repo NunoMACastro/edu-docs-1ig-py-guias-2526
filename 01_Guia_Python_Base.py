@@ -2,7 +2,6 @@
 # RESUMO DETALHADO — PYTHON (10.º ANO) · Ficheiro de Consulta
 # Como usar:
 # - Lê as notas (comentários) e observa o código logo abaixo de cada bloco.
-# - Podes copiar pequenos trechos para um ficheiro à parte e experimentar.
 # =============================================================================
 
 # =============================================================================
