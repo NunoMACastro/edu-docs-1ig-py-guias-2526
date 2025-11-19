@@ -1,7 +1,7 @@
 **Índice**
 
--   [Estrutura do repositório](#estrutura-do-reposit%C3%B3rio)
--   [`01_introducao_variaveis_tipos_strings_io.md`](#01introducaovariaveistiposstringsiomd)
+-   [Estrutura do repositório](#01_introducao_variaveis_tipos_strings_io.md)
+-   [`01_introducao_variaveis_tipos_strings_io.md`](#01introducaovariaveistiposstrings_iomd)
 -   [`02_operadores_e_controlo_de_fluxo_if_ciclos.md`](#02operadoresecontrolodefluxoifciclosmd)
 -   [`03_listas_dicionarios_estruturas_aninhadas.md`](#03listasdicionariosestruturasaninhadasmd)
 -   [`04_funcoes_do_basico_ao_avancado.md`](#04funcoesdobasicoaoavancadomd)
