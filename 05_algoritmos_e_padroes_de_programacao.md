@@ -1,9 +1,9 @@
 # Python (10.º Ano) - 05 · Algoritmos e Padrões de Programação
 
 > **Objetivo deste ficheiro**  
-> Deixar de ser apenas “truques de Python” e começar a pensar **como programador**:
+> Aprender a resolver problemas de programação comuns, usando listas, dicionários e funções.
 >
-> -   ler um problema em português,
+> -   ler um problema,
 > -   descobrir quais são os **dados de entrada**,
 > -   decidir o que é o **processamento** (contagens, médias, filtragens, etc.),
 > -   definir o que deve aparecer como **saída**,
@@ -18,7 +18,7 @@ Ao longo deste documento:
 
 ## Índice
 
--   [0. Como atacar um problema de programação · [ESSENCIAL]](#0-como-atacar-um-problema-de-programa%C3%A7%C3%A3o--essencial)
+-   [0. Como resolver um problema de programação · [ESSENCIAL]](#0-como-resolver-um-problema-de-programa%C3%A7%C3%A3o--essencial)
 -   [1. Padrões clássicos com listas · [ESSENCIAL]](#1-padr%C3%B5es-cl%C3%A1ssicos-com-listas--essencial)
 -   [2. Padrões com dicionários · [ESSENCIAL]](#2-padr%C3%B5es-com-dicion%C3%A1rios--essencial)
 -   [3. Juntar tudo em funções · [ESSENCIAL]](#3-juntar-tudo-em-fun%C3%A7%C3%B5es--essencial)
@@ -29,7 +29,7 @@ Ao longo deste documento:
 
 ---
 
-## 0. Como atacar um problema de programação · [ESSENCIAL]
+## 0. Como resolver um problema de programação · [ESSENCIAL]
 
 Muitos erros aparecem porque se começa logo a escrever código, sem pensar.  
 Uma abordagem mais segura:
@@ -54,6 +54,17 @@ Exemplo de enunciado:
     -   guardar idades algures (lista),
     -   somar idades para calcular média,
     -   contar quantas idades são ≥ 18.
+
+Podes criar uma tabela com estas informações, se ajudares.
+exemplo:
+
+| Entradas       | Processamento                    | Saída                        |
+| -------------- | -------------------------------- | ---------------------------- |
+| 5 idades (int) | guardar idades numa lista        | média das idades (float)     |
+|                | somar idades para calcular média | número de pessoas ≥ 18 (int) |
+|                | contar idades ≥ 18               |                              |
+
+---
 
 ### 0.2. Passo 2 - Fazer 2–3 exemplos à mão
 
