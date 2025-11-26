@@ -917,7 +917,7 @@ print(mais_velho(pessoas1))  # "Bruno"
 
 ---
 
-### Exercício 10 - Média por aluno (função + dicionário aninhado)
+### <a id="ex10"></a> Exercício 10 - Média por aluno (função + dicionário aninhado)
 
 Usa um dicionário semelhante a este:
 
@@ -930,10 +930,6 @@ turma = {
     ]
 }
 ```
-
----
-
-### <a id="ex10"></a> Exercício 10 - Média por aluno (função + dicionário aninhado)
 
 Cria uma função `media_aluno(aluno)` que:
 
@@ -1107,7 +1103,57 @@ Máximo: ...
 
 ---
 
-### <a id="ex16"></a> Exercício 16 - Mutabilidade: função que modifica uma lista recebida
+### <a id="ex16"></a> Exercício 16 - Função que simula lançamento de dados
+
+Cria uma função `lancar_dados(n)` que:
+• recebe um número inteiro `n` (número de dados a lançar);
+• Diz (com `print`) o resultado de cada dado (números aleatórios entre 1 e 6);
+• devolve a soma dos resultados.
+
+No programa principal:
+
+1. Pede ao utilizador quantos dados quer lançar;
+2. Chama a função;
+3. Mostra a soma total.
+
+> Nota: usa o módulo `random` para gerar números aleatórios.
+> Exemplo de uso do `random`:
+>
+> ```python
+> import random
+> dado = random.randint(1, 6)  # número aleatório entre 1 e 6 que é colocado em 'dado'
+> ```
+
+---
+
+### <a id="ex17"></a> Exercício 17 - Calculadora simples com funções
+
+Cria quatro funções: `adicionar(a, b)`, `subtrair(a, b)`, `multiplicar(a, b)`, `dividir(a, b)` que:
+• recebem dois números `a` e `b`;
+• devolvem o resultado da respetiva operação.
+
+No programa principal:
+
+1. Pede ao utilizador dois números e uma operação (por exemplo, "+", "-", "\*", "/").
+2. Chama a função correta com base na operação escolhida.
+3. Mostra o resultado.
+
+---
+
+### </a id="ex18"></a> Exercício 18 - Função que calcula média de temperaturas
+
+Cria uma função `media_temperaturas(temperaturas)` que:
+• recebe um dicionário onde as chaves são os meses do ano (strings) e os valores são as temperaturas médias (floats);
+• Diz se o dicionário está vazio: - se estiver, devolve 0.0; - caso contrário: - Calcula a temperatura máxima e mínima; - Diz (com `print`) as temperaturas máxima e mínima e os respetivos meses; - devolve a média das temperaturas.
+
+No programa principal:
+
+1. Cria um dicionário com as temperaturas médias de alguns meses;
+2. Chama a função e imprime a média devolvida.
+
+---
+
+### <a id="ex19"></a> Exercício 16 - Mutabilidade: função que modifica uma lista recebida
 
 Cria uma função adicionar_prefixo(lista_nomes, prefixo) que:
 • recebe uma lista de nomes (por exemplo ["Ana", "Bruno"]);
@@ -1121,21 +1167,9 @@ No programa principal:
 -   2. Chama a função;
 -   3. Imprime a lista antes e depois da chamada para veres o efeito da mutabilidade.
 
-> Resolução
-
-```python
-def adicionar_prefixo(lista_nomes, prefixo):
-    for i in range(len(lista_nomes)):
-        lista_nomes[i] = f"{prefixo} {lista_nomes[i]}"
-nomes = ["Ana", "Bruno", "Carla"]
-print("Antes:", nomes)
-adicionar_prefixo(nomes, "Sr./Sra.")
-print("Depois:", nomes)
-```
-
 ---
 
-### <a id="ex17"></a> Exercício 17 - \*args: média de quantidade variável de números
+### <a id="ex20"></a> Exercício 20 - \*args: média de quantidade variável de números
 
 Cria uma função media_variavel(\*nums) que:
 • recebe 0 ou mais números (inteiros ou floats);
@@ -1149,7 +1183,7 @@ No programa principal: 1. Testa a função com:
 
 ---
 
-### <a id="ex18"></a> Exercício 18 - \*\*kwargs: configuração flexível
+### <a id="ex21"></a> Exercício 21 - \*\*kwargs: configuração flexível
 
 Cria uma função criar_perfil(\*\*info) que:
 • recebe informações nomeadas sobre uma pessoa (por exemplo, nome="Ana", idade=16, curso="PI"),
@@ -1159,7 +1193,7 @@ No programa principal: 1. Cria 2 perfis diferentes usando a função:
 • um com nome, idade;
 • outro com nome, idade, curso e turma (por exemplo "10.º A"). 2. Imprime os dicionários devolvidos.
 
-### <a id="ex19"></a> Exercício 19 (Desafio) - Função com `*args`
+### <a id="ex22"></a> Exercício 22 (Desafio) - Função com `*args`
 
 Cria uma função `produto(*nums)` que:
 
@@ -1175,7 +1209,7 @@ Testa com:
 
 ---
 
-### <a id="ex20"></a> Exercício 20 (Desafio avançado) - Recursão simples
+### <a id="ex23"></a> Exercício 23 (Desafio avançado) - Recursão simples
 
 Cria uma função recursiva `conta_decrescente(n)` que:
 
