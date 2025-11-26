@@ -1123,7 +1123,7 @@ print(f"Soma: {soma}")
 print(f"Mínimo: {minimo}")
 print(f"Máximo: {maximo}")
 
-// Usando o min e max:
+# Usando o min e max:
 
 def estatisticas_numeros_com_min_max(numeros):
     soma = sum(numeros)
