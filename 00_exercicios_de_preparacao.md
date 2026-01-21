@@ -11,7 +11,7 @@
 
 1. Lê dois números inteiros com `input()`, converte para `int` e imprime a soma, a diferença, o produto, a divisão inteira e o resto.
 
-2. Lê uma temperatura em Celsius (`float`) e converte para Fahrenheit. Mostra o resultado com 1 casa decimal.
+2. Lê uma temperatura em Celsius (`float`) e converte para Fahrenheit. A conversão é dada por: `F = C * 9/5 + 32`. Imprime o resultado.
 
 3. Pede ao utilizador o nome e a idade. Imprime uma frase de boas-vindas e indica se é maior de idade.
 

@@ -10,9 +10,9 @@
 Um **algoritmo** é um conjunto de passos claros para resolver um problema.  
 Exemplos do dia a dia:
 
--   receita de um bolo (passos na ordem certa);
--   instrucoes para montar um movel;
--   lista de regras para decidir algo.
+- receita de um bolo (passos na ordem certa);
+- instrucoes para montar um movel;
+- lista de regras para decidir algo.
 
 Na programacao, um algoritmo diz **como** encontrar uma resposta, não apenas **qual** é a resposta.
 
@@ -24,8 +24,8 @@ Na programacao, um algoritmo diz **como** encontrar uma resposta, não apenas **
 
 A **pesquisa linear** percorre uma lista do inicio ao fim, item a item, ate encontrar o valor desejado.
 
--   se encontrar, termina;
--   se nao encontrar, chega ao fim.
+- se encontrar, termina;
+- se nao encontrar, chega ao fim.
 
 ### 2.2 Exemplo simples
 
@@ -63,8 +63,8 @@ Ordenar uma lista significa colocar os elementos numa **ordem** (crescente ou de
 
 Aqui vamos ver duas ordenacoes classicas:
 
--   **Bubble Sort**
--   **Selection Sort**
+- **Bubble Sort**
+- **Selection Sort**
 
 Estas ordenacoes nao sao as mais rapidas, mas sao **simples** e boas para aprender.
 
@@ -82,8 +82,8 @@ A cada passagem, o maior elemento "sobe" para o fim.
 
 Lista inicial: `[5, 2, 4]`
 
--   Compara 5 e 2 -> troca: `[2, 5, 4]`
--   Compara 5 e 4 -> troca: `[2, 4, 5]`
+- Compara 5 e 2 -> troca: `[2, 5, 4]`
+- Compara 5 e 4 -> troca: `[2, 4, 5]`
 
 Agora o maior (5) ja esta no fim.  
 Fazemos outra passagem para confirmar a ordem.
@@ -120,6 +120,15 @@ def bubble_sort_otimizado(valores):
             break
 ```
 
+Explicação do código:
+
+- Começamos por definir o tamanho da lista `n`.
+- O primeiro loop `for i in range(n):` percorre a lista `n` vezes.
+- Dentro deste loop, inicializamos a variável `houve_troca` como `False` para monitorizar se houve alguma troca durante a passagem.
+- O segundo loop `for j in range(0, n - 1 - i):` percorre os elementos da lista até o penúltimo elemento não ordenado.
+- Se o elemento atual `valores[j]` for maior que o próximo `valores[j + 1]`, trocamos os dois elementos e definimos `houve_troca` como `True`.
+- Após o segundo loop, verificamos se `houve_troca` é `False`. Se for, significa que a lista já está ordenada, e podemos sair do loop principal com `break`, otimizando o processo de ordenação.
+
 ---
 
 ## 5) Selection Sort (ordenacao por selecao)
@@ -132,12 +141,12 @@ Em cada passo, encontramos o **menor** elemento da parte nao ordenada e colocamo
 
 Lista inicial: `[4, 2, 7, 1]`
 
--   menor = 1 -> troca com o primeiro elemento  
-    lista fica `[1, 2, 7, 4]`
--   agora olhamos para o resto `[2, 7, 4]`  
-    menor = 2 -> ja esta na posicao certa
--   ultimo passo: entre `[7, 4]`, menor = 4 -> troca  
-    lista final `[1, 2, 4, 7]`
+- menor = 1 -> troca com o primeiro elemento  
+  lista fica `[1, 2, 7, 4]`
+- agora olhamos para o resto `[2, 7, 4]`  
+  menor = 2 -> ja esta na posicao certa
+- ultimo passo: entre `[7, 4]`, menor = 4 -> troca  
+  lista final `[1, 2, 4, 7]`
 
 ### 5.3 Implementacao
 
@@ -156,20 +165,29 @@ selection_sort(nums)
 print(nums)  # [1, 2, 4, 7]
 ```
 
+Explicação do código:
+
+- Definimos o tamanho da lista `n`.
+- O primeiro loop `for i in range(n):` percorre cada posição da lista.
+- Inicializamos `indice_min` com o índice atual `i`, assumindo que o menor elemento está nessa posição.
+- O segundo loop `for j in range(i + 1, n):` percorre os elementos restantes da lista para encontrar o índice do menor elemento.
+- Se encontrarmos um elemento menor que o atual `valores[indice_min]`, atualizamos `indice_min` com o índice desse elemento.
+- Após encontrar o menor elemento na parte não ordenada, trocamos o elemento na posição `i` com o elemento na posição `indice_min`, colocando o menor elemento na posição correta.
+
 ---
 
 ## 6) Comparar pesquisa linear e ordenacao
 
 ### Pesquisa linear
 
--   passa pela lista uma vez;
--   se o alvo estiver no fim, ve todos os elementos;
--   se estiver no inicio, termina logo.
+- passa pela lista uma vez;
+- se o alvo estiver no fim, ve todos os elementos;
+- se estiver no inicio, termina logo.
 
 ### Ordenacao
 
--   faz muitas comparacoes e trocas;
--   mesmo com listas pequenas, ja e um pouco mais pesado.
+- faz muitas comparacoes e trocas;
+- mesmo com listas pequenas, ja e um pouco mais pesado.
 
 ---
 
@@ -180,27 +198,35 @@ Quando temos **muitos dados**, a escolha do algoritmo faz muita diferenca.
 
 ### Ideia simples:
 
--   pesquisar 1 elemento em 10 itens -> rapido
--   pesquisar 1 elemento em 1 000 000 itens -> pode demorar
+- pesquisar 1 elemento em 10 itens -> rapido
+- pesquisar 1 elemento em 1 000 000 itens -> pode demorar
 
 Se um algoritmo faz 100 000 passos e outro faz 10 000, o segundo e mais eficiente.
 
 Nao precisamos de formulas complicadas agora, basta perceber que:
 
--   **mais passos = mais tempo**;
--   ordenar uma lista costuma ser mais pesado do que apenas procurar um valor.
+- **mais passos = mais tempo**;
+- ordenar uma lista costuma ser mais pesado do que apenas procurar um valor.
 
 ---
 
 ## 8) Quando usar cada coisa
 
--   **Pesquisa linear**: quando a lista nao esta ordenada e e pequena ou media.
--   **Ordenacao basica**: boa para aprender e para listas pequenas.
--   Para listas grandes, existem algoritmos mais rapidos (veremos mais tarde).
+- **Pesquisa linear**: quando a lista nao esta ordenada e e pequena ou media.
+- **Ordenacao basica**: boa para aprender e para listas pequenas.
+- Para listas grandes, existem algoritmos mais rapidos (veremos mais tarde).
 
 ---
 
 ## 8.1) Porque aprender isto se existe `sort()`?
+
+Exemplo do sort:
+
+```python
+numeros = [5, 2, 9, 1]
+numeros.sort()
+print(numeros)  # [1, 2, 5, 9]
+```
 
 E uma pergunta excelente e muito comum. A resposta curta e: **para perceberes o que acontece por tras do `sort()` e para ganhares ferramentas de raciocinio**. Aqui vai a explicacao por partes:
 
@@ -341,12 +367,12 @@ Dica: usa `nome.lower()`.
 
 Cria um programa que:
 
--   pede 5 numeros ao utilizador e guarda numa lista;
--   ordena a lista com **bubble sort**;
--   mostra a lista ordenada.
+- pede 5 numeros ao utilizador e guarda numa lista;
+- ordena a lista com **bubble sort**;
+- mostra a lista ordenada.
 
 ---
 
 ## 10) Changelog
 
--   `2025-02-XX` · Criacao inicial do ficheiro com pesquisa linear, bubble/selection sort e eficiencia basica.
+- `2025-02-XX` · Criacao inicial do ficheiro com pesquisa linear, bubble/selection sort e eficiencia basica.
