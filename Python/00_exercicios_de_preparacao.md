@@ -723,4 +723,34 @@ print(f"Média: {resultado_media}")
 
 33. Cria um módulo `texto_utils.py` com a função `contar_vogais(texto)` e usa `from texto_utils import contar_vogais` num ficheiro principal.
 
+> Resolução:
+
+```python
+# texto_utils.py
+def contar_vogais(texto):
+    vogais = "aeiouAEIOUàáéíóúÀÁÉÍÓÚâêîôûÂÊÎÔÛãõÃÕ"
+    contador = 0
+    for char in texto:
+        if char in vogais:
+            contador += 1
+    return contador
+
+# main.py
+
+from texto_utils import contar_vogais
+texto = "Olá, como estás?"
+resultado = contar_vogais(texto)
+print(f"Número de vogais: {resultado}")
+```
+
 34. Usa `import random as rd` para gerar 5 números aleatórios entre 1 e 100 e guarda-os numa lista.
+
+> Resolução:
+
+```python
+import random as rd
+
+for _ in range(5):
+    numero_aleatorio = rd.randint(1, 100)
+    print(numero_aleatorio)
+```
