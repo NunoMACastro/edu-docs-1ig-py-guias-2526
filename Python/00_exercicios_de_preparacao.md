@@ -702,8 +702,25 @@ except ValueError as e:
 
 32. Cria um módulo `math_utils.py` com as funções `soma(a, b)` e `media(valores)`. Usa-o num `main.py` com `import math_utils`.
 
-33. No mesmo módulo, adiciona testes simples dentro de `if __name__ == "__main__":` e confirma que não correm quando o módulo é importado.
+> Resolução:
 
-34. Cria um módulo `texto_utils.py` com a função `contar_vogais(texto)` e usa `from texto_utils import contar_vogais` num ficheiro principal.
+```python
+# math_utils.py
+def soma(a, b):
+    return a + b
+def media(valores):
+    return sum(valores) / len(valores)
 
-35. Usa `import random as rd` para gerar 5 números aleatórios entre 1 e 100 e guarda-os numa lista.
+# main.py
+from math_utils import soma, media
+
+resultado_soma = soma(5, 10)
+print(f"Soma: {resultado_soma}")
+valores = [10, 20, 30, 40]
+resultado_media = media(valores)
+print(f"Média: {resultado_media}")
+```
+
+33. Cria um módulo `texto_utils.py` com a função `contar_vogais(texto)` e usa `from texto_utils import contar_vogais` num ficheiro principal.
+
+34. Usa `import random as rd` para gerar 5 números aleatórios entre 1 e 100 e guarda-os numa lista.
