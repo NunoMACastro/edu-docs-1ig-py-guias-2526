@@ -217,30 +217,33 @@ Se um algoritmo passa de 1 000 para 10 000 elementos:
 
 ## 9. Comparação simplificada de estruturas
 
-| Estrutura | Ponto forte | Limitação típica |
-| --- | --- | --- |
-| Lista (array dinâmico) | acesso por índice rápido | inserir/remover no meio pode ser caro |
-| Pilha | inserir/remover no topo é simples e rápido | acesso restrito ao topo |
-| Fila | ordem FIFO natural | acesso aleatório não é foco |
-| Lista ligada | flexível em inserções/remoções | pesquisa/acesso por posição pode ser mais lento |
-| Árvore binária | boa organização hierárquica | pode degradar se ficar desequilibrada |
-| Dicionário | acesso por chave rápido em média | não substitui todas as estruturas |
+| Estrutura              | Ponto forte                                | Limitação típica                                |
+| ---------------------- | ------------------------------------------ | ----------------------------------------------- |
+| Lista (array dinâmico) | acesso por índice rápido                   | inserir/remover no meio pode ser caro           |
+| Pilha                  | inserir/remover no topo é simples e rápido | acesso restrito ao topo                         |
+| Fila                   | ordem FIFO natural                         | acesso aleatório não é foco                     |
+| Lista ligada           | flexível em inserções/remoções             | pesquisa/acesso por posição pode ser mais lento |
+| Árvore binária         | boa organização hierárquica                | pode degradar se ficar desequilibrada           |
+| Dicionário             | acesso por chave rápido em média           | não substitui todas as estruturas               |
 
 ---
 
 ## 10. Erros comuns (e correções)
 
 ### Erro 1
+
 "A estrutura mais rápida é sempre a melhor."
 
 **Correção:** depende da operação principal (pesquisar? inserir? remover? manter ordem?).
 
 ### Erro 2
+
 "Big-O dá o tempo exato."
 
 **Correção:** Big-O dá tendência de crescimento, não segundos exatos.
 
 ### Erro 3
+
 "Dicionário resolve qualquer problema."
 
 **Correção:** excelente para chave-valor, mas não substitui pilhas, filas, árvores, etc.

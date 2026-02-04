@@ -11,6 +11,7 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 ## Índice
 
 - [Como usar estes materiais](#como-usar-estes-materiais)
+- [`00_fundamentos_hardware_bits_cpu_memoria.md`](#00_fundamentos_hardware_bits_cpu_memoriamd)
 - [`01_memoria_do_computador_cache_primaria_secundaria.md`](#01_memoria_do_computador_cache_primaria_secundariamd)
 - [`02_ram_rom_binario_bytes_enderecos.md`](#02_ram_rom_binario_bytes_enderecosmd)
 - [`03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`](#03_gestao_de_memoria_em_python_referencias_mutabilidade_gcmd)
@@ -27,6 +28,12 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 3. Quando aparecer um termo novo, para e confirma se o entendeste antes de continuar.
 4. No ficheiro de binário (`02_...`), resolve os exercícios.
 5. Revisa os resumos no fim de cada ficheiro.
+
+---
+
+### `00_fundamentos_hardware_bits_cpu_memoria.md`
+
+**Objetivo:** criar base sólida antes da memória em Python: bits, transístor, RAM (condensador/transístor), CPU, ciclo de execução, endereços e barramentos.
 
 ---
 
@@ -64,14 +71,16 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 
 ## Rota de estudo recomendada
 
-1. `01_memoria_do_computador_cache_primaria_secundaria.md`
-2. `02_ram_rom_binario_bytes_enderecos.md`
-3. `03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`
-4. `04_heap_stack_frames_e_execucao_python.md`
-5. `05_estruturas_dinamicas_e_complexidade.md`
+1. `00_fundamentos_hardware_bits_cpu_memoria.md`
+2. `01_memoria_do_computador_cache_primaria_secundaria.md`
+3. `02_ram_rom_binario_bytes_enderecos.md`
+4. `03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`
+5. `04_heap_stack_frames_e_execucao_python.md`
+6. `05_estruturas_dinamicas_e_complexidade.md`
 
 ---
 
 ## Changelog
 
 - **2026-02-04**: Criação inicial da pasta `Memoria` com guia de estudo e 5 módulos.
+- **2026-02-04**: Adicionado módulo `00` de fundamentos (hardware, CPU, RAM, endereços).

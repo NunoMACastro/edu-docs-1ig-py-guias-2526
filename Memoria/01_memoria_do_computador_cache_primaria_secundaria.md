@@ -175,11 +175,6 @@ Fluxo simplificado:
 4. Dados usados frequentemente vão para cache;
 5. Resultado final pode ser gravado novamente no SSD.
 
-### Ideia-chave
-
-A CPU não trabalha diretamente, de forma constante, com o SSD como se fosse RAM.  
-Existe uma cadeia de transferência para otimizar velocidade.
-
 ---
 
 ## 8. Conceitos essenciais para não confundir
@@ -234,37 +229,7 @@ Para nível inicial, basta lembrares:
 
 ---
 
-## 9. Erros comuns de alunos (e correção)
-
-### Erro 1
-
-"RAM é onde os ficheiros ficam guardados para sempre."
-
-**Correção:** RAM é memória de trabalho temporária.  
-Ficheiros persistentes ficam no SSD/HDD.
-
-### Erro 2
-
-"Cache é igual à RAM."
-
-**Correção:** ambas guardam dados, mas cache é muito mais rápida e muito menor, e tem função diferente.
-
-### Erro 3
-
-"Mais GB de disco = computador mais rápido."
-
-**Correção:** capacidade de disco e velocidade do sistema não são a mesma coisa.
-
-### Erro 4
-
-"Se tenho 16 GB de RAM, nunca preciso de SSD."
-
-**Correção:** RAM não substitui armazenamento persistente.  
-Sem SSD/HDD, não tens onde manter sistema e ficheiros de forma permanente.
-
----
-
-## 10. Resumo final
+## 9. Resumo final
 
 - O computador usa memória para guardar dados e instruções.
 - Não há uma memória "perfeita" em tudo; por isso existe hierarquia.
@@ -275,6 +240,6 @@ Sem SSD/HDD, não tens onde manter sistema e ficheiros de forma permanente.
 
 ---
 
-## 11. Changelog
+## 10. Changelog
 
 - **2026-02-04**: versão inicial do módulo 01.

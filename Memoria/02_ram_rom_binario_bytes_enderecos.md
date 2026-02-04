@@ -7,7 +7,6 @@
 
 ## Índice
 
-- [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
 - [1. RAM vs ROM (diferença essencial)](#1-ram-vs-rom-diferença-essencial)
 - [2. O que é um bit? O que é um byte?](#2-o-que-é-um-bit-o-que-é-um-byte)
 - [3. Sistema binário (base 2)](#3-sistema-binário-base-2)
@@ -18,21 +17,6 @@
 - [8. Exercícios de consolidação (binário)](#8-exercícios-de-consolidação-binário)
 - [9. Resumo final](#9-resumo-final)
 - [10. Changelog](#10-changelog)
-
----
-
-## 0. Como usar este ficheiro
-
-Este tema costuma assustar no início, mas a dificuldade normalmente vem de tentar fazer tudo rápido demais.
-
-Estratégia:
-
-1. Lê cada secção;
-2. Faz 2 ou 3 exemplos à mão;
-3. Só depois avança para a secção seguinte;
-4. No fim, resolve os exercícios.
-
-Não procures velocidade. Procura clareza.
 
 ---
 
@@ -260,6 +244,27 @@ Não precisas decorar tabela completa agora.
 Precisas apenas de perceber a ideia:
 
 **texto -> código numérico -> binário**
+
+### 6.1 ASCII? UTF-8?
+
+ASCII é um padrão antigo (7 bits, 128 caracteres).  
+UTF-8 é um padrão moderno (usa 1 a 4 bytes por caractere, suporta muitos idiomas).
+
+Ambos convertem caracteres em números, que depois são convertidos em binário. E vice-versa.
+
+Ou seja, imagina que estás a usar o Microsoft Word que por sua vez usa UTF-8 para guardar o ficheiro:
+
+- Quando escreves `A`, o Word consulta a tabela UTF-8 e vê que `A` = 65.
+- Depois, converte 65 para binário: `01000001`.
+- Finalmente, guarda `01000001` no ficheiro.
+
+Se leres o ficheiro depois, o processo é invertido.
+
+Ou seja, se num ficheiro word tiveres a frase "Olá, vocês são lindos!", o Word vai guardar tudo isso em binário, usando UTF-8 para converter cada caractere em números e depois em bits. E vai ter um ficheiro com a sequência:
+
+`01001111 01101100 11000011 10100001 00101100 00100000 01110110 01101111 11000011 10100101 01110011 00100000 01110011 11000011 10100111 01101111 01101110 00100000 01101100 01101001 01101110 01100100 01101111 01110011 00100001`
+
+Assim o processador e o software sabem exatamente como interpretar cada parte do ficheiro. Para o software é uma questão de consultar a tabela de codificação correta. Para o processador, é tudo números em binário.
 
 ---
 
