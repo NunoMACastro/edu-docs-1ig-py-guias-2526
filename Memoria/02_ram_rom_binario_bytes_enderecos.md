@@ -131,6 +131,91 @@ Lendo restos de baixo para cima: **1101**
 
 Logo: `13(10) = 1101(2)`
 
+### Método alternativo: "marcar os bits ativos (1)"
+
+Ideia:
+
+1. Escolhe as potências de 2 (normalmente em 8 bits: 128, 64, 32, 16, 8, 4, 2, 1);
+2. Começa no maior valor e pergunta: "cabe no número?";
+3. Se couber, marca `1` e subtrai esse valor;
+4. Se não couber, marca `0`;
+5. Continua até chegar ao `1`;
+6. O resultado final é a sequência de 0 e 1.
+
+#### Exemplo A: decimal 35
+
+Potências: 32, 16, 8, 4, 2, 1
+
+- 35: cabe 32? sim -> bit = 1, sobra 3
+- 3: cabe 16? não -> bit = 0
+- 3: cabe 8? não -> bit = 0
+- 3: cabe 4? não -> bit = 0
+- 3: cabe 2? sim -> bit = 1, sobra 1
+- 1: cabe 1? sim -> bit = 1, sobra 0
+
+Resultado: `100011`
+
+Confirmação: 32 + 2 + 1 = 35
+
+Tabela visual (bits ativos):
+
+| Potência de 2 | 32  | 16  | 8   | 4   | 2   | 1   |
+| ------------- | --- | --- | --- | --- | --- | --- |
+| Bit (0/1)     | 1   | 0   | 0   | 0   | 1   | 1   |
+| Valor ativo   | 32  | 0   | 0   | 0   | 2   | 1   |
+
+Soma dos ativos: `32 + 2 + 1 = 35`
+
+#### Exemplo B: decimal 41
+
+Potências: 32, 16, 8, 4, 2, 1
+
+- 41: cabe 32? sim -> 1, sobra 9
+- 9: cabe 16? não -> 0
+- 9: cabe 8? sim -> 1, sobra 1
+- 1: cabe 4? não -> 0
+- 1: cabe 2? não -> 0
+- 1: cabe 1? sim -> 1, sobra 0
+
+Resultado: `101001`
+
+Confirmação: 32 + 8 + 1 = 41
+
+Tabela visual (bits ativos):
+
+| Potência de 2 | 32  | 16  | 8   | 4   | 2   | 1   |
+| ------------- | --- | --- | --- | --- | --- | --- |
+| Bit (0/1)     | 1   | 0   | 1   | 0   | 0   | 1   |
+| Valor ativo   | 32  | 0   | 8   | 0   | 0   | 1   |
+
+Soma dos ativos: `32 + 8 + 1 = 41`
+
+#### Exemplo C: decimal 27
+
+Potências: 16, 8, 4, 2, 1
+
+- 27: cabe 16? sim -> 1, sobra 11
+- 11: cabe 8? sim -> 1, sobra 3
+- 3: cabe 4? não -> 0
+- 3: cabe 2? sim -> 1, sobra 1
+- 1: cabe 1? sim -> 1, sobra 0
+
+Resultado: `11011`
+
+Confirmação: 16 + 8 + 2 + 1 = 27
+
+Tabela visual (bits ativos):
+
+| Potência de 2 | 32  | 16  | 8   | 4   | 2   | 1   |
+| ------------- | --- | --- | --- | --- | --- | --- |
+| Bit (0/1)     | 0   | 1   | 1   | 0   | 1   | 1   |
+| Valor ativo   | 0   | 16  | 8   | 0   | 2   | 1   |
+
+Soma dos ativos: `16 + 8 + 2 + 1 = 27`
+
+> Nota didática: este método ajuda muito a "ver" o sistema binário.  
+> O método das divisões é ótimo para procedimento; o dos bits ativos é ótimo para compreensão.
+
 ---
 
 ## 5. Converter binário para decimal
