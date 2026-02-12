@@ -5,6 +5,8 @@
 
 ---
 
+**Pré-requisitos:** [`01_memoria_do_computador_cache_primaria_secundaria.md`](01_memoria_do_computador_cache_primaria_secundaria.md)
+
 ## Índice
 
 - [1. RAM vs ROM (diferença essencial)](#1-ram-vs-rom-diferença-essencial)
@@ -34,11 +36,6 @@
 - memória de leitura usada para guardar informação essencial do sistema;
 - normalmente não volátil;
 - contém firmware/instruções base de arranque.
-
-### Comparação direta
-
-- RAM: "mesa de trabalho";
-- ROM: "manual fixo do equipamento".
 
 ---
 
@@ -299,6 +296,8 @@ Exemplo didático:
 - uma sequência pode representar a letra `A` (dado);
 - outra sequência pode representar "somar valores" (instrução da CPU).
 
+Para aprofundar a ponte "binário -> código de máquina -> execução", consulta [`06_do_codigo_a_execucao_real_so_cpu_isa.md`](06_do_codigo_a_execucao_real_so_cpu_isa.md).
+
 ---
 
 ## 8. Exercícios de consolidação (binário)
@@ -398,6 +397,10 @@ Completa:
 - Binário usa base 2 e potências de 2.
 - Conversão decimal/binário é essencial para compreender memória.
 - Endereço de memória é a localização exata de um dado na RAM.
+
+---
+
+**A seguir:** [`06_do_codigo_a_execucao_real_so_cpu_isa.md`](06_do_codigo_a_execucao_real_so_cpu_isa.md)
 
 ---
 

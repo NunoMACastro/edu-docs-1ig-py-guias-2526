@@ -5,9 +5,10 @@
 
 ---
 
+**Pré-requisitos:** nenhum (início da rota recomendada).
+
 ## Índice
 
-- [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
 - [1. Porque este módulo vem antes dos outros](#1-porque-este-módulo-vem-antes-dos-outros)
 - [2. Do mundo físico ao digital](#2-do-mundo-físico-ao-digital)
 - [3. Transístor: o "interruptor inteligente"](#3-transístor-o-interruptor-inteligente)
@@ -22,21 +23,6 @@
 - [12. Ponte para Python (porque isto importa já)](#12-ponte-para-python-porque-isto-importa-já)
 - [13. Resumo final](#13-resumo-final)
 - [14. Changelog](#14-changelog)
-
----
-
-## 0. Como usar este ficheiro
-
-Neste módulo não há quase código.  
-Há conceitos-base que te vão ajudar nos próximos temas.
-
-Para estudar bem:
-
-1. Lê cada secção com calma.
-2. Faz a pergunta: "qual é a utilidade disto no computador real?"
-3. No fim de cada secção, tenta explicar por palavras tuas.
-
-Se conseguires explicar, entendeste. Se só conseguires repetir palavras, ainda falta consolidar.
 
 ---
 
@@ -298,13 +284,13 @@ Instrução: "somar A + B"
 - execute: ALU soma valores;
 - resultado vai para registo/memória.
 
-Este ciclo acontece milhões ou biliões de vezes por segundo.
+Este ciclo acontece milhões ou milhares de milhões de vezes por segundo.
 
 ---
 
 ## 10. Endereços de memória: o "GPS" dos dados
 
-RAM tem milhões/biliões de posições.  
+RAM tem milhões/milhares de milhões de posições.  
 Cada posição tem um endereço único.
 
 Sem endereço, a CPU não sabe:
@@ -369,8 +355,6 @@ Com a base deste ficheiro, já tens contexto:
 - a CPU acede por ciclos e barramentos;
 - linguagens de alto nível escondem detalhes, mas não os eliminam.
 
-Isto torna a aprendizagem de Python mais sólida e menos "decorada".
-
 ---
 
 ## 13. Resumo final
@@ -383,6 +367,10 @@ Isto torna a aprendizagem de Python mais sólida e menos "decorada".
 - CPU e memória comunicam por barramentos.
 
 Esta é a fundação para entender memória e execução de programas nos próximos ficheiros.
+
+---
+
+**A seguir:** [`01_memoria_do_computador_cache_primaria_secundaria.md`](01_memoria_do_computador_cache_primaria_secundaria.md)
 
 ---
 

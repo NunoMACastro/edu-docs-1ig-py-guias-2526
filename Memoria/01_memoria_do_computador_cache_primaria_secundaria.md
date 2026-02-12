@@ -5,6 +5,8 @@
 
 ---
 
+**Pré-requisitos:** [`00_fundamentos_hardware_bits_cpu_memoria.md`](00_fundamentos_hardware_bits_cpu_memoria.md)
+
 ## Índice
 
 - [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
@@ -119,7 +121,7 @@ A cache funciona como uma zona intermédia para reduzir essa espera.
 - L2 (maior, ligeiramente mais lenta);
 - L3 (ainda maior, mais lenta que L1/L2, mas rápida face à RAM).
 
-Não precisas decorar tamanhos exatos agora.  
+Não precisas decorar tamanhos exatos.  
 Precisas de entender a lógica: **mais perto = mais rápido, menos capacidade**.
 
 ---
@@ -202,17 +204,7 @@ São problemas diferentes.
 
 Além da RAM física, os sistemas operativos usam memória virtual.
 
-De forma simples:
-
-- quando falta RAM para tantas aplicações abertas;
-- o sistema pode usar parte do disco como apoio temporário (swap/page file).
-
-Isto permite continuar a funcionar, mas com perda de velocidade, porque disco é mais lento que RAM.
-
-Regra prática:
-
-- memória virtual ajuda em emergência;
-- não substitui RAM real em desempenho.
+Mais à frente iremos ver isto mais ao pormenor.
 
 ### 8.5 Latência e largura de banda (duas medidas diferentes)
 
@@ -237,6 +229,10 @@ Para nível inicial, basta lembrares:
 - Primária (RAM): memória de trabalho principal.
 - Secundária (SSD/HDD): grande, mais lenta, persistente.
 - O equilíbrio entre velocidade, custo e capacidade explica toda a arquitetura.
+
+---
+
+**A seguir:** [`02_ram_rom_binario_bytes_enderecos.md`](02_ram_rom_binario_bytes_enderecos.md)
 
 ---
 

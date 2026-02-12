@@ -5,6 +5,8 @@
 
 ---
 
+**Pré-requisitos:** [`02_ram_rom_binario_bytes_enderecos.md`](02_ram_rom_binario_bytes_enderecos.md)
+
 ## Índice
 
 - [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
@@ -51,6 +53,8 @@ Fluxo simplificado:
 Ideia-chave:
 
 > No fim da cadeia, quem executa é sempre a CPU, através de instruções de máquina.
+
+O mapa mental de stack/heap/frames e execução em Python está no [`04_heap_stack_frames_e_execucao_python.md`](04_heap_stack_frames_e_execucao_python.md).
 
 ---
 
@@ -277,6 +281,10 @@ Perceber este fluxo ajuda-te a:
 - SO e loader tratam de processo e memória;
 - abrir/editar/guardar ficheiros envolve RAM + CPU + disco + SO;
 - binário é formato geral; código de máquina é binário executável pela CPU.
+
+---
+
+**A seguir:** [`04_heap_stack_frames_e_execucao_python.md`](04_heap_stack_frames_e_execucao_python.md)
 
 ---
 

@@ -5,6 +5,8 @@
 
 ---
 
+**Pré-requisitos:** [`03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`](03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md)
+
 ## Índice
 
 - [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
@@ -67,6 +69,8 @@ Isto explica porque a `list` é tão usada.
 ## 2. Pilha (Stack)
 
 Regra principal: **LIFO** (Last In, First Out).
+
+> Nota: no Módulo 04 falámos de call stack/stack frames (execução). Aqui "pilha/stack" é a estrutura de dados. Mesma ideia LIFO, contextos diferentes.
 
 Operações típicas:
 
@@ -258,6 +262,10 @@ Se um algoritmo passa de 1 000 para 10 000 elementos:
 - Árvores modelam hierarquia.
 - Dicionários são muito úteis para acesso por chave.
 - Big-O ajuda a antecipar desempenho quando os dados crescem.
+
+---
+
+**A seguir:** [Rota de estudo recomendada](README.md#rota-de-estudo-recomendada)
 
 ---
 
