@@ -7,6 +7,10 @@ Usa um IDE para escrever os teus programas.
 
 Podes usar o [OnlineGDB](https://www.onlinegdb.com/online_python_compiler) inicialmente uma vez que é muito simples de usar.
 
+# Exercícios Básicos
+
+Exercícios sobre variáveis, tipos de dados, operações aritméticas e entrada e saída de dados.
+
 ## Exercício 1
 
 Cria um programa que:
@@ -18,17 +22,35 @@ Cria um programa que:
     Olá, eu sou a/o <nome>, tenho <idade> anos e estou no curso <curso>.
     ```
 
+> Resolução:
+
+```python
+nome = "João"
+idade = 16
+curso = "10.º Ano"
+print(f"Olá, eu sou {nome}, tenho {idade} anos e estou no curso {curso}.")
+```
+
 ## Exercício 2
 
 Cria um programa que:
 
-1. Guarda em variáveis o `preço` de um produto e a `quantidade` que queres comprar (em números).
-2. Calcula o `total` a pagar, multiplicando o preço pela quantidade.
-3. Mostra uma mensagem do tipo:
+1.  Guarda em variáveis o `preço` de um produto e a `quantidade` que queres comprar (em números).
+2.  Calcula o `total` a pagar, multiplicando o preço pela quantidade.
+3.  Mostra uma mensagem do tipo:
 
-    ```
-    O total a pagar é: <total>.
-    ```
+        ```
+        O total a pagar é: <total>.
+        ```
+
+    > Resolução:
+
+```python
+preço = 9.99
+quantidade = 3
+total = preço * quantidade
+print(f"O total a pagar é: {total}.")
+```
 
 ## Exercício 3
 
@@ -45,6 +67,23 @@ Cria um programa que:
     A divisão é: <divisão>.
     ```
 
+> Resolução:
+
+```python
+num1 = float(input("Introduz o primeiro número: "))
+num2 = float(input("Introduz o segundo número: "))
+
+soma = num1 + num2
+subtração = num1 - num2
+multiplicação = num1 * num2
+divisão = num1 / num2
+
+print(f"A soma é: {soma}.")
+print(f"A subtração é: {subtração}.")
+print(f"A multiplicação é: {multiplicação}.")
+print(f"A divisão é: {divisão}.")
+```
+
 ## Exercício 4
 
 Cria um programa que:
@@ -55,4 +94,98 @@ Cria um programa que:
 
     ```
     A área do retângulo é: <área>.
+    ```
+
+> Resolução:
+
+```python
+altura = float(input("Introduz a altura do retângulo: "))
+largura = float(input("Introduz a largura do retângulo: "))
+área = altura * largura
+print(f"A área do retângulo é: {área}.")
+```
+
+## Exercício 5
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir a temperatura em graus Celsius (em número).
+2. Converte a temperatura para Fahrenheit usando a fórmula: `F = (C * 9/5) + 32`
+3. Mostra uma mensagem do tipo:
+
+    ```
+    A temperatura em Celsius é: <C>°C.
+    A temperatura em Fahrenheit é: <F>°F.
+    ```
+
+## Exercício 6
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir a sua morada (em texto).
+2. Mostra uma mensagem do tipo:
+
+    ```
+    A tua morada é: <morada>.
+    ```
+
+## Exercício 7
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir o seu nome e idade (em texto e número).
+2. Mostra uma mensagem do tipo:
+
+    ```
+    Olá, <nome>! Tens <idade> anos.
+    ```
+
+## Exercício 8
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir o raio de um círculo (em número).
+2. Calcula a área do círculo usando a fórmula: `A = π * r^2` (assume que o π = 3.14).
+3. Mostra uma mensagem do tipo:
+
+    ```
+    A área do círculo é: <área>.
+    ```
+
+## Exercício 9
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir a sua data de nascimento (em texto, formato: DD/MM/AAAA).
+2. Mostra uma mensagem do tipo:
+
+    ```
+    A tua data de nascimento é: <data>.
+    ```
+
+# Exercícios Intermédios
+
+Exercícios que envolvem estruturas de repetição, de controlo, funções, listas e dicionários.
+
+## Exercício 10
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir um número.
+2. Verifica se o número é positivo, negativo ou zero e mostra uma mensagem do tipo:
+
+    ```
+    O número <n> é positivo.
+    ```
+
+    ou
+
+    ```
+    O número <n> é negativo.
+    ```
+
+    ou
+
+    ```
+    O número <n> é zero.
     ```
