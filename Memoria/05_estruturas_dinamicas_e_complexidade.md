@@ -20,8 +20,9 @@
 - [8. Big-O sem medo](#8-big-o-sem-medo)
 - [9. Comparação simplificada de estruturas](#9-comparação-simplificada-de-estruturas)
 - [10. Erros comuns (e correções)](#10-erros-comuns-e-correções)
-- [11. Resumo final](#11-resumo-final)
-- [12. Changelog](#12-changelog)
+- [11. Tabela resumo: pontos fortes, fracos e quando usar](#11-tabela-resumo-pontos-fortes-fracos-e-quando-usar)
+- [12. Resumo final](#12-resumo-final)
+- [13. Changelog](#13-changelog)
 
 ---
 
@@ -569,7 +570,24 @@ Legenda:
 
 ---
 
-## 11. Resumo final
+## 11. Tabela resumo: pontos fortes, fracos e quando usar
+
+| Estrutura                 | Pontos fortes                                                    | Pontos fracos                                                           | Quando usar                                                                 |
+| ------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Lista (array dinâmico)    | simples, versátil, acesso por índice rápido                      | inserir/remover no meio pode ser caro                                  | sequência geral de dados, percursos, acesso por posição                     |
+| Pilha                     | `push/pop` rápidos no topo, modelo LIFO claro                    | acesso restrito ao topo, pesquisa não é foco                            | undo/redo, histórico de navegação, call stack, backtracking                 |
+| Fila (`deque`)            | `enqueue/dequeue` rápidos nas extremidades, modelo FIFO natural  | acesso aleatório e pesquisa global não são foco                         | filas de tarefas, atendimento, BFS                                           |
+| Lista ligada              | inserção/remoção eficiente quando já tens o nó/ponto             | pesquisa e acesso por posição tendem a ser lentos                       | cenários com muitas alterações locais e pouca necessidade de índice direto   |
+| BST (árvore de pesquisa)  | mantém ordem e permite pesquisa/inserção/remoção eficientes      | pode degradar se desequilibrada; implementação é mais complexa          | dados ordenáveis com operações dinâmicas frequentes                          |
+| Dicionário (hash table)   | pesquisa/inserção/remoção muito rápidas em média por chave       | não é ideal para ordem natural por valor/chave e intervalos             | mapeamento chave-valor, indexação rápida, contagens                          |
+| Lista de listas           | boa para dados tabulares simples e acesso `dados[i][j]`          | pesquisa global por valor pode custar `O(n*m)`                          | matrizes simples, grelhas, tabelas sem chave                                |
+| Lista de dicionários      | cada item pode ter campos nomeados (estrutura flexível)          | achar um item pode exigir varrer lista (`O(n)`)                         | registos pequenos (ex.: alunos, produtos) com ordem/importância de lista    |
+| Dicionário de listas      | acesso rápido por grupo/chave e coleção interna por chave        | operações na lista interna podem custar `O(m)`                           | agrupar muitos itens por categoria/chave                                     |
+| Dicionário de dicionários | acesso direto por duas chaves, estrutura clara para hierarquias  | consome mais memória e exige cuidado com chaves em vários níveis        | dados hierárquicos (ex.: turma -> aluno -> campos)                           |
+
+---
+
+## 12. Resumo final
 
 - Estruturas dinâmicas adaptam-se ao crescimento dos dados.
 - Pilha usa LIFO; fila usa FIFO.
@@ -584,7 +602,7 @@ Legenda:
 
 ---
 
-## 12. Changelog
+## 13. Changelog
 
-- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order, reforço pedagógico da complexidade, comparação `sort` vs BST e tabela de estruturas compostas.
+- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order, reforço pedagógico da complexidade, comparação `sort` vs BST, tabela de estruturas compostas e tabela-resumo de utilização.
 - **2026-02-04**: versão inicial do módulo 05.
