@@ -484,6 +484,20 @@ Não dá tempo exato; dá uma classe de crescimento.
 | `O(n log n)` | ~33      | ~664      | ~9966      |
 | `O(n^2)`     | 100      | 10 000    | 1 000 000  |
 
+### Ordenar uma lista: `sort` vs BST
+
+Se tens uma lista não ordenada com `n` elementos:
+
+- usar `sort` (Timsort, em Python) tem custo típico `O(n log n)` no pior/médio caso;
+- construir uma BST simples com inserções sucessivas + percurso in-order:
+  - média: `O(n log n)` (se árvore ficar razoavelmente equilibrada);
+  - pior caso: `O(n^2)` (se árvore degradar para quase lista ligada).
+
+Conclusão prática:
+
+- para ordenar, `sort` é a escolha mais robusta;
+- BST faz sentido quando também precisas de operações dinâmicas de pesquisa/inserção/remoção ao longo do tempo.
+
 ### Melhor, médio e pior caso
 
 Para a mesma operação, podem existir cenários diferentes:
@@ -514,6 +528,22 @@ Notas importantes:
 - BST pode degradar para `O(n)` se ficar muito desequilibrada;
 - dicionário não mantém ordem "natural" de menor para maior;
 - "rápido em média" não elimina a necessidade de escolher a estrutura certa para a tarefa.
+
+### Estruturas compostas (aninhadas)
+
+Aqui o custo costuma ser a soma dos passos em cada nível.
+
+| Estrutura                 | Pesquisa                                                                  | Inserção                                                                   | Remoção                                                                   |
+| ------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Lista de listas           | `O(n*m)` por valor global / `O(1)` por acesso direto `dados[i][j]`       | `O(1)` no fim (amortizado) / no meio pode chegar a `O(n+m)`               | no fim `O(1)`; no meio pode chegar a `O(n+m)`                             |
+| Lista de dicionários      | `O(n)` para achar item na lista + `O(1)` por chave no dicionário         | `O(1)` para `append` + `O(1)` para inserir chave no dicionário            | `O(n)` para remover item da lista + `O(1)` para remover chave             |
+| Dicionário de listas      | `O(1)` para achar chave + `O(m)` para procurar valor na lista interna     | `O(1)` para chave + `O(1)` para `append` na lista interna                 | `O(1)` para chave + `O(m)` para remover valor no meio da lista interna    |
+| Dicionário de dicionários | `O(1)` para chave externa + `O(1)` para chave interna                     | `O(1)` para chave externa + `O(1)` para inserir chave interna             | `O(1)` para chave externa + `O(1)` para remover chave interna             |
+
+Legenda:
+
+- `n`: tamanho da estrutura externa;
+- `m`: tamanho médio da estrutura interna.
 
 ---
 
@@ -556,5 +586,5 @@ Notas importantes:
 
 ## 12. Changelog
 
-- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order e reforço pedagógico da secção de complexidade.
+- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order, reforço pedagógico da complexidade, comparação `sort` vs BST e tabela de estruturas compostas.
 - **2026-02-04**: versão inicial do módulo 05.
