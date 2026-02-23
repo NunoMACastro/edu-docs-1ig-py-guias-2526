@@ -455,11 +455,12 @@ Isto é comportamento **linear**: cresce com `n`.
 
 ---
 
-## 8. Big-O sem medo
+## 8. Big-O
 
+Big-O é a notação usada para expressar a complexidade de forma simplificada.
 Big-O descreve a **tendência de crescimento** do custo quando `n` fica grande.
 
-Não dá tempo exato; dá uma classe de crescimento.
+Não dá tempo exato; dá uma classe de crescimento. Ou seja, diz "cresce como `n`", "cresce como `n^2`", etc.
 
 ### Regras simples de leitura
 
@@ -477,6 +478,10 @@ Não dá tempo exato; dá uma classe de crescimento.
 
 ### Tabela mental de crescimento (aproximada)
 
+Valores maiores -> mais lento
+
+Por exemplo, para n = 10, O(1) é 1 passo, O(log n) é cerca de 3 passos, O(n) é 10 passos, O(n log n) é cerca de 33 passos, e O(n^2) é 100 passos.
+
 | Classe       | `n = 10` | `n = 100` | `n = 1000` |
 | ------------ | -------- | --------- | ---------- |
 | `O(1)`       | 1        | 1         | 1          |
@@ -491,12 +496,12 @@ Se tens uma lista não ordenada com `n` elementos:
 
 - usar `sort` (Timsort, em Python) tem custo típico `O(n log n)` no pior/médio caso;
 - construir uma BST simples com inserções sucessivas + percurso in-order:
-  - média: `O(n log n)` (se árvore ficar razoavelmente equilibrada);
-  - pior caso: `O(n^2)` (se árvore degradar para quase lista ligada).
+    - média: `O(n log n)` (se árvore ficar razoavelmente equilibrada);
+    - pior caso: `O(n^2)` (se árvore degradar para quase lista ligada).
 
 Conclusão prática:
 
-- para ordenar, `sort` é a escolha mais robusta;
+- para ordenar listas simples, `sort` é a escolha mais robusta;
 - BST faz sentido quando também precisas de operações dinâmicas de pesquisa/inserção/remoção ao longo do tempo.
 
 ### Melhor, médio e pior caso
@@ -534,12 +539,12 @@ Notas importantes:
 
 Aqui o custo costuma ser a soma dos passos em cada nível.
 
-| Estrutura                 | Pesquisa                                                                  | Inserção                                                                   | Remoção                                                                   |
-| ------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Lista de listas           | `O(n*m)` por valor global / `O(1)` por acesso direto `dados[i][j]`       | `O(1)` no fim (amortizado) / no meio pode chegar a `O(n+m)`               | no fim `O(1)`; no meio pode chegar a `O(n+m)`                             |
-| Lista de dicionários      | `O(n)` para achar item na lista + `O(1)` por chave no dicionário         | `O(1)` para `append` + `O(1)` para inserir chave no dicionário            | `O(n)` para remover item da lista + `O(1)` para remover chave             |
-| Dicionário de listas      | `O(1)` para achar chave + `O(m)` para procurar valor na lista interna     | `O(1)` para chave + `O(1)` para `append` na lista interna                 | `O(1)` para chave + `O(m)` para remover valor no meio da lista interna    |
-| Dicionário de dicionários | `O(1)` para chave externa + `O(1)` para chave interna                     | `O(1)` para chave externa + `O(1)` para inserir chave interna             | `O(1)` para chave externa + `O(1)` para remover chave interna             |
+| Estrutura                 | Pesquisa                                                              | Inserção                                                       | Remoção                                                                |
+| ------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Lista de listas           | `O(n*m)` por valor global / `O(1)` por acesso direto `dados[i][j]`    | `O(1)` no fim (amortizado) / no meio pode chegar a `O(n+m)`    | no fim `O(1)`; no meio pode chegar a `O(n+m)`                          |
+| Lista de dicionários      | `O(n)` para achar item na lista + `O(1)` por chave no dicionário      | `O(1)` para `append` + `O(1)` para inserir chave no dicionário | `O(n)` para remover item da lista + `O(1)` para remover chave          |
+| Dicionário de listas      | `O(1)` para achar chave + `O(m)` para procurar valor na lista interna | `O(1)` para chave + `O(1)` para `append` na lista interna      | `O(1)` para chave + `O(m)` para remover valor no meio da lista interna |
+| Dicionário de dicionários | `O(1)` para chave externa + `O(1)` para chave interna                 | `O(1)` para chave externa + `O(1)` para inserir chave interna  | `O(1)` para chave externa + `O(1)` para remover chave interna          |
 
 Legenda:
 
@@ -572,18 +577,18 @@ Legenda:
 
 ## 11. Tabela resumo: pontos fortes, fracos e quando usar
 
-| Estrutura                 | Pontos fortes                                                    | Pontos fracos                                                           | Quando usar                                                                 |
-| ------------------------- | ---------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Lista (array dinâmico)    | simples, versátil, acesso por índice rápido                      | inserir/remover no meio pode ser caro                                  | sequência geral de dados, percursos, acesso por posição                     |
-| Pilha                     | `push/pop` rápidos no topo, modelo LIFO claro                    | acesso restrito ao topo, pesquisa não é foco                            | undo/redo, histórico de navegação, call stack, backtracking                 |
-| Fila (`deque`)            | `enqueue/dequeue` rápidos nas extremidades, modelo FIFO natural  | acesso aleatório e pesquisa global não são foco                         | filas de tarefas, atendimento, BFS                                           |
-| Lista ligada              | inserção/remoção eficiente quando já tens o nó/ponto             | pesquisa e acesso por posição tendem a ser lentos                       | cenários com muitas alterações locais e pouca necessidade de índice direto   |
-| BST (árvore de pesquisa)  | mantém ordem e permite pesquisa/inserção/remoção eficientes      | pode degradar se desequilibrada; implementação é mais complexa          | dados ordenáveis com operações dinâmicas frequentes                          |
-| Dicionário (hash table)   | pesquisa/inserção/remoção muito rápidas em média por chave       | não é ideal para ordem natural por valor/chave e intervalos             | mapeamento chave-valor, indexação rápida, contagens                          |
-| Lista de listas           | boa para dados tabulares simples e acesso `dados[i][j]`          | pesquisa global por valor pode custar `O(n*m)`                          | matrizes simples, grelhas, tabelas sem chave                                |
-| Lista de dicionários      | cada item pode ter campos nomeados (estrutura flexível)          | achar um item pode exigir varrer lista (`O(n)`)                         | registos pequenos (ex.: alunos, produtos) com ordem/importância de lista    |
-| Dicionário de listas      | acesso rápido por grupo/chave e coleção interna por chave        | operações na lista interna podem custar `O(m)`                           | agrupar muitos itens por categoria/chave                                     |
-| Dicionário de dicionários | acesso direto por duas chaves, estrutura clara para hierarquias  | consome mais memória e exige cuidado com chaves em vários níveis        | dados hierárquicos (ex.: turma -> aluno -> campos)                           |
+| Estrutura                 | Pontos fortes                                                   | Pontos fracos                                                    | Quando usar                                                                |
+| ------------------------- | --------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| Lista (array dinâmico)    | simples, versátil, acesso por índice rápido                     | inserir/remover no meio pode ser caro                            | sequência geral de dados, percursos, acesso por posição                    |
+| Pilha                     | `push/pop` rápidos no topo, modelo LIFO claro                   | acesso restrito ao topo, pesquisa não é foco                     | undo/redo, histórico de navegação, call stack, backtracking                |
+| Fila (`deque`)            | `enqueue/dequeue` rápidos nas extremidades, modelo FIFO natural | acesso aleatório e pesquisa global não são foco                  | filas de tarefas, atendimento, BFS                                         |
+| Lista ligada              | inserção/remoção eficiente quando já tens o nó/ponto            | pesquisa e acesso por posição tendem a ser lentos                | cenários com muitas alterações locais e pouca necessidade de índice direto |
+| BST (árvore de pesquisa)  | mantém ordem e permite pesquisa/inserção/remoção eficientes     | pode degradar se desequilibrada; implementação é mais complexa   | dados ordenáveis com operações dinâmicas frequentes                        |
+| Dicionário (hash table)   | pesquisa/inserção/remoção muito rápidas em média por chave      | não é ideal para ordem natural por valor/chave e intervalos      | mapeamento chave-valor, indexação rápida, contagens                        |
+| Lista de listas           | boa para dados tabulares simples e acesso `dados[i][j]`         | pesquisa global por valor pode custar `O(n*m)`                   | matrizes simples, grelhas, tabelas sem chave                               |
+| Lista de dicionários      | cada item pode ter campos nomeados (estrutura flexível)         | achar um item pode exigir varrer lista (`O(n)`)                  | registos pequenos (ex.: alunos, produtos) com ordem/importância de lista   |
+| Dicionário de listas      | acesso rápido por grupo/chave e coleção interna por chave       | operações na lista interna podem custar `O(m)`                   | agrupar muitos itens por categoria/chave                                   |
+| Dicionário de dicionários | acesso direto por duas chaves, estrutura clara para hierarquias | consome mais memória e exige cuidado com chaves em vários níveis | dados hierárquicos (ex.: turma -> aluno -> campos)                         |
 
 ---
 
