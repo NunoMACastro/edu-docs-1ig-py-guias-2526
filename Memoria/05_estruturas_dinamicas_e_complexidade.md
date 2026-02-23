@@ -351,6 +351,20 @@ Lista de entrada (não ordenada): `8, 3, 10, 1, 6, 14, 7`
        7
 ```
 
+### Ordenação da árvore com BST (in-order)
+
+Para obter os valores por ordem crescente numa BST, fazemos percurso **in-order**:
+
+- visitar subárvore esquerda;
+- visitar nó atual;
+- visitar subárvore direita.
+
+Aplicando à árvore acima, a ordem de visita fica:
+
+`1, 3, 6, 7, 8, 10, 14`
+
+Isto mostra a ideia central: inserir numa BST e depois fazer in-order produz os números ordenados.
+
 ### Exemplo de pesquisa (em BST)
 
 Pesquisar `14`:
@@ -496,5 +510,5 @@ Se um algoritmo passa de 1 000 para 10 000 elementos:
 
 ## 12. Changelog
 
-- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa e um passo a passo de inserção de lista não ordenada em BST.
+- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST e ordenação in-order.
 - **2026-02-04**: versão inicial do módulo 05.
