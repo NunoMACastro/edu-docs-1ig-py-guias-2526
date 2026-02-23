@@ -90,6 +90,33 @@ Pilha de pratos:
 - operações de desfazer (undo);
 - avaliação de expressões.
 
+### Esquema (ASCII)
+
+```text
+Base                 Topo
+[10] [20] [30] [40]
+                 ^ push/pop/peek
+```
+
+### Exemplo de inserção (`push`)
+
+```python
+pilha = []
+pilha.append("A")
+pilha.append("B")
+# Estado: ["A", "B"] (topo = "B")
+```
+
+### Exemplo de pesquisa
+
+```python
+pilha = ["A", "B", "C"]  # topo = "C"
+alvo = "B"
+encontrado = alvo in pilha  # pesquisa linear: O(n)
+```
+
+Nota: a pilha foi pensada para trabalhar no topo; pesquisar não é a operação principal.
+
 ---
 
 ## 3. Fila (Queue)
@@ -113,6 +140,37 @@ Fila de supermercado:
 - sistemas de atendimento;
 - algoritmos de pesquisa em largura (BFS).
 
+### Esquema (ASCII)
+
+```text
+Frente                               Trás
+  |                                    |
+dequeue <- [A] <- [B] <- [C] <- enqueue
+```
+
+### Exemplo de inserção (`enqueue`)
+
+```python
+from collections import deque
+
+fila = deque()
+fila.append("Ana")
+fila.append("Bruno")
+# Estado: deque(["Ana", "Bruno"])
+```
+
+### Exemplo de pesquisa
+
+```python
+from collections import deque
+
+fila = deque(["Ana", "Bruno", "Carla"])
+alvo = "Bruno"
+encontrado = alvo in fila  # pesquisa linear: O(n)
+```
+
+Nota: tal como na pilha, pesquisar não é a operação de foco da fila.
+
 ---
 
 ## 4. Lista ligada (Linked List)
@@ -132,6 +190,41 @@ Inserções/remoções em certos pontos podem ser eficientes sem mover todos os 
 ### Desvantagem conceptual
 
 Acesso direto por índice não é tão natural como em arrays/listas dinâmicas comuns.
+
+### Esquema (ASCII)
+
+```text
+head
+ |
+ v
+[10|*] -> [25|*] -> [40|None]
+```
+
+### Exemplo de inserção (no início)
+
+```python
+class No:
+    def __init__(self, valor, next=None):
+        self.valor = valor
+        self.next = next
+
+head = No(25, No(40))
+head = No(10, head)  # inserção no início
+```
+
+### Exemplo de pesquisa
+
+```python
+alvo = 40
+atual = head
+encontrado = False
+
+while atual is not None:
+    if atual.valor == alvo:
+        encontrado = True
+        break
+    atual = atual.next
+```
 
 ---
 
@@ -158,6 +251,33 @@ Cada nó (na versão binária):
 - pesquisa;
 - representação de expressões.
 
+### Esquema (ASCII)
+
+```text
+        8
+      /   \
+     3    10
+    / \     \
+   1   6    14
+```
+
+### Exemplo de inserção (em árvore binária de pesquisa, BST)
+
+Inserir `7`:
+
+- comparar com `8` -> vai para a esquerda;
+- comparar com `3` -> vai para a direita;
+- comparar com `6` -> vai para a direita;
+- posição livre -> inserir `7`.
+
+### Exemplo de pesquisa (em BST)
+
+Pesquisar `14`:
+
+- comparar com `8` -> ir para a direita;
+- comparar com `10` -> ir para a direita;
+- encontrar `14`.
+
 ---
 
 ## 6. Dicionário (Hash Table, visão base)
@@ -177,6 +297,30 @@ Permite acesso muito rápido por chave em média.
 ### Atenção pedagógica
 
 "Muito rápido em média" não significa "milagroso em todos os casos", mas no uso normal é excelente.
+
+### Esquema (ASCII)
+
+```text
+chave --hash--> índice
+
+"nome" --hash--> [bucket 5] -> "Ana"
+"nota" --hash--> [bucket 2] -> 17
+```
+
+### Exemplo de inserção
+
+```python
+aluno = {}
+aluno["nome"] = "Ana"
+aluno["nota"] = 17
+```
+
+### Exemplo de pesquisa
+
+```python
+tem_nota = "nota" in aluno   # True
+nota = aluno.get("nota")     # 17
+```
 
 ---
 
@@ -271,4 +415,5 @@ Se um algoritmo passa de 1 000 para 10 000 elementos:
 
 ## 12. Changelog
 
+- **2026-02-23**: adicionados esquemas (ASCII) e exemplos de inserção/pesquisa nas estruturas principais.
 - **2026-02-04**: versão inicial do módulo 05.
