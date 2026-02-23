@@ -261,14 +261,95 @@ Cada nó (na versão binária):
    1   6    14
 ```
 
-### Exemplo de inserção (em árvore binária de pesquisa, BST)
+### Exemplo de inserção de lista não ordenada (BST, step-by-step)
 
-Inserir `7`:
+Regra da BST:
 
-- comparar com `8` -> vai para a esquerda;
-- comparar com `3` -> vai para a direita;
-- comparar com `6` -> vai para a direita;
-- posição livre -> inserir `7`.
+- valores menores vão para a esquerda;
+- valores maiores vão para a direita.
+
+Lista de entrada (não ordenada): `8, 3, 10, 1, 6, 14, 7`
+
+**Passo 1: inserir 8 (raiz)**
+
+```text
+8
+```
+
+**Passo 2: inserir 3**
+
+- 3 < 8 -> vai para a esquerda de 8.
+
+```text
+  8
+ /
+3
+```
+
+**Passo 3: inserir 10**
+
+- 10 > 8 -> vai para a direita de 8.
+
+```text
+  8
+ / \
+3  10
+```
+
+**Passo 4: inserir 1**
+
+- 1 < 8 -> ir para a esquerda;
+- 1 < 3 -> fica à esquerda de 3.
+
+```text
+    8
+   / \
+  3  10
+ /
+1
+```
+
+**Passo 5: inserir 6**
+
+- 6 < 8 -> ir para a esquerda;
+- 6 > 3 -> fica à direita de 3.
+
+```text
+    8
+   / \
+  3  10
+ / \
+1   6
+```
+
+**Passo 6: inserir 14**
+
+- 14 > 8 -> ir para a direita;
+- 14 > 10 -> fica à direita de 10.
+
+```text
+    8
+   / \
+  3  10
+ / \   \
+1   6  14
+```
+
+**Passo 7: inserir 7**
+
+- 7 < 8 -> ir para a esquerda;
+- 7 > 3 -> ir para a direita;
+- 7 > 6 -> fica à direita de 6.
+
+```text
+      8
+    /   \
+   3    10
+  / \     \
+ 1   6    14
+      \
+       7
+```
 
 ### Exemplo de pesquisa (em BST)
 
@@ -415,5 +496,5 @@ Se um algoritmo passa de 1 000 para 10 000 elementos:
 
 ## 12. Changelog
 
-- **2026-02-23**: adicionados esquemas (ASCII) e exemplos de inserção/pesquisa nas estruturas principais.
+- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa e um passo a passo de inserção de lista não ordenada em BST.
 - **2026-02-04**: versão inicial do módulo 05.
