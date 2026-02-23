@@ -421,53 +421,99 @@ nota = aluno.get("nota")     # 17
 
 ## 7. O que é complexidade?
 
-Complexidade mede como o custo (tempo ou memória) cresce quando aumentamos o tamanho da entrada.
+Complexidade mede como o custo de um algoritmo cresce quando aumentamos o tamanho da entrada (`n`).
 
-Pergunta mental:
+Em geral, olhamos para dois custos:
 
-"Se eu duplicar o tamanho dos dados, o trabalho cresce quanto?"
+- **tempo**: quantos passos/operações são necessários;
+- **memória**: quanta memória extra é usada.
+
+### O que é `n` na prática?
+
+Depende do problema:
+
+- numa lista, `n` = número de elementos;
+- numa string, `n` = número de caracteres;
+- numa árvore/grafo, `n` = número de nós.
+
+### Pergunta pedagógica principal
+
+Em vez de perguntar "quanto tempo em segundos?", pergunta:
+
+"Se eu aumentar os dados de 1 000 para 10 000, o custo cresce pouco, muito, ou explode?"
+
+### Exemplo rápido (pesquisa numa lista)
+
+Para procurar um valor numa lista sem ordem:
+
+- no melhor caso, encontra logo no início;
+- no pior caso, percorre a lista toda;
+- em média, percorre uma parte significativa.
+
+Isto é comportamento **linear**: cresce com `n`.
 
 ---
 
 ## 8. Big-O sem medo
 
-Big-O descreve tendência de crescimento, não tempo exato em segundos.
+Big-O descreve a **tendência de crescimento** do custo quando `n` fica grande.
+
+Não dá tempo exato; dá uma classe de crescimento.
+
+### Regras simples de leitura
+
+- ignoramos constantes: `3n` e `n` ficam na mesma classe (`O(n)`);
+- ignoramos termos menos relevantes: `n^2 + n` fica `O(n^2)`;
+- focamos o termo que domina para entradas grandes.
 
 ### Formas comuns
 
-- `O(1)` constante;
-- `O(log n)` logarítmica;
-- `O(n)` linear;
-- `O(n log n)` quase linear;
-- `O(n^2)` quadrática.
+- `O(1)`: custo aproximadamente constante;
+- `O(log n)`: cresce devagar (ex.: dividir problema ao meio);
+- `O(n)`: cresce proporcionalmente ao tamanho dos dados;
+- `O(n log n)`: comum em ordenações eficientes;
+- `O(n^2)`: compara muitos pares (cresce muito depressa).
 
-### Leitura intuitiva
+### Tabela mental de crescimento (aproximada)
 
-- `O(1)`: custo praticamente fixo;
-- `O(n)`: custo cresce proporcionalmente aos dados;
-- `O(n^2)`: cresce muito rapidamente com dados grandes.
+| Classe       | `n = 10` | `n = 100` | `n = 1000` |
+| ------------ | -------- | --------- | ---------- |
+| `O(1)`       | 1        | 1         | 1          |
+| `O(log2 n)`  | ~3       | ~7        | ~10        |
+| `O(n)`       | 10       | 100       | 1000       |
+| `O(n log n)` | ~33      | ~664      | ~9966      |
+| `O(n^2)`     | 100      | 10 000    | 1 000 000  |
 
-### Exemplo mental rápido
+### Melhor, médio e pior caso
 
-Se um algoritmo passa de 1 000 para 10 000 elementos:
+Para a mesma operação, podem existir cenários diferentes:
 
-- `O(n)` cresce cerca de 10x;
-- `O(n^2)` cresce cerca de 100x.
+- **melhor caso**: situação mais favorável;
+- **caso médio**: comportamento típico;
+- **pior caso**: limite máximo de custo.
 
-É por isso que escolhas de estrutura importam muito em escalas maiores.
+Em sala de aula, costuma-se usar muito o pior caso para garantir que o algoritmo não ultrapassa certo custo.
 
 ---
 
 ## 9. Comparação simplificada de estruturas
 
-| Estrutura              | Ponto forte                                | Limitação típica                                |
-| ---------------------- | ------------------------------------------ | ----------------------------------------------- |
-| Lista (array dinâmico) | acesso por índice rápido                   | inserir/remover no meio pode ser caro           |
-| Pilha                  | inserir/remover no topo é simples e rápido | acesso restrito ao topo                         |
-| Fila                   | ordem FIFO natural                         | acesso aleatório não é foco                     |
-| Lista ligada           | flexível em inserções/remoções             | pesquisa/acesso por posição pode ser mais lento |
-| Árvore binária         | boa organização hierárquica                | pode degradar se ficar desequilibrada           |
-| Dicionário             | acesso por chave rápido em média           | não substitui todas as estruturas               |
+Custos típicos (visão prática, simplificada):
+
+| Estrutura                        | Pesquisa                             | Inserção                                       | Remoção                                        |
+| -------------------------------- | ------------------------------------ | ---------------------------------------------- | ---------------------------------------------- |
+| Lista (array dinâmico)           | `O(n)` por valor / `O(1)` por índice | `O(1)` no fim (amortizado), `O(n)` no meio     | `O(1)` no fim, `O(n)` no meio                  |
+| Pilha                            | `O(n)`                               | `O(1)` no topo                                 | `O(1)` no topo                                 |
+| Fila (`deque`)                   | `O(n)`                               | `O(1)` no fim (`enqueue`)                      | `O(1)` no início (`dequeue`)                   |
+| Lista ligada                     | `O(n)`                               | `O(1)` se já tens o ponto; `O(n)` para o achar | `O(1)` se já tens o ponto; `O(n)` para o achar |
+| Árvore binária de pesquisa (BST) | `O(log n)` média (equilibrada)       | `O(log n)` média (equilibrada)                 | `O(log n)` média (equilibrada)                 |
+| Dicionário (hash table)          | `O(1)` em média                      | `O(1)` em média                                | `O(1)` em média                                |
+
+Notas importantes:
+
+- BST pode degradar para `O(n)` se ficar muito desequilibrada;
+- dicionário não mantém ordem "natural" de menor para maior;
+- "rápido em média" não elimina a necessidade de escolher a estrutura certa para a tarefa.
 
 ---
 
@@ -510,5 +556,5 @@ Se um algoritmo passa de 1 000 para 10 000 elementos:
 
 ## 12. Changelog
 
-- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST e ordenação in-order.
+- **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order e reforço pedagógico da secção de complexidade.
 - **2026-02-04**: versão inicial do módulo 05.
