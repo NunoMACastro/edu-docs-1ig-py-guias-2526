@@ -189,3 +189,63 @@ Cria um programa que:
     ```
     O número <n> é zero.
     ```
+
+## Exercício 11
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir um número inteiro.
+2. Verifica se o número é par ou ímpar e mostra uma mensagem do tipo:
+
+    ```
+    O número <n> é par.
+    ```
+
+    ou
+
+    ```
+    O número <n> é ímpar.
+    ```
+
+> Nota: um número é par se o resto da divisão por 2 for igual a 0, ou seja, `n % 2 == 0`. Neste caso `if n % 2 == 0:` é a condição para verificar se o número é par.
+
+## Exercício 12
+
+Cria um programa que:
+
+1. Peça um nome ao utilizador e diga se o nome tem mais de 5 letras ou não, mostrando uma mensagem do tipo:
+
+    ```
+    O nome <nome> tem mais de 5 letras.
+    ```
+
+    ou
+
+    ```
+    O nome <nome> tem 5 ou menos letras.
+    ```
+
+> Nota: para verificar o número de letras de um nome, podes usar a função `len(nome)`, que retorna o comprimento da string.
+
+## Exercício 13
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir dois números inteiros.
+2. Diga se algum dos números é maior do que o outro, ou se são iguais, mostrando uma mensagem do tipo:
+
+    ```
+    O número <n1> é maior do que <n2>.
+    ```
+
+    ou
+
+    ```
+    O número <n2> é maior do que <n1>.
+    ```
+
+    ou
+
+    ```
+    Os números <n1> e <n2> são iguais.
+    ```
