@@ -118,6 +118,16 @@ Cria um programa que:
     A temperatura em Fahrenheit é: <F>°F.
     ```
 
+> Resolução:
+
+```python
+
+C = float(input("Introduz a temperatura em graus Celsius: "))
+F = (C * 9/5) + 32
+print(f"A temperatura em Celsius é: {C}°C.")
+print(f"A temperatura em Fahrenheit é: {F}°F.")
+```
+
 ## Exercício 6
 
 Cria um programa que:
