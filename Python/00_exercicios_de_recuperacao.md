@@ -259,3 +259,81 @@ Cria um programa que:
     ```
     Os números <n1> e <n2> são iguais.
     ```
+
+## Exercício 14
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir a idade.
+2. O programa deve verificar se a idade está entre 0 e 100 (inclusive).
+3. Se não estiver, deve mostrar uma mensagem do tipo:
+
+    ```
+    A idade <n> não está entre 0 e 100.
+    ```
+
+4. Se estiver, deve depois verificar se a idade é menor do que 18, entre 18 e 65 (inclusive) ou maior do que 65, mostrando uma mensagem do tipo:
+
+    ```
+    A idade <n> é menor do que 18. Ainda és jovem!
+    ```
+
+    ou
+
+    ```
+    A idade <n> está entre 18 e 65. És adulto!
+    ```
+
+    ou
+
+    ```
+    A idade <n> é maior do que 65. Já és idoso!
+    ```
+
+# Exercício 15
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir uma temperatura em graus Celsius.
+2. O programa deve verificar se a temperatura é menor do que 0, entre 0 e 30 (inclusive) ou maior do que 30, mostrando uma mensagem do tipo:
+
+    ```
+    A temperatura <n>°C é menor do que 0. Está muito frio!
+    ```
+
+    ou
+
+    ```
+    A temperatura <n>°C está entre 0 e 30. O tempo está agradável!
+    ```
+
+    ou
+
+    ```
+    A temperatura <n>°C é maior do que 30. Está muito quente!
+    ```
+
+## Exercício 16
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir um número inteiro.
+2. O programa deve verificar se o número é múltiplo de 3 ou de 5, mostrando uma mensagem do tipo:
+
+    ```
+    O número <n> é múltiplo de 3.
+    ```
+
+    ou
+
+    ```
+    O número <n> é múltiplo de 5.
+    ```
+
+    ou
+
+    ```
+    O número <n> não é múltiplo de 3 nem de 5.
+    ```
+
+> Para verificar se um número é múltiplo de 3, podes usar a condição `n % 3 == 0`, que verifica se o resto da divisão por 3 é igual a 0.
