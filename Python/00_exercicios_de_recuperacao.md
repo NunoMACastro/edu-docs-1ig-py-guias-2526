@@ -506,3 +506,10 @@ Cria um programa que:
 
 1. Peça ao utilizador para introduzir um número inteiro e positivo.
 2. Usando um `for` ou um `while`, o programa deve mostrar os números pares desde 0 até ao número introduzido (inclusive, se for par).
+
+## Exercício 20
+
+Cria um programa que:
+
+1. Peça o nome do utilizador e o coloque numa variável.
+2. Depois, usando o `for`ou o `while`, deve dizer quantas vezes a letra `a` aparece no nome.
