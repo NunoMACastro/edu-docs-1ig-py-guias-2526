@@ -485,3 +485,24 @@ elif n % 5 == 0:
 else:
     print(f"O número {n} não é múltiplo de 3 nem de 5.")
 ```
+
+## Exercício 17
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir um número inteiro e positivo.
+2. O programa deve fazer uma contagem decrescente desde o número introduzido até 0, mostrando cada número numa linha.
+
+## Exercício 18
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir um número inteiro e positivo.
+2. Usando um `for` ou um `while`, o programa deve mostrar a tabuada do número introduzido, ou seja, os resultados da multiplicação do número por 1, 2, 3, ..., 10.
+
+## Exercício 19
+
+Cria um programa que:
+
+1. Peça ao utilizador para introduzir um número inteiro e positivo.
+2. Usando um `for` ou um `while`, o programa deve mostrar os números pares desde 0 até ao número introduzido (inclusive, se for par).
