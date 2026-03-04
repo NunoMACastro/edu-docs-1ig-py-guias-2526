@@ -527,3 +527,23 @@ Cria um programa que:
 
 1. Peça ao utilizador 5 palavras, uma de cada vez, e guarde-as numa lista.
 2. Depois, usando um `for` ou um `while`, o programa deve mostrar todas as palavras introduzidas, uma de cada vez, e dizer quantas letras tem cada palavra.
+
+## Exercício 23
+
+Cria um programa que:
+
+1. Considera a lista:
+
+    ```python
+    numeros = [1, 2, 3, 4, 5]
+    ```
+
+2. Usando um `for` ou um `while`, o programa deve mostrar o quadrado de cada número da lista, um de cada vez.
+
+## Exercício 24
+
+Cria um programa que:
+
+1. Peça um numero ao utilizador
+2. Calcule a tabuada desse número e guarde os resultados numa lista.
+3. Mostre a lista com os resultados.
