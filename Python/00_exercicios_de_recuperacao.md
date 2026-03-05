@@ -562,3 +562,26 @@ Cria um programa que:
 
 1. Peça uma letra ao utilizador.
 2. Usando a lista do exercício anterior, deve mostrar todas as palavras que começam com a letra introduzida, uma de cada vez.
+
+## Exercício 27
+
+Cria um programa que:
+
+1. Tenha um dicionário com o teu nome, idade e cidade.
+2. Mostre uma mensagem do tipo:
+
+    ```
+    O meu nome é <nome>, tenho <idade> anos e vivo em <cidade>.
+    ```
+
+## Exercício 28
+
+Cria um programa que:
+
+1. Pede um nome, uma idade e uma cidade ao utilizador e guarde-os num dicionário.
+2. Mostre uma mensagem do tipo:
+
+    ````
+    Foi inserido o nome <nome>, a idade <idade> e a cidade <cidade> no dicionário.
+    ```
+    ````
