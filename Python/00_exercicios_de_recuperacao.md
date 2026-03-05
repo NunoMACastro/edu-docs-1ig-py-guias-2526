@@ -493,12 +493,38 @@ Cria um programa que:
 1. Peça ao utilizador para introduzir um número inteiro e positivo.
 2. O programa deve fazer uma contagem decrescente desde o número introduzido até 0, mostrando cada número numa linha.
 
+> Resolução:
+
+```python
+
+n = int(input("Introduz um número inteiro e positivo: "))
+if n < 0:
+    print("O número deve ser positivo.")
+else:
+    for i in range(n, -1, -1):
+        print(i)
+```
+
 ## Exercício 18
 
 Cria um programa que:
 
 1. Peça ao utilizador para introduzir um número inteiro e positivo.
 2. Usando um `for` ou um `while`, o programa deve mostrar a tabuada do número introduzido, ou seja, os resultados da multiplicação do número por 1, 2, 3, ..., 10.
+
+> Resolução:
+
+```python
+
+n = int(input("Introduz um número inteiro e positivo: "))
+
+if n < 0:
+    print("O número deve ser positivo.")
+else:
+    for i in range(1, 11):
+        resultado = n * i
+        print(f"{n} x {i} = {resultado}")
+```
 
 ## Exercício 19
 
@@ -507,12 +533,36 @@ Cria um programa que:
 1. Peça ao utilizador para introduzir um número inteiro e positivo.
 2. Usando um `for` ou um `while`, o programa deve mostrar os números pares desde 0 até ao número introduzido (inclusive, se for par).
 
+> Resolução:
+
+```python
+n = int(input("Introduz um número inteiro e positivo: "))
+
+if n < 0:
+    print("O número deve ser positivo.")
+else:
+    for i in range(0, n + 1, 2):
+        print(i)
+```
+
 ## Exercício 20
 
 Cria um programa que:
 
 1. Peça o nome do utilizador e o coloque numa variável.
 2. Depois, usando o `for`ou o `while`, deve dizer quantas vezes a letra `a` aparece no nome.
+
+> Resolução:
+
+```python
+nome = input("Introduz o teu nome: ")
+contador_a = 0
+for letra in nome:
+    if letra.lower() == 'a': # o método lower() é usado para garantir que a comparação seja feita de forma case-insensitive, ou seja, tanto 'a' como 'A' serão contados.
+        contador_a += 1
+
+print(f"A letra 'a' aparece {contador_a} vezes no nome {nome}.")
+```
 
 ## Exercício 21
 
@@ -585,3 +635,7 @@ Cria um programa que:
     Foi inserido o nome <nome>, a idade <idade> e a cidade <cidade> no dicionário.
     ```
     ````
+
+```
+
+```
