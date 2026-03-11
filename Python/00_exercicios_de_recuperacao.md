@@ -571,6 +571,25 @@ Cria um programa que:
 1. Peça ao utilizador 10 números inteiros e positivos, um de cada vez, e guarde-os numa lista.
 2. Depois, usando um `for` ou um `while`, o programa deve mostrar todos os números introduzidos, um de cada vez, e dizer se são pares ou ímpares.
 
+> Resolução:
+
+```python
+
+numeros = []
+for i in range(10):
+    n = int(input(f"Introduz o número {i + 1}: "))
+    if n < 0:
+        print("O número deve ser positivo.")
+    else:
+        numeros.append(n)
+
+for n in numeros:
+    if n % 2 == 0:
+        print(f"O número {n} é par.")
+    else:
+        print(f"O número {n} é ímpar.")
+```
+
 ## Exercício 22
 
 Cria um programa que:
