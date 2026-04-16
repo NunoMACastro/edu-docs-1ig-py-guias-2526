@@ -1179,3 +1179,44 @@ Cria um programa que:
 1. Defina uma função que receba um dicionário de produtos (com preço e stock) e um produto a comprar (com quantidade) como parâmetros.
 2. A função deve verificar se o produto existe, se há stock suficiente e calcular o total a pagar, atualizando o stock se a compra for válida.
 3. Chame a função com um dicionário de produtos e um produto a comprar para mostrar os resultados.
+
+## Exercício 45
+
+Cria um programa que:
+
+1. Tenha um dicionário de alunos, onde cada chave é o nome do aluno e o valor é outro dicionário com as disciplinas e as respetivas notas, por exemplo:
+
+    ```python
+    alunos = {
+        "Ana": {"Matemática": 17, "Português": 15},
+        "João": {"Matemática": 12, "Português": 14}
+    }
+    ```
+
+2. Defina uma função que receba o dicionário de alunos e mostre a média de cada aluno, a média de cada disciplina, o melhor aluno e os alunos em risco.
+3. Chame a função com o dicionário de alunos para mostrar os resultados.
+4. Defina outra função que receba o dicionário de alunos e um nome de aluno, e mostre as notas desse aluno em cada disciplina, ou uma mensagem se o aluno não existir.
+5. Chame a função para mostrar as notas de um aluno à tua escolha.
+
+## Exercício 46
+
+Cria um programa que:
+
+1. Tenha uma lista de números aleatórios. Para isso:
+
+```python
+import random
+
+numeros = []
+
+for i in range(20):
+    numeros.append(random.randint(1, 100))
+
+```
+
+2. Defina uma função que receba a lista de números e mostre:
+    - o número mais frequente
+    - quantas vezes aparece
+    - a média dos números
+    - os números acima da média
+3. Chame a função com a lista de números para mostrar os resultados.
