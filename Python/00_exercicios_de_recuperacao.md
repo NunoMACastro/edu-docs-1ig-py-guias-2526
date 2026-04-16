@@ -1180,6 +1180,37 @@ Cria um programa que:
 2. A função deve verificar se o produto existe, se há stock suficiente e calcular o total a pagar, atualizando o stock se a compra for válida.
 3. Chame a função com um dicionário de produtos e um produto a comprar para mostrar os resultados.
 
+> Resolução:
+
+```python
+
+def comprar_produto(produtos, produto, quantidade):
+    if produto not in produtos:
+        print(f"O produto {produto} não existe.")
+        return
+
+    preco = produtos[produto]["preco"]
+    stock = produtos[produto]["stock"]
+
+    if quantidade > stock:
+        print(f"Não há stock suficiente para o produto {produto}. Stock disponível: {stock}.")
+        return
+
+    total = preco * quantidade
+    produtos[produto]["stock"] -= quantidade
+    print(f"Compra válida. Total a pagar: {total:.2f}. Stock atualizado para o produto {produto}: {produtos[produto]['stock']}.")
+
+produtos = {
+    "Camisa": {"preco": 19.99, "stock": 50},
+    "Calças": {"preco": 39.99, "stock": 30},
+    "Ténis": {"preco": 59.99, "stock": 20}
+}
+
+produto_a_comprar = "Camisa"
+quantidade_a_comprar = 5
+comprar_produto(produtos, produto_a_comprar, quantidade_a_comprar)
+```
+
 ## Exercício 45
 
 Cria um programa que:
@@ -1197,6 +1228,63 @@ Cria um programa que:
 3. Chame a função com o dicionário de alunos para mostrar os resultados.
 4. Defina outra função que receba o dicionário de alunos e um nome de aluno, e mostre as notas desse aluno em cada disciplina, ou uma mensagem se o aluno não existir.
 5. Chame a função para mostrar as notas de um aluno à tua escolha.
+
+> Resolução:
+
+```python
+
+alunos = {
+    "Ana": {"Matemática": 17, "Português": 15},
+    "João": {"Matemática": 12, "Português": 14},
+    "Maria": {"Matemática": 9, "Português": 8},
+    "Pedro": {"Matemática": 18, "Português": 19}
+}
+
+def calcular_medias(alunos):
+    medias_alunos = {}
+    for aluno, disciplinas in alunos.items():
+        media = sum(disciplinas.values()) / len(disciplinas)
+        medias_alunos[aluno] = media
+        print(f"A média do aluno {aluno} é: {media}.")
+
+    medias_disciplinas = {}
+    for disciplinas in alunos.values():
+        for disciplina, nota in disciplinas.items():
+            if disciplina not in medias_disciplinas:
+                medias_disciplinas[disciplina] = []
+            medias_disciplinas[disciplina].append(nota)
+
+    for disciplina, notas in medias_disciplinas.items():
+        media = sum(notas) / len(notas)
+        print(f"A média da disciplina {disciplina} é: {media}.")
+
+    melhor_aluno = max(medias_alunos, key=medias_alunos.get)
+    print(f"O melhor aluno é: {melhor_aluno} com média {medias_alunos[melhor_aluno]}.")
+    alunos_em_risco = []
+    for aluno, media in medias_alunos.items():
+        if media < 10:
+            alunos_em_risco.append(aluno)
+
+    if alunos_em_risco:
+        print("Alunos em risco (média inferior a 10):")
+        for aluno in alunos_em_risco:
+            print(aluno)
+    else:
+        print("Não há alunos em risco.")
+
+def mostrar_notas(alunos, nome_aluno):
+    if nome_aluno in alunos:
+        disciplinas = alunos[nome_aluno]
+        print(f"Notas do aluno {nome_aluno}:")
+        for disciplina, nota in disciplinas.items():
+            print(f"{disciplina}: {nota}")
+    else:
+        print(f"O aluno {nome_aluno} não existe.")
+
+calcular_medias(alunos)
+nome_aluno = input("Introduz o nome do aluno para mostrar as notas: ")
+mostrar_notas(alunos, nome_aluno)
+```
 
 ## Exercício 46
 
@@ -1237,6 +1325,20 @@ Cria um programa que:
 1. Leia o ficheiro JSON do exercício anterior e mostre o conteúdo, ou seja, o dicionário com o teu nome, idade e cidade.
 
 ## Exercício 49
+
+Cria um programa que:
+
+1. Que tenha uma lista com 10 números pedidos ao utilizador e guarde essa lista num ficheiro JSON.
+2. Guarde os números num ficheiro JSON.
+
+## Exercício 50
+
+Cria um programa que:
+
+1. Leia o ficheiro JSON do exercício anterior e mostre o conteúdo, ou seja, a lista de números introduzidos pelo utilizador.
+2. Calcule e mostre a média dos números da lista.
+
+## Exercício 51
 
 Cria um programa que:
 
