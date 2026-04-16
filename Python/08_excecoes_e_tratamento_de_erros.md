@@ -183,9 +183,9 @@ Funcionamento:
 -   o Python entra no bloco `try` e executa as linhas normalmente;
 -   se não houver erro → ignora o `except`;
 -   se houver erro em alguma linha do `try`:
-    -   pára aí,
-    -   salta para dentro do bloco `except`,
-    -   executa o código do `except` em vez de parar o programa.
+   -  pára aí,
+   -  salta para dentro do bloco `except`,
+   -  executa o código do `except` em vez de parar o programa.
 
 **Atenção:**  
 Neste exemplo o `except` é **genérico** (apanha qualquer erro).  
@@ -477,11 +477,11 @@ def media(numeros):
 -   Prefere **capturar exceções específicas** (`ValueError`, `ZeroDivisionError`, `FileNotFoundError`, etc.).
 -   Mostra mensagens claras ao utilizador, de preferência em português simples.
 -   Não “engulas” o erro sem fazer nada:
-    -   evita `except: pass`.
+   -  evita `except: pass`.
 -   Usa `try`/`except` para:
-    -   validar `input` do utilizador;
-    -   lidar com ficheiros que podem não existir;
-    -   tratar dados vindos de fora do programa (JSON, CSV, etc.).
+   -  validar `input` do utilizador;
+   -  lidar com ficheiros que podem não existir;
+   -  tratar dados vindos de fora do programa (JSON, CSV, etc.).
 
 ---
 
@@ -567,8 +567,8 @@ Escreve um programa que:
 
 -   pede um número inteiro ao utilizador;
 -   usa `try`/`except` para:
-    -   mostrar o quadrado do número, **se estiver tudo bem**;
-    -   mostrar uma mensagem amigável **se o utilizador escrever algo inválido** (por exemplo, `abc`).
+   -  mostrar o quadrado do número, **se estiver tudo bem**;
+   -  mostrar uma mensagem amigável **se o utilizador escrever algo inválido** (por exemplo, `abc`).
 
 > Resolução:
 
@@ -612,8 +612,8 @@ Escreve um programa que:
 -   pede dois números (numerador e denominador);
 -   tenta fazer a divisão;
 -   trata separadamente:
-    -   `ValueError` (se o utilizador escrever algo que não seja número),
-    -   `ZeroDivisionError` (se o denominador for zero).
+   -  `ValueError` (se o utilizador escrever algo que não seja número),
+   -  `ZeroDivisionError` (se o denominador for zero).
 
 Mostra mensagens diferentes em cada caso.
 
@@ -672,8 +672,8 @@ Escreve um programa que:
 -   divide a linha em partes (`split`);
 -   tenta converter cada parte para inteiro e somar todos os valores;
 -   se alguma parte não for um número válido, apanha `ValueError` e:
-    -   mostra uma mensagem a indicar qual foi o valor inválido;
-    -   ignora esse valor e continua com os restantes.
+   -  mostra uma mensagem a indicar qual foi o valor inválido;
+   -  ignora esse valor e continua com os restantes.
 
 > Resolução
 
@@ -786,10 +786,10 @@ Escreve uma função `calculadora(operacao, *numeros)` que:
 -   recebe um número variável de argumentos `numeros` (pelo menos dois);
 -   realiza a operação indicada em todos os números fornecidos;
 -   usa `try`/`except` para tratar:
-    -   `ValueError` se algum dos argumentos não for numérico;
-    -   `ZeroDivisionError` se tentar dividir por zero (neste caso, devolve `None`);
-    -   `TypeError` se a operação não for reconhecida (mostra uma mensagem clara).
-    -   Cria um erro `ValueError` se forem fornecidos menos de dois números.
+   -  `ValueError` se algum dos argumentos não for numérico;
+   -  `ZeroDivisionError` se tentar dividir por zero (neste caso, devolve `None`);
+   -  `TypeError` se a operação não for reconhecida (mostra uma mensagem clara).
+   -  Cria um erro `ValueError` se forem fornecidos menos de dois números.
 
 Exemplos de uso:
 
@@ -859,9 +859,9 @@ Escreve um programa que:
 -   se o ficheiro não existir, apanha `FileNotFoundError` e mostra uma mensagem;
 -   se o conteúdo for inválido, apanha `json.JSONDecodeError` e mostra uma mensagem;
 -   se tudo correr bem, calcula e mostra:
-    -   a média de cada aluno;
-    -   a média geral da turma;
-    -   o nome do aluno com a maior média.
+   -  a média de cada aluno;
+   -  a média geral da turma;
+   -  o nome do aluno com a maior média.
 
 > Resolução:
 
@@ -917,13 +917,13 @@ Requisitos:
 
 -   todas as entradas são guardadas em `diario.json`;
 -   ao escolher “Escrever nova entrada”:
-    -   pede a data (formato `YYYY-MM-DD`);
-    -   pede o texto da entrada;
-    -   guarda a entrada no ficheiro JSON (cria o ficheiro se não existir);
+   -  pede a data (formato `YYYY-MM-DD`);
+   -  pede o texto da entrada;
+   -  guarda a entrada no ficheiro JSON (cria o ficheiro se não existir);
 -   ao escolher “Ver entradas”:
-    -   tenta ler o ficheiro `diario.json`;
-    -   se o ficheiro não existir, mostra uma mensagem adequada;
-    -   se o ficheiro existir, mostra todas as entradas com data e texto;
+   -  tenta ler o ficheiro `diario.json`;
+   -  se o ficheiro não existir, mostra uma mensagem adequada;
+   -  se o ficheiro existir, mostra todas as entradas com data e texto;
 -   usa `try`/`except` para tratar erros de ficheiro e JSON inválido.
 
 > Resolução:
@@ -981,8 +981,4 @@ main()
 
 ## 10. Changelog
 
--   `2025-02-XX` · Criação inicial do ficheiro com introdução a exceções, leitura de mensagens de erro e `try`/`except` básico.
-
-```
-
-```
+-   `Data a definir` · Criação inicial do ficheiro com introdução a exceções, leitura de mensagens de erro e `try`/`except` básico.

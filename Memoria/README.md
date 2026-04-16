@@ -37,7 +37,7 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 
 **Objetivo:** dominar RAM vs ROM, sistema binário, bytes e noções de endereçamento de memória.
 
-> Este é o único ficheiro desta pasta com exercícios.
+> Este é o ficheiro com maior foco em exercícios de conversão e treino base.
 
 ---
 

@@ -37,23 +37,23 @@ Uma abordagem mais segura:
 ### 0.1. Passo 1 - Ler o enunciado com calma
 
 -   Sublinha ou destaca:
-    -   o que é dado (**entrada**),
-    -   o que é pedido (**saída**),
-    -   pistas sobre o que tens de fazer no meio (**processamento**).
+   -  o que é dado (**entrada**),
+   -  o que é pedido (**saída**),
+   -  pistas sobre o que tens de fazer no meio (**processamento**).
 
 Exemplo de enunciado:
 
 > “Pede ao utilizador as idades de 5 pessoas, calcula a média das idades e diz quantas são maiores ou iguais a 18.”
 
 -   Entradas:
-    -   5 idades (números inteiros).
+   -  5 idades (números inteiros).
 -   Saída:
-    -   idade média,
-    -   número de pessoas ≥ 18.
+   -  idade média,
+   -  número de pessoas ≥ 18.
 -   Processamento:
-    -   guardar idades algures (lista),
-    -   somar idades para calcular média,
-    -   contar quantas idades são ≥ 18.
+   -  guardar idades algures (lista),
+   -  somar idades para calcular média,
+   -  contar quantas idades são ≥ 18.
 
 Podes criar uma tabela com estas informações, se ajudares.
 exemplo:
@@ -547,8 +547,8 @@ Tenta identificar no teu código os padrões de:
 Cria uma função contar_aprovados_reprovados(notas) que recebe uma lista de notas (0–20) e:
 
 -   devolve dois valores:
-    -   número de aprovados (nota ≥ 10),
-    -   número de reprovados (nota < 10).
+   -  número de aprovados (nota ≥ 10),
+   -  número de reprovados (nota < 10).
 
 No programa principal:
 
@@ -575,8 +575,8 @@ Escreve uma função separar_pares_impares(lista_numeros) que:
 
 -   recebe uma lista de inteiros,
 -   devolve duas listas:
-    -   uma com os números pares,
-    -   outra com os números ímpares.
+   -  uma com os números pares,
+   -  outra com os números ímpares.
 
 No programa principal:
 
@@ -640,8 +640,8 @@ Escreve uma função contar_alunos_por_turma(turmas) que:
 
 -   recebe este dicionário,
 -   devolve um novo dicionário com:
-    -   as mesmas chaves,
-    -   como valor, o número de alunos em cada turma.
+   -  as mesmas chaves,
+   -  como valor, o número de alunos em cada turma.
 
 No fim, mostra algo do género:
 
@@ -661,7 +661,7 @@ reprovados_por_turma(turmas) que:
 -   recebe um dicionário de turmas,
 -   para cada turma, conta quantos alunos têm pelo menos uma negativa,
 -   devolve um dicionário do tipo:
-    -   "10A" -> número de alunos com negativas, etc.
+   -  "10A" -> número de alunos com negativas, etc.
 
 Mostra depois um pequeno relatório por turma.
 
@@ -697,8 +697,8 @@ Escreve uma função contar_letras(texto) que:
 
 -   recebe uma string,
 -   devolve um dicionário em que:
-    -   as chaves são letras (ignorando espaços),
-    -   os valores são as quantidades de vezes que cada letra aparece.
+   -  as chaves são letras (ignorando espaços),
+   -  os valores são as quantidades de vezes que cada letra aparece.
 
 Exemplo:
 
@@ -726,13 +726,13 @@ Escolhe um dos programas que já fizeste (por exemplo, um que trabalhe com turma
 > Registo de alterações a este ficheiro.
 
 -   **2025-11-17 · v1.1**
-    -   TOC atualizado.
+   -  TOC atualizado.
 -   **2025-11-17 · v1.0**
-    -   Criação inicial do documento.
-    -   Adicionadas secções sobre:
-        -   estratégia para atacar problemas (entrada/processamento/saída e pseudocódigo),
-        -   padrões clássicos com listas (acumulação, contagem, min/max, filtragem, transformação),
-        -   padrões com dicionários (base de dados simples, contagem de frequências, dicionário de listas),
-        -   junção de tudo em funções (exemplos com idades e turmas),
-        -   erros típicos e dicas de debugging.
-    -   Criados 12 exercícios graduais, incluindo desafios com dicionários e refatoração de código em funções.
+   -  Criação inicial do documento.
+   -  Adicionadas secções sobre:
+       -  estratégia para atacar problemas (entrada/processamento/saída e pseudocódigo),
+       -  padrões clássicos com listas (acumulação, contagem, min/max, filtragem, transformação),
+       -  padrões com dicionários (base de dados simples, contagem de frequências, dicionário de listas),
+       -  junção de tudo em funções (exemplos com idades e turmas),
+       -  erros típicos e dicas de debugging.
+   -  Criados 12 exercícios graduais, incluindo desafios com dicionários e refatoração de código em funções.

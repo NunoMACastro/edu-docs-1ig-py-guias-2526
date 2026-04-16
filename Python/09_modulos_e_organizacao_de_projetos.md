@@ -303,8 +303,8 @@ Deves sempre ser consistente na organização e coerente com os nomes.
 
 Python vem com muitas bibliotecas. Alguns exemplos uteis:
 
--   `random` → números aleatorios;
--   `math` → funções matematicas;
+-   `random` → números aleatórios;
+-   `math` → funções matemáticas;
 -   `datetime` → datas e horas;
 -   `os` e `os.path` → caminhos e pastas.
 
@@ -355,7 +355,7 @@ Depois cria `main.py` para testar cada função.
 Cria um pequeno projeto:
 
 -   `alunos.py` com funções para calcular media e contar negativas;
--   `main.py` com uma lista de alunos e a impressao do relatorio.
+-   `main.py` com uma lista de alunos e a impressão do relatório.
 
 ---
 
@@ -418,4 +418,4 @@ Objetivo: um mini gestor de tarefas simples (adicionar, listar, remover).
 
 ## 10) Changelog
 
--   `2025-02-XX` · Criacao inicial do ficheiro com introducao a modulos, imports e organizacao de projetos.
+-   `Data a definir` · Criação inicial do ficheiro com introdução a módulos, imports e organização de projetos.

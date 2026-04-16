@@ -223,9 +223,9 @@ print(saudacao("Bruno", prefixo="Bem-vindo"))  # usa "Bem-vindo"
 ### 4.5. Boas práticas para nomes de funções
 
 -   Funções → **verbos** em `snake_case`:
-    -   `calcular_media`, `contar_vogais`, `obter_idade`.
+   -  `calcular_media`, `contar_vogais`, `obter_idade`.
 -   Parâmetros → nomes claros que indiquem o que representam:
-    -   `lista_numeros`, `nome_aluno`, `notas`.
+   -  `lista_numeros`, `nome_aluno`, `notas`.
 
 ---
 
@@ -352,9 +352,9 @@ Isto chama-se uma **closure**; é útil, mas não é essencial no 10.º ano.
 Quando passamos uma variável a uma função, o comportamento depende do tipo:
 
 -   Tipos **imutáveis** → `int`, `float`, `str`, `tuple`, etc.
-    -   Não podem ser alterados “por dentro”.
+   -  Não podem ser alterados “por dentro”.
 -   Tipos **mutáveis** → `list`, `dict`, `set`, etc.
-    -   Podem ser alterados por métodos, como `append`, `pop`, etc.
+   -  Podem ser alterados por métodos, como `append`, `pop`, etc.
 
 ### 7.1. Exemplo com tipos imutáveis
 
@@ -847,8 +847,8 @@ Depois, cria uma função `contar_alunos_por_turma(turmas)` que:
 
 -   recebe este dicionário,
 -   devolve um **novo dicionário** em que:
-    -   as chaves são as mesmas turmas,
-    -   os valores são o número de alunos em cada turma.
+   -  as chaves são as mesmas turmas,
+   -  os valores são o número de alunos em cada turma.
 
 No programa principal, mostra algo do género:
 
@@ -1171,11 +1171,15 @@ No programa principal:
 
 ---
 
-### </a id="ex18"></a> Exercício 18 - Função que calcula média de temperaturas
+### <a id="ex18"></a> Exercício 18 - Função que calcula média de temperaturas
 
 Cria uma função `media_temperaturas(temperaturas)` que:
-• recebe um dicionário onde as chaves são os meses do ano (strings) e os valores são as temperaturas médias (floats);
-• Diz se o dicionário está vazio: - se estiver, devolve 0.0; - caso contrário: - Calcula a temperatura máxima e mínima; - Diz (com `print`) as temperaturas máxima e mínima e os respetivos meses; - devolve a média das temperaturas.
+- recebe um dicionário onde as chaves são os meses do ano (strings) e os valores são as temperaturas médias (floats);
+- se o dicionário estiver vazio, devolve `0.0`;
+- caso contrário:
+  - calcula a temperatura máxima e mínima;
+  - mostra (com `print`) as temperaturas máxima e mínima e os respetivos meses;
+  - devolve a média das temperaturas.
 
 No programa principal:
 
@@ -1184,45 +1188,53 @@ No programa principal:
 
 ---
 
-### <a id="ex19"></a> Exercício 16 - Mutabilidade: função que modifica uma lista recebida
+### <a id="ex19"></a> Exercício 19 - Mutabilidade: função que modifica uma lista recebida
 
 Cria uma função adicionar_prefixo(lista_nomes, prefixo) que:
-• recebe uma lista de nomes (por exemplo ["Ana", "Bruno"]);
-• recebe uma string prefixo (por exemplo "Sr." ou "Aluna"),
-• altera a lista recebida, transformando cada nome para "prefixo nome", por exemplo:
-• ["Ana", "Bruno"] com "Aluna" → ["Aluna Ana", "Aluna Bruno"].
+- recebe uma lista de nomes (por exemplo `["Ana", "Bruno"]`);
+- recebe uma string `prefixo` (por exemplo `"Sr."` ou `"Aluna"`);
+- altera a lista recebida, transformando cada nome para `"prefixo nome"`.
+
+Exemplo:
+`["Ana", "Bruno"]` com `"Aluna"` -> `["Aluna Ana", "Aluna Bruno"]`.
 
 No programa principal:
 
--   1. Cria uma lista de nomes;
--   2. Chama a função;
--   3. Imprime a lista antes e depois da chamada para veres o efeito da mutabilidade.
+1. Cria uma lista de nomes;
+2. Chama a função;
+3. Imprime a lista antes e depois da chamada para veres o efeito da mutabilidade.
 
 ---
 
 ### <a id="ex20"></a> Exercício 20 - \*args: média de quantidade variável de números
 
 Cria uma função media_variavel(\*nums) que:
-• recebe 0 ou mais números (inteiros ou floats);
-• se não receber nenhum número, devolve 0.0;
-• caso contrário, devolve a média aritmética.
+- recebe 0 ou mais números (inteiros ou floats);
+- se não receber nenhum número, devolve `0.0`;
+- caso contrário, devolve a média aritmética.
 
-No programa principal: 1. Testa a função com:
-• media_variavel();
-• media_variavel(10, 12, 14);
-• media_variavel(5, 7.5). 2. Imprime os resultados.
+No programa principal:
+
+1. Testa a função com:
+   - `media_variavel()`;
+   - `media_variavel(10, 12, 14)`;
+   - `media_variavel(5, 7.5)`.
+2. Imprime os resultados.
 
 ---
 
 ### <a id="ex21"></a> Exercício 21 - \*\*kwargs: configuração flexível
 
 Cria uma função criar_perfil(\*\*info) que:
-• recebe informações nomeadas sobre uma pessoa (por exemplo, nome="Ana", idade=16, curso="PI"),
-• devolve um dicionário com essas informações.
+- recebe informações nomeadas sobre uma pessoa (por exemplo, `nome="Ana", idade=16, curso="PI"`);
+- devolve um dicionário com essas informações.
 
-No programa principal: 1. Cria 2 perfis diferentes usando a função:
-• um com nome, idade;
-• outro com nome, idade, curso e turma (por exemplo "10.º A"). 2. Imprime os dicionários devolvidos.
+No programa principal:
+
+1. Cria 2 perfis diferentes usando a função:
+   - um com nome e idade;
+   - outro com nome, idade, curso e turma (por exemplo `"10.º A"`).
+2. Imprime os dicionários devolvidos.
 
 ### <a id="ex22"></a> Exercício 22 (Desafio) - Função com `*args`
 
@@ -1263,11 +1275,11 @@ Reflete qual das versões achas mais fácil de ler.
 > Registo de alterações importantes a este ficheiro.
 
 -   **2025-11-17 · v1.2**
-    -   Adicionadas soluções aos já realizados.
+   -  Adicionadas soluções aos já realizados.
 -   **2025-11-17 · v1.1**
-    -   TOC atualizado.
+   -  TOC atualizado.
 -   **2025-11-17 · v1.0**
-    -   Criação inicial do documento.
-    -   Secções essenciais: motivação para funções, definição e chamada, `print` vs `return`, parâmetros/argumentos, `return`, scope básico, mutabilidade, boas práticas e testes.
-    -   Secções extra: funções de ordem superior, `lambda`, `*args`/`**kwargs`, docstrings e tipos, recursão.
-    -   Adicionados 12 exercícios graduais (dos básicos aos desafios com recursão e estruturas aninhadas).
+   -  Criação inicial do documento.
+   -  Secções essenciais: motivação para funções, definição e chamada, `print` vs `return`, parâmetros/argumentos, `return`, scope básico, mutabilidade, boas práticas e testes.
+   -  Secções extra: funções de ordem superior, `lambda`, `*args`/`**kwargs`, docstrings e tipos, recursão.
+   -  Adicionados 12 exercícios graduais (dos básicos aos desafios com recursão e estruturas aninhadas).

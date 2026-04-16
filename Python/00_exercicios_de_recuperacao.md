@@ -404,7 +404,7 @@ else:
         print(f"A idade {idade} é maior do que 65. Já és idoso!")
 ```
 
-# Exercício 15
+## Exercício 15
 
 Cria um programa que:
 
@@ -1137,7 +1137,7 @@ Cria um programa que:
 1. Defina uma função que diga "Olá mundo!".
 2. Chame a função para mostrar a mensagem.
 
-# Exercício 39
+## Exercício 39
 
 Cria um programa que:
 

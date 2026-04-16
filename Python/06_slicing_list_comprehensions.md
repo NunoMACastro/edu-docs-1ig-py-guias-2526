@@ -1,4 +1,4 @@
-# Python (10.º Ano) - 05 · Slicing e List Comprehensions
+# Python (10.º Ano) - 06 · Slicing e List Comprehensions
 
 > **Objetivo deste ficheiro**  
 > Perceber bem como “cortar” sequências em Python (listas, strings, etc.) com _slicing_ e como criar listas novas a partir de outras de forma compacta usando _list comprehensions_.
@@ -34,8 +34,8 @@ Aqui aparecem dois temas que costumam baralhar:
 Para te organizares:
 
 -   Foca-te primeiro em:
-    -   **Secção 2 e 3** (índices e slicing básico),
-    -   **Secção 6 e 7** (list comprehensions simples e com condição).
+   -  **Secção 2 e 3** (índices e slicing básico),
+   -  **Secção 6 e 7** (list comprehensions simples e com condição).
 -   As partes marcadas como **[EXTRA]** lê quando estiveres confortável com o essencial.
 -   Usa o interpretador (`python` / VS Code) para ir testando exemplos pequeninos.
 
@@ -59,8 +59,8 @@ texto = "Programador"
 ```
 
 -   Outras sequências que aparecem mais tarde:
-    -   `tuple` → `tuplo = (1, 2, 3)`
-    -   `range` → `range(0, 10, 2)`
+   -  `tuple` → `tuplo = (1, 2, 3)`
+   -  `range` → `range(0, 10, 2)`
 
 Todas estas estruturas têm duas características importantes:
 
@@ -166,8 +166,8 @@ sublista = lista[inicio:fim:passo]
 ```
 
 -   `passo` → de quantos em quantos índices avança.
-    -   Se for 1 → vai elemento a elemento.
-    -   Se for 2 → salta de 2 em 2, etc.
+   -  Se for 1 → vai elemento a elemento.
+   -  Se for 2 → salta de 2 em 2, etc.
 
 ### 4.1. Passo positivo
 
@@ -748,7 +748,7 @@ Sugestão:
 > Registo de alterações importantes a este ficheiro.
 
 -   **2025-11-26 · v1.0**
-    -   Criação inicial do documento.
-    -   Secções essenciais: revisão de sequências, índices, slicing básico, slicing em strings, introdução a list comprehensions e comprehensions com filtro.
-    -   Secções extra: slicing com passo e índices negativos, comprehensions com `if/else`, outras comprehensions (sets, dicts, generators).
-    -   Adicionados exercícios graduais (slicing básico, comprehensions, misto slicing+comprehension, desafios).
+   -  Criação inicial do documento.
+   -  Secções essenciais: revisão de sequências, índices, slicing básico, slicing em strings, introdução a list comprehensions e comprehensions com filtro.
+   -  Secções extra: slicing com passo e índices negativos, comprehensions com `if/else`, outras comprehensions (sets, dicts, generators).
+   -  Adicionados exercícios graduais (slicing básico, comprehensions, misto slicing+comprehension, desafios).

@@ -36,9 +36,9 @@ Se tiveres dúvidas, anota-as e fala com o professor.
 Programar é dar **instruções muito precisas** ao computador para ele resolver um problema.
 
 -   Em vez de fazeres as contas à mão, dizes ao computador exatamente:
-    -   que dados vai ler (entrada),
-    -   o que deve fazer com esses dados (processamento),
-    -   e o que deve mostrar no ecrã (saída).
+   -  que dados vai ler (entrada),
+   -  o que deve fazer com esses dados (processamento),
+   -  e o que deve mostrar no ecrã (saída).
 
 Python é uma linguagem de programação **muito usada no mundo real** (web, ciência de dados, inteligência artificial, automação, etc.) e também é muito boa para aprender a programar pela primeira vez.
 
@@ -91,8 +91,8 @@ aprovado = True       # booleano (True/False)
 -   Usar **snake_case**: palavras em minúsculas separadas por `_`  
     → `media_turma`, `numero_alunos`, `nota_final`
 -   Não começar com número nem usar espaços:
-    -   ✅ `idade_aluno`
-    -   ❌ `1idade`, `idade aluno`
+   -  Correto: `idade_aluno`
+   -  Incorreto: `1idade`, `idade aluno`
 -   Evitar nomes como `a`, `b`, `x` em programas reais.  
     É melhor usar nomes que **expliquem o significado**.
 
@@ -676,10 +676,10 @@ Média: {media:.2f} valores
 > Registo de alterações importantes a este ficheiro.
 
 -   **2025-11-17 · v1.2**
-    -   Adicionadas soluções aos exercícios todos.
+   -  Adicionadas soluções aos exercícios todos.
 -   **2025-11-17 · v1.1**
-    -   TOC atualizado.
+   -  TOC atualizado.
 -   **2025-11-17 · v1.0**
-    -   Criação inicial do documento.
-    -   Secções: introdução, variáveis, tipos básicos, strings, comentários, `print()`/`input()` e f-strings.
-    -   Adicionados 12 exercícios graduais (nível: 10.º ano, primeira unidade de Python).
+   -  Criação inicial do documento.
+   -  Secções: introdução, variáveis, tipos básicos, strings, comentários, `print()`/`input()` e f-strings.
+   -  Adicionados 12 exercícios graduais (nível: 10.º ano, primeira unidade de Python).

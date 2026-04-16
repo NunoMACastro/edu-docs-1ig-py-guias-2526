@@ -1,4 +1,4 @@
-# Projeto Final (10.º IG) — Jogo de Perguntas (Quiz) em Python
+# Projeto Final (10.º IG) - Jogo de Perguntas (Quiz) em Python
 
 **Duração:** 2–3 semanas  
 **Grupos:** 3 alunos  
@@ -63,10 +63,10 @@ O ficheiro terá uma **lista de perguntas**, e cada pergunta terá que guardar c
 - `id` (int ou str)
 - `pergunta` (str)
 - `opcoes` (lista de strings)
-- `resposta` (int **ou** str — dependendo do ficheiro fornecido)
+- `resposta` (int **ou** str - dependendo do ficheiro fornecido)
 - `categoria` (str) - Se for aplicável
-- `dificuldade` (str: `"facil"`, `"media"`, `"dificil"`) — opcional
-- `explicacao` (str) — opcional (para mostrar no fim)
+- `dificuldade` (str: `"facil"`, `"media"`, `"dificil"`) - opcional
+- `explicacao` (str) - opcional (para mostrar no fim)
 
 **Nota importante:** O campo `resposta` pode ser:
 
@@ -77,7 +77,7 @@ O ficheiro terá uma **lista de perguntas**, e cada pergunta terá que guardar c
 
 ## 5) Funcionalidades
 
-### 5.1 — MVP (obrigatório)
+### 5.1 - MVP (obrigatório)
 
 Estas funcionalidades têm de existir e estar a funcionar bem:
 
@@ -115,7 +115,7 @@ Estas funcionalidades têm de existir e estar a funcionar bem:
 
 ---
 
-### 5.2 — Nível 2
+### 5.2 - Nível 2
 
 Escolhe pelo menos **2** destas melhorias:
 
@@ -141,7 +141,7 @@ D) **Explicação**
 
 ---
 
-### 5.3 — Nível 3 (bónus)
+### 5.3 - Nível 3 (bónus)
 
 Escolhe **1**:
 
@@ -197,11 +197,11 @@ Não existe uma estrutura “certa”. Mas é obrigatório:
 
 Exemplos do género:
 
-- `carregar_perguntas(...)` — lê JSON e devolve lista
-- `mostrar_menu(...)` — imprime opções e devolve escolha válida
-- `fazer_pergunta(...)` — mostra pergunta, pede resposta, devolve se acertou
+- `carregar_perguntas(...)` - lê JSON e devolve lista
+- `mostrar_menu(...)` - imprime opções e devolve escolha válida
+- `fazer_pergunta(...)` - mostra pergunta, pede resposta, devolve se acertou
 
-(Os nomes e a divisão são decididos por vocês — mas têm de justificar.)
+(Os nomes e a divisão são decididos por vocês - mas têm de justificar.)
 
 Exemplo de tabela com as funções:
 

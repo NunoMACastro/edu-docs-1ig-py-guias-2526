@@ -2,18 +2,19 @@
 
 **Índice**
 
--   [Estrutura do repositório](#estrutura-do-reposit%C3%B3rio)
--   [ `00_exercicios_de_preparacao`](#00_exercicios_de_preparacaomd)
--   [`01_introducao_variaveis_tipos_strings_io.md`](#01_introducao_variaveis_tipos_strings_iomd)
--   [`02_operadores_e_controlo_de_fluxo_if_ciclos.md`](#02_operadores_e_controlo_de_fluxo_if_ciclosmd)
--   [`03_listas_dicionarios_estruturas_aninhadas.md`](#03_listas_dicionarios_estruturas_aninhadasmd)
--   [`04_funcoes_do_basico_ao_avancado.md`](#04_funcoes_do_basico_ao_avancadomd)
--   [`05_algoritmos_e_padroes_de_programacao.md`](#05_algoritmos_e_padroes_de_programacaomd)
--   [`06_slicing_list_comprehensions_md`](#06_slicing_list_comprehensions_md)
--   [`07_ficheiros_texto_json_csv.md`](#07_ficheiros_texto_json_csvmd)
--   [`08_excecoes_e_tratamento_de_erros.md`](#08_excecoes_e_tratamento_de_errosmd)
--   [`09_modulos_e_organizacao_de_projetos.md`](#09_modulos_e_organizacao_de_projetosmd)
--   [`10_estruturas_e_algoritmos_classicos.md`](#10_estruturas_e_algoritmos_classicosmd)
+-   [Estrutura do repositório](#estrutura-do-repositório)
+-   [`00_exercicios_de_preparacao.md`](./00_exercicios_de_preparacao.md)
+-   [`01_introducao_variaveis_tipos_strings_io.md`](./01_introducao_variaveis_tipos_strings_io.md)
+-   [`02_operadores_e_controlo_de_fluxo_if_ciclos.md`](./02_operadores_e_controlo_de_fluxo_if_ciclos.md)
+-   [`03_listas_dicionarios_estruturas_aninhadas.md`](./03_listas_dicionarios_estruturas_aninhadas.md)
+-   [`04_funcoes_do_basico_ao_avancado.md`](./04_funcoes_do_basico_ao_avancado.md)
+-   [`05_algoritmos_e_padroes_de_programacao.md`](./05_algoritmos_e_padroes_de_programacao.md)
+-   [`06_slicing_list_comprehensions.md`](./06_slicing_list_comprehensions.md)
+-   [`07_ficheiros_texto_json_csv.md`](./07_ficheiros_texto_json_csv.md)
+-   [`08_excecoes_e_tratamento_de_erros.md`](./08_excecoes_e_tratamento_de_erros.md)
+-   [`09_modulos_e_organizacao_de_projetos.md`](./09_modulos_e_organizacao_de_projetos.md)
+-   [`10_estruturas_e_algoritmos_classicos.md`](./10_estruturas_e_algoritmos_classicos.md)
+-   [`11_projeto_final_python.md`](./11_projeto_final_python.md)
 -   [Como usar estes materiais](#como-usar-estes-materiais)
 -   [Pré-requisitos e ambiente de trabalho](#pr%C3%A9-requisitos-e-ambiente-de-trabalho)
 
@@ -30,9 +31,9 @@ O objetivo deste repositório é ter um conjunto de **apontamentos estruturados 
 -   material de estudo para testes;
 -   base para pequenos projetos.
 
-Cada ficheiro foca um conjunto de temas e termina com:
+A maioria dos ficheiros foca um conjunto de temas e termina com:
 
--   uma secção de **Exercícios** (10–12 exercícios, do mais simples ao mais desafiante);
+-   uma secção de **Exercícios** (do mais simples ao mais desafiante);
 -   uma secção de **Changelog**, para registar alterações.
 
 ---
@@ -52,6 +53,7 @@ Cada ficheiro foca um conjunto de temas e termina com:
 ├── 08_excecoes_e_tratamento_de_erros.md
 ├── 09_modulos_e_organizacao_de_projetos.md
 ├── 10_estruturas_e_algoritmos_classicos.md
+├── 11_projeto_final_python.md
 └── README.md
 ```
 
@@ -83,8 +85,8 @@ Conteúdos principais:
 -   operações básicas com números e strings;
 -   métodos de strings mais usados (`lower`, `upper`, `strip`, `replace`, `split`, `join`, etc.);
 -   entrada e saída:
-    -   `print` (incluindo _f-strings_);
-    -   `input` e conversão de tipos (`int`, `float`);
+   -  `print` (incluindo _f-strings_);
+   -  `input` e conversão de tipos (`int`, `float`);
 -   noções de comentário e leitura de código.
 
 Inclui exemplos muito simples e exercícios iniciais focados em:
@@ -105,29 +107,29 @@ Inclui exemplos muito simples e exercícios iniciais focados em:
 Conteúdos principais:
 
 -   operadores aritméticos: `+`, `-`, `*`, `/`, `//`, `%`, `**`
-    -   diferença entre `/` (divisão real) e `//` (divisão inteira);
-    -   exemplos com resto (`%`) e potência (`**`);
+   -  diferença entre `/` (divisão real) e `//` (divisão inteira);
+   -  exemplos com resto (`%`) e potência (`**`);
 -   operadores de comparação: `==`, `!=`, `>`, `>=`, `<`, `<=`
-    -   encadeamento de comparações: `1 < x <= 10`;
+   -  encadeamento de comparações: `1 < x <= 10`;
 -   operadores lógicos: `and`, `or`, `not`
-    -   tabelas verdade simples;
-    -   ideia intuitiva de _short-circuit_;
+   -  tabelas verdade simples;
+   -  ideia intuitiva de _short-circuit_;
 -   `in` / `not in` (strings, listas, dicionários) e `is` / `is not` (sobretudo com `None`);
 -   atribuições compostas: `+=`, `-=`, `*=`, etc.;
 -   **truthiness**: o que conta como `False` (`0`, `0.0`, `""`, `[]`, `{}`, `None`);
 -   estruturas de seleção:
-    -   `if`, `elif`, `else`;
-    -   exemplos com classificação de notas (0–20);
-    -   `if` aninhado;
-    -   expressão condicional (“ternário”) como curiosidade;
+   -  `if`, `elif`, `else`;
+   -  exemplos com classificação de notas (0–20);
+   -  `if` aninhado;
+   -  expressão condicional (“ternário”) como curiosidade;
 -   estruturas de repetição:
-    -   `while`: repetir enquanto a condição for verdadeira, cuidado com ciclos infinitos;
-    -   `for` sobre strings, listas e `range`;
+   -  `while`: repetir enquanto a condição for verdadeira, cuidado com ciclos infinitos;
+   -  `for` sobre strings, listas e `range`;
 -   `range()`:
-    -   `range(fim)`, `range(inicio, fim)`, `range(inicio, fim, passo)` (inclui passo negativo);
+   -  `range(fim)`, `range(inicio, fim)`, `range(inicio, fim, passo)` (inclui passo negativo);
 -   blocos de código e indentação:
-    -   regra dos 4 espaços;
-    -   como o Python usa indentação em vez de `{}`.
+   -  regra dos 4 espaços;
+   -  como o Python usa indentação em vez de `{}`.
 
 Exercícios focados em:
 
@@ -149,29 +151,29 @@ Exercícios focados em:
 Conteúdos principais:
 
 -   **listas**:
-    -   criação, acesso por índice (positivo e negativo);
-    -   alteração de elementos;
-    -   métodos: `append`, `insert`, `pop`, `remove`, `clear`, `count`, `index`, `sort`, `reverse`;
-    -   funções: `len`, `sum`, `min`, `max`, `sorted`;
-    -   percorrer listas com `for` (por elemento e por índice);
-    -   padrões clássicos:
-        -   construir nova lista;
-        -   filtrar valores;
-        -   calcular média;
-        -   encontrar mínimo/máximo sem `min`/`max`;
-    -   pequena introdução a **compreensões de lista** (como curiosidade);
+   -  criação, acesso por índice (positivo e negativo);
+   -  alteração de elementos;
+   -  métodos: `append`, `insert`, `pop`, `remove`, `clear`, `count`, `index`, `sort`, `reverse`;
+   -  funções: `len`, `sum`, `min`, `max`, `sorted`;
+   -  percorrer listas com `for` (por elemento e por índice);
+   -  padrões clássicos:
+       -  construir nova lista;
+       -  filtrar valores;
+       -  calcular média;
+       -  encontrar mínimo/máximo sem `min`/`max`;
+   -  pequena introdução a **compreensões de lista** (como curiosidade);
 -   **dicionários**:
-    -   ideia chave→valor;
-    -   criação, acesso, atualização, inserção e remoção;
-    -   métodos: `keys`, `values`, `items`, `get`;
-    -   verificar existência de chaves com `in`;
-    -   exemplos aplicados (preços de frutas, dados de uma pessoa);
+   -  ideia chave→valor;
+   -  criação, acesso, atualização, inserção e remoção;
+   -  métodos: `keys`, `values`, `items`, `get`;
+   -  verificar existência de chaves com `in`;
+   -  exemplos aplicados (preços de frutas, dados de uma pessoa);
 -   **estruturas aninhadas**:
-    -   lista de listas (matriz);
-    -   dicionário de listas (turmas e alunos);
-    -   dicionário de dicionários (aluno → disciplina → nota);
-    -   lista de dicionários (livros, alunos, etc.);
-    -   percorrer com ciclos aninhados;
+   -  lista de listas (matriz);
+   -  dicionário de listas (turmas e alunos);
+   -  dicionário de dicionários (aluno → disciplina → nota);
+   -  lista de dicionários (livros, alunos, etc.);
+   -  percorrer com ciclos aninhados;
 
 Inclui exemplos aplicados como:
 
@@ -203,49 +205,49 @@ O ficheiro está organizado com etiquetas:
 Conteúdos principais:
 
 -   porque usar funções:
-    -   evitar repetição;
-    -   organizar o código;
-    -   facilitar testes;
+   -  evitar repetição;
+   -  organizar o código;
+   -  facilitar testes;
 -   definir e chamar funções (`def`):
-    -   exemplos básicos (`ola_mundo`, `soma`, `saudacao`);
-    -   diferença entre `print` dentro da função e `return`;
+   -  exemplos básicos (`ola_mundo`, `soma`, `saudacao`);
+   -  diferença entre `print` dentro da função e `return`;
 -   parâmetros e argumentos:
-    -   posicionais vs nomeados;
-    -   valores por defeito;
-    -   boas práticas para nomes de funções e parâmetros;
+   -  posicionais vs nomeados;
+   -  valores por defeito;
+   -  boas práticas para nomes de funções e parâmetros;
 -   `return`:
-    -   ausência de `return` → `None`;
-    -   devolver um valor;
-    -   devolver vários valores via **tuplos** (ex.: divisão que devolve quociente e resto);
-    -   **saída antecipada** (casos especiais);
+   -  ausência de `return` → `None`;
+   -  devolver um valor;
+   -  devolver vários valores via **tuplos** (ex.: divisão que devolve quociente e resto);
+   -  **saída antecipada** (casos especiais);
 -   scope (espaço de nomes):
-    -   variáveis locais;
-    -   noção de global (como coisa a evitar na maior parte dos casos);
-    -   `nonlocal` como curiosidade (exemplo `cria_contador`);
+   -  variáveis locais;
+   -  noção de global (como coisa a evitar na maior parte dos casos);
+   -  `nonlocal` como curiosidade (exemplo `cria_contador`);
 -   mutabilidade e passagem de argumentos:
-    -   imutáveis (`int`, `float`, `str`, `tuple`);
-    -   mutáveis (`list`, `dict`);
-    -   funções que alteram listas recebidas;
-    -   perigo de _defaults_ mutáveis (`acumulador_errado` vs `acumulador_correto`);
+   -  imutáveis (`int`, `float`, `str`, `tuple`);
+   -  mutáveis (`list`, `dict`);
+   -  funções que alteram listas recebidas;
+   -  perigo de _defaults_ mutáveis (`acumulador_errado` vs `acumulador_correto`);
 -   **[EXTRA]** funções de ordem superior e `lambda`:
-    -   funções como valores;
-    -   `aplicar(func, valor)`;
-    -   `map`, `filter`, `sorted(key=...)` vs compreensões de lista;
+   -  funções como valores;
+   -  `aplicar(func, valor)`;
+   -  `map`, `filter`, `sorted(key=...)` vs compreensões de lista;
 -   **[EXTRA]** `*args` e `**kwargs`:
-    -   funções “elásticas” (`media(*nums)`, `configurar(**opcoes)`);
-    -   desempacotar listas e dicionários ao chamar;
+   -  funções “elásticas” (`media(*nums)`, `configurar(**opcoes)`);
+   -  desempacotar listas e dicionários ao chamar;
 -   **[EXTRA]** docstrings e anotações de tipo:
-    -   exemplo `normalizar_textos`;
-    -   referência rápida a `typing` (`list[str]`, `Sequence[str]`);
+   -  exemplo `normalizar_textos`;
+   -  referência rápida a `typing` (`list[str]`, `Sequence[str]`);
 -   **[EXTRA]** recursão:
-    -   ideia de função que chama a si própria;
-    -   caso base e passo recursivo;
-    -   exemplo `fatorial`, `conta_decrescente`;
-    -   aviso sobre limites e sobre quando preferir `while`/`for`;
+   -  ideia de função que chama a si própria;
+   -  caso base e passo recursivo;
+   -  exemplo `fatorial`, `conta_decrescente`;
+   -  aviso sobre limites e sobre quando preferir `while`/`for`;
 -   boas práticas:
-    -   funções curtas, uma responsabilidade;
-    -   `if __name__ == "__main__":` para demos e pequenos testes;
-    -   uso de `assert` para testes rápidos.
+   -  funções curtas, uma responsabilidade;
+   -  `if __name__ == "__main__":` para demos e pequenos testes;
+   -  uso de `assert` para testes rápidos.
 
 Exercícios focados em:
 
@@ -266,27 +268,27 @@ Começar a pensar como **programador**, usando o que já se aprendeu (variáveis
 Conteúdos principais:
 
 -   como atacar um problema de programação:
-    -   identificar **entradas**, **processamento** e **saídas**;
-    -   fazer exemplos à mão antes de programar;
-    -   escrever um plano em português (pseudocódigo) antes do código;
+   -  identificar **entradas**, **processamento** e **saídas**;
+   -  fazer exemplos à mão antes de programar;
+   -  escrever um plano em português (pseudocódigo) antes do código;
 -   padrões clássicos com **listas**:
-    -   leitura de valores para uma lista (input em ciclo + `append`);
-    -   padrão de **acumulação** (somatórios, médias);
-    -   padrão de **contagem condicional** (contar positivos, pares, aprovados, etc.);
-    -   busca de **mínimo/máximo manual** (sem `min`/`max`);
-    -   padrão de **filtragem** (nova lista com elementos que cumprem uma condição);
-    -   padrão de **transformação** (nova lista com valores transformados);
+   -  leitura de valores para uma lista (input em ciclo + `append`);
+   -  padrão de **acumulação** (somatórios, médias);
+   -  padrão de **contagem condicional** (contar positivos, pares, aprovados, etc.);
+   -  busca de **mínimo/máximo manual** (sem `min`/`max`);
+   -  padrão de **filtragem** (nova lista com elementos que cumprem uma condição);
+   -  padrão de **transformação** (nova lista com valores transformados);
 -   padrões com **dicionários**:
-    -   “mini base de dados” em memória (nome → idade, produto → preço, etc.);
-    -   procura de chaves (`if chave in dicionario`);
-    -   contagem de frequências (quantas vezes aparece cada palavra/letra);
-    -   dicionário de listas (turma → lista de alunos);
+   -  “mini base de dados” em memória (nome → idade, produto → preço, etc.);
+   -  procura de chaves (`if chave in dicionario`);
+   -  contagem de frequências (quantas vezes aparece cada palavra/letra);
+   -  dicionário de listas (turma → lista de alunos);
 -   juntar tudo em **funções**:
-    -   separar funções “puras” (com `return`) da parte de `input`/`print`;
-    -   decompor problemas maiores em funções pequenas (média de alunos, melhor aluno, reprovados, etc.);
+   -  separar funções “puras” (com `return`) da parte de `input`/`print`;
+   -  decompor problemas maiores em funções pequenas (média de alunos, melhor aluno, reprovados, etc.);
 -   erros típicos e **debugging básico**:
-    -   esquecer `return`, confundir `=` com `==`, erros em `range`, mutabilidade;
-    -   uso de `print` intermédios e `assert` para testar.
+   -  esquecer `return`, confundir `=` com `==`, erros em `range`, mutabilidade;
+   -  uso de `print` intermédios e `assert` para testar.
 
 Exercícios focados em:
 
@@ -297,7 +299,7 @@ Exercícios focados em:
 
 ---
 
-### `06_slicing_list_comprehensions_md`
+### `06_slicing_list_comprehensions.md`
 
 [Ver ficheiro](./06_slicing_list_comprehensions.md)
 
@@ -307,17 +309,17 @@ Aprofundar dois tópicos importantes para manipulação de listas em Python: **s
 Conteúdos principais:
 
 -   **Slicing**:
-    -   sintaxe básica: `lista[inicio:fim:passo]`;
-    -   valores por defeito (omitir `inicio`, `fim` ou `passo`);
-    -   índices negativos;
-    -   exemplos práticos (sublistas, inverter listas, pegar elementos de `n` em `n`);
-    -   uso de slicing com strings;
+   -  sintaxe básica: `lista[inicio:fim:passo]`;
+   -  valores por defeito (omitir `inicio`, `fim` ou `passo`);
+   -  índices negativos;
+   -  exemplos práticos (sublistas, inverter listas, pegar elementos de `n` em `n`);
+   -  uso de slicing com strings;
 -   **Compreensões de lista**:
-    -   sintaxe básica: `[expressao for item in lista if condicao]`;
-    -   criar listas de forma concisa;
-    -   exemplos com transformação e filtragem;
-    -   compreensões aninhadas (listas de listas);
-    -   comparação com loops tradicionais.
+   -  sintaxe básica: `[expressao for item in lista if condicao]`;
+   -  criar listas de forma concisa;
+   -  exemplos com transformação e filtragem;
+   -  compreensões aninhadas (listas de listas);
+   -  comparação com loops tradicionais.
 
 Exercícios focados em:
 
@@ -337,23 +339,23 @@ Introduzir o trabalho com **ficheiros** em Python, para guardar e voltar a usar 
 Conteúdos principais:
 
 -   ficheiros de texto (`.txt`):
-    -   `open` com os modos `"r"`, `"w"` e `"a"`;
-    -   uso de `with open(..., encoding="utf-8")`;
-    -   escrever linhas com `write`;
-    -   ler linha a linha com `for`, `read`, `readlines`;
+   -  `open` com os modos `"r"`, `"w"` e `"a"`;
+   -  uso de `with open(..., encoding="utf-8")`;
+   -  escrever linhas com `write`;
+   -  ler linha a linha com `for`, `read`, `readlines`;
 -   ficheiros JSON (`.json`):
-    -   o que é JSON (dicionários/listas em texto);
-    -   guardar dicionários e listas com `json.dump`;
-    -   ler para estruturas Python com `json.load`;
-    -   exemplos com um aluno e lista de alunos;
+   -  o que é JSON (dicionários/listas em texto);
+   -  guardar dicionários e listas com `json.dump`;
+   -  ler para estruturas Python com `json.load`;
+   -  exemplos com um aluno e lista de alunos;
 -   ficheiros CSV (`.csv`):
-    -   noção de tabela (linhas/colunas separadas por `;`);
-    -   escrita “à mão” de CSV a partir de listas/dicionários;
-    -   leitura “à mão” com `split(";")` e conversão de tipos;
-    -   curiosidade: uso básico do módulo `csv` (`DictReader`);
+   -  noção de tabela (linhas/colunas separadas por `;`);
+   -  escrita “à mão” de CSV a partir de listas/dicionários;
+   -  leitura “à mão” com `split(";")` e conversão de tipos;
+   -  curiosidade: uso básico do módulo `csv` (`DictReader`);
 -   boas práticas:
-    -   usar sempre `with open` e `encoding="utf-8"`;
-    -   ler ficheiros grandes linha a linha.
+   -  usar sempre `with open` e `encoding="utf-8"`;
+   -  ler ficheiros grandes linha a linha.
 
 Exercícios focados em:
 
@@ -373,20 +375,20 @@ Perceber os tipos de erros mais comuns em Python, aprender a ler mensagens de er
 Conteúdos principais:
 
 -   tipos de erros:
-    -   `SyntaxError` vs erros em tempo de execução;
-    -   exemplos de `ValueError`, `ZeroDivisionError`, `TypeError`, `IndexError`, `KeyError`, etc.;
+   -  `SyntaxError` vs erros em tempo de execução;
+   -  exemplos de `ValueError`, `ZeroDivisionError`, `TypeError`, `IndexError`, `KeyError`, etc.;
 -   leitura de mensagens de erro:
-    -   ficheiro, linha, tipo de erro e mensagem;
-    -   como usar o traceback para encontrar o problema;
+   -  ficheiro, linha, tipo de erro e mensagem;
+   -  como usar o traceback para encontrar o problema;
 -   `try`/`except` básico:
-    -   sintaxe geral;
-    -   usar `try`/`except` para validar `input`;
-    -   capturar exceções específicas (`ValueError`, `ZeroDivisionError`, `FileNotFoundError`, ...);
+   -  sintaxe geral;
+   -  usar `try`/`except` para validar `input`;
+   -  capturar exceções específicas (`ValueError`, `ZeroDivisionError`, `FileNotFoundError`, ...);
 -   secções **[EXTRA]**:
-    -   vários blocos `except` e captura múltipla;
-    -   exceção genérica (`Exception`) e cuidados a ter;
-    -   `else` e `finally`;
-    -   lançar erros com `raise` e usar `assert`.
+   -  vários blocos `except` e captura múltipla;
+   -  exceção genérica (`Exception`) e cuidados a ter;
+   -  `else` e `finally`;
+   -  lançar erros com `raise` e usar `assert`.
 
 Exercícios focados em:
 
@@ -441,15 +443,35 @@ Exercícios focados em:
 
 ---
 
+### `11_projeto_final_python.md`
+
+[Ver ficheiro](./11_projeto_final_python.md)
+
+**Objetivo:**  
+Aplicar os conteúdos dos módulos anteriores num projeto prático de consola, com planificação, implementação em equipa, validação de entradas e organização por módulos.
+
+Conteúdos principais:
+
+-   planeamento técnico com `PLANIFICACAO.md`;
+-   leitura e validação de JSON;
+-   menu e fluxo de aplicação no terminal;
+-   funções e módulos com responsabilidades separadas;
+-   critérios de avaliação e plano de testes manual.
+
+---
+
 ## Como usar estes materiais
 
-1. Segue a **ordem dos ficheiros** (01 → 02 → 03 → 04 → 05 → 06 → 07 → 08).
-2. Em cada ficheiro:
+1. Segue a **ordem dos ficheiros**:
+   `01 → 02 → 03 → 04 → 05 → 06 → 07 → 08 → 09 → 10`.
+2. Resolve `00_exercicios_de_preparacao.md` e `00_exercicios_de_recuperacao.md` como revisão e consolidação.
+3. Depois de concluíres os módulos base, avança para `11_projeto_final_python.md`.
+4. Em cada ficheiro:
     - lê primeiro a teoria e os exemplos;
     - copia alguns exemplos para um ficheiro `.py` e experimenta alterá-los;
     - tenta resolver todos os exercícios, pela ordem apresentada;
     - marca as partes com **[EXTRA]** para rever mais tarde se sentires dificuldades.
-3. Usa os apontamentos como apoio ao estudo para testes e projetos.
+5. Usa os apontamentos como apoio ao estudo para testes e projetos.
 
 ---
 
@@ -457,8 +479,8 @@ Exercícios focados em:
 
 -   Python 3.x instalado (idealmente uma versão recente, ex.: 3.11/3.12).
 -   Editor recomendado: **VS Code** ou IDE online com:
-    -   extensão **Python**;
-    -   (opcional) ferramenta de execução integrada (Run/Debug).
+   -  extensão **Python**;
+   -  (opcional) ferramenta de execução integrada (Run/Debug).
 
 Para correr um exemplo:
 

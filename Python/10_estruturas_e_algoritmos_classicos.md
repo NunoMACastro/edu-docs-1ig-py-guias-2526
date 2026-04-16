@@ -14,7 +14,7 @@ Exemplos do dia a dia:
 - instrucoes para montar um movel;
 - lista de regras para decidir algo.
 
-Na programacao, um algoritmo diz **como** encontrar uma resposta, não apenas **qual** é a resposta.
+Na programação, um algoritmo diz **como** encontrar uma resposta, não apenas **qual** é a resposta.
 
 ---
 
@@ -22,10 +22,10 @@ Na programacao, um algoritmo diz **como** encontrar uma resposta, não apenas **
 
 ### 2.1 Ideia principal
 
-A **pesquisa linear** percorre uma lista do inicio ao fim, item a item, ate encontrar o valor desejado.
+A **pesquisa linear** percorre uma lista do inicio ao fim, item a item, até encontrar o valor desejado.
 
 - se encontrar, termina;
-- se nao encontrar, chega ao fim.
+- se não encontrar, chega ao fim.
 
 ### 2.2 Exemplo simples
 
@@ -41,7 +41,7 @@ print(pesquisa_linear(nums, 9))   # True
 print(pesquisa_linear(nums, 10))  # False
 ```
 
-### 2.3 Exemplo com indice
+### 2.3 Exemplo com índice
 
 ```python
 def pesquisa_linear_indice(valores, alvo):
@@ -57,20 +57,20 @@ print(pesquisa_linear_indice(nomes, "Duarte")) # -1
 
 ---
 
-## 3) Ordenacao basica
+## 3) Ordenação básica
 
 Ordenar uma lista significa colocar os elementos numa **ordem** (crescente ou decrescente).
 
-Aqui vamos ver duas ordenacoes classicas:
+Aqui vamos ver duas ordenacoes clássicas:
 
 - **Bubble Sort**
 - **Selection Sort**
 
-Estas ordenacoes nao sao as mais rapidas, mas sao **simples** e boas para aprender.
+Estas ordenacoes não são as mais rápidas, mas são **simples** e boas para aprender.
 
 ---
 
-## 4) Bubble Sort (ordenacao por bolha)
+## 4) Bubble Sort (ordenação por bolha)
 
 ### 4.1 Ideia principal
 
@@ -103,9 +103,9 @@ bubble_sort(nums)
 print(nums)  # [1, 2, 4, 5, 8]
 ```
 
-### 4.4 Versao com detecao de trocas
+### 4.4 Versao com deteção de trocas
 
-Se numa passagem nao houver trocas, a lista ja esta ordenada e podemos parar.
+Se numa passagem não houver trocas, a lista ja esta ordenada e podemos parar.
 
 ```python
 def bubble_sort_otimizado(valores):
@@ -131,11 +131,11 @@ Explicação do código:
 
 ---
 
-## 5) Selection Sort (ordenacao por selecao)
+## 5) Selection Sort (ordenação por seleção)
 
 ### 5.1 Ideia principal
 
-Em cada passo, encontramos o **menor** elemento da parte nao ordenada e colocamo-lo na posicao certa.
+Em cada passo, encontramos o **menor** elemento da parte não ordenada e colocamo-lo na posição certa.
 
 ### 5.2 Exemplo passo a passo (lista pequena)
 
@@ -144,7 +144,7 @@ Lista inicial: `[4, 2, 7, 1]`
 - menor = 1 -> troca com o primeiro elemento  
   lista fica `[1, 2, 7, 4]`
 - agora olhamos para o resto `[2, 7, 4]`  
-  menor = 2 -> ja esta na posicao certa
+  menor = 2 -> ja esta na posição certa
 - ultimo passo: entre `[7, 4]`, menor = 4 -> troca  
   lista final `[1, 2, 4, 7]`
 
@@ -176,7 +176,7 @@ Explicação do código:
 
 ---
 
-## 6) Comparar pesquisa linear e ordenacao
+## 6) Comparar pesquisa linear e ordenação
 
 ### Pesquisa linear
 
@@ -184,17 +184,17 @@ Explicação do código:
 - se o alvo estiver no fim, ve todos os elementos;
 - se estiver no inicio, termina logo.
 
-### Ordenacao
+### Ordenação
 
-- faz muitas comparacoes e trocas;
+- faz muitas comparações e trocas;
 - mesmo com listas pequenas, ja e um pouco mais pesado.
 
 ---
 
-## 7) Noção simples de eficiencia
+## 7) Noção simples de eficiência
 
 Quando temos **poucos dados**, quase tudo funciona bem.  
-Quando temos **muitos dados**, a escolha do algoritmo faz muita diferenca.
+Quando temos **muitos dados**, a escolha do algoritmo faz muita diferença.
 
 ### Ideia simples:
 
@@ -212,8 +212,8 @@ Nao precisamos de formulas complicadas agora, basta perceber que:
 
 ## 8) Quando usar cada coisa
 
-- **Pesquisa linear**: quando a lista nao esta ordenada e e pequena ou media.
-- **Ordenacao basica**: boa para aprender e para listas pequenas.
+- **Pesquisa linear**: quando a lista não esta ordenada e e pequena ou media.
+- **Ordenação básica**: boa para aprender e para listas pequenas.
 - Para listas grandes, existem algoritmos mais rapidos (veremos mais tarde).
 
 ---
@@ -228,33 +228,33 @@ numeros.sort()
 print(numeros)  # [1, 2, 5, 9]
 ```
 
-E uma pergunta excelente e muito comum. A resposta curta e: **para perceberes o que acontece por tras do `sort()` e para ganhares ferramentas de raciocinio**. Aqui vai a explicacao por partes:
+E uma pergunta excelente e muito comum. A resposta curta e: **para perceberes o que acontece por tras do `sort()` e para ganhares ferramentas de raciocinio**. Aqui vai a explicação por partes:
 
-### 1) `sort()` existe, mas nao e magico
+### 1) `sort()` existe, mas não e magico
 
-O `sort()` ordena porque **usa um algoritmo de ordenacao por dentro**. Esse algoritmo foi criado, testado e escolhido por ser eficiente na maioria dos casos. Se nao souberes o que e um algoritmo de ordenacao, vais tratar o `sort()` como uma \"caixa preta\".
+O `sort()` ordena porque **usa um algoritmo de ordenação por dentro**. Esse algoritmo foi criado, testado e escolhido por ser eficiente na maioria dos casos. Se não souberes o que e um algoritmo de ordenação, vais tratar o `sort()` como uma \"caixa preta\".
 
 Saber o basico permite:
 
 - entender porque ordenar custa tempo;
 - perceber porque listas grandes demoram mais;
-- distinguir quando faz sentido ordenar e quando nao.
+- distinguir quando faz sentido ordenar e quando não.
 
 ### 2) Aprender algoritmos treina o raciocinio
 
-Bubble sort e selection sort nao sao ensinados por serem os melhores.  
-Sao ensinados porque sao **simples** e mostram ideias fundamentais:
+Bubble sort e selection sort não são ensinados por serem os melhores.  
+Sao ensinados porque são **simples** e mostram ideias fundamentais:
 
 - comparar valores;
 - decidir quando trocar;
-- repetir passos ate estar ordenado;
+- repetir passos até estar ordenado;
 - medir quantos passos foram precisos.
 
 Esse raciocinio vai ser usado em muitos problemas diferentes, mesmo que nunca mais uses bubble sort numa aplicacao real.
 
 ### 3) Nem sempre podes usar `sort()`
 
-Em alguns exercicios e projetos, o objetivo **e aprender** e nao apenas chegar ao resultado.  
+Em alguns exercícios e projetos, o objetivo **é aprender** e não apenas chegar ao resultado.  
 Se usares `sort()` sem perceber, estas a \"saltar\" a aprendizagem.
 
 Tambem ha situacoes em que tens de:
@@ -265,15 +265,15 @@ Tambem ha situacoes em que tens de:
 
 Sem conhecer o algoritmo, fica dificil adaptar.
 
-### 4) O algoritmo certo faz diferenca
+### 4) O algoritmo certo faz diferença
 
-Imagina duas formas de ordenar 10 000 numeros:
+Imagina duas formas de ordenar 10 000 números:
 
-- uma faz cerca de 1 000 000 comparacoes;
+- uma faz cerca de 1 000 000 comparações;
 - outra faz apenas 100 000.
 
 A segunda e muito mais rapida.  
-Saber que existem algoritmos diferentes ajuda-te a perceber **porque algumas solucoes sao lentas**.
+Saber que existem algoritmos diferentes ajuda-te a perceber **porque algumas solucoes são lentas**.
 
 ### 5) No futuro vais estudar algoritmos melhores
 
@@ -283,7 +283,7 @@ Para compreender esses algoritmos, precisas destas bases:
 - comparacao e troca;
 - percorrer a lista;
 - dividir problemas;
-- analisar eficiencia.
+- analisar eficiência.
 
 ### Em resumo
 
@@ -297,29 +297,29 @@ Para compreender esses algoritmos, precisas destas bases:
 
 ### Exercício 1 - Pesquisa linear simples
 
-Cria uma funcao `existe(lista, alvo)` que devolve `True` se o alvo estiver na lista.
+Cria uma função `existe(lista, alvo)` que devolve `True` se o alvo estiver na lista.
 
 ---
 
-### Exercício 2 - Pesquisa com indice
+### Exercício 2 - Pesquisa com índice
 
-Cria uma funcao `indice(lista, alvo)` que devolve o indice do alvo ou `-1` se nao existir.
+Cria uma função `indice(lista, alvo)` que devolve o índice do alvo ou `-1` se não existir.
 
 ---
 
 ### Exercício 3 - Bubble Sort
 
-Cria uma funcao `ordenar_bubble(lista)` que ordena a lista de forma crescente.
+Cria uma função `ordenar_bubble(lista)` que ordena a lista de forma crescente.
 
 ---
 
 ### Exercício 4 - Selection Sort
 
-Cria uma funcao `ordenar_selection(lista)` que ordena a lista de forma crescente.
+Cria uma função `ordenar_selection(lista)` que ordena a lista de forma crescente.
 
 ---
 
-### Exercício 5 - Comparar metodos
+### Exercício 5 - Comparar métodos
 
 Dada a lista:
 
@@ -333,15 +333,15 @@ Dada a lista:
 
 ---
 
-### Exercício 6 - Pesquisa antes e depois da ordenacao
+### Exercício 6 - Pesquisa antes e depois da ordenação
 
-1. Procura o numero 7 numa lista nao ordenada com pesquisa linear.
+1. Procura o número 7 numa lista não ordenada com pesquisa linear.
 2. Ordena a lista.
-3. Procura de novo e compara o numero de passos (podes usar um contador).
+3. Procura de novo e compara o número de passos (podes usar um contador).
 
 ---
 
-### Exercício 7 - Ordenacao decrescente
+### Exercício 7 - Ordenação decrescente
 
 Adapta o **bubble sort** para ordenar de forma decrescente.
 
@@ -367,7 +367,7 @@ Dica: usa `nome.lower()`.
 
 Cria um programa que:
 
-- pede 5 numeros ao utilizador e guarda numa lista;
+- pede 5 números ao utilizador e guarda numa lista;
 - ordena a lista com **bubble sort**;
 - mostra a lista ordenada.
 
@@ -375,4 +375,4 @@ Cria um programa que:
 
 ## 10) Changelog
 
-- `2025-02-XX` · Criacao inicial do ficheiro com pesquisa linear, bubble/selection sort e eficiencia basica.
+- `Data a definir` · Criação inicial do ficheiro com pesquisa linear, bubble/selection sort e eficiência básica.

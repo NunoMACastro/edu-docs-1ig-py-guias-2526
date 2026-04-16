@@ -1,4 +1,4 @@
-# Guia Completo de Markdown (10º ao 12º Ano)
+# Guia Completo de Markdown (10.º ao 12.º Ano)
 
 > **Objetivo:**  
 > Ensinar Markdown de forma simples e completa, com exemplos práticos.  

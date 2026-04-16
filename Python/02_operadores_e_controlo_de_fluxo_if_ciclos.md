@@ -882,10 +882,10 @@ else:
 > Registo de alterações importantes a este ficheiro.
 
 -   **2025-11-17 · v1.2**
-    -   Adicionadas soluções aos exercícios todos.
+   -  Adicionadas soluções aos exercícios todos.
 -   **2025-11-17 · v1.1**
-    -   TOC atualizado.
+   -  TOC atualizado.
 -   **2025-11-17 · v1.0**
-    -   Criação inicial do documento.
-    -   Secções: operadores aritméticos, comparação, lógicos, pertinência/identidade, atribuições compostas, truthiness, `if/elif/else`, `while`, `for`, `range` e indentação.
-    -   Adicionados 12 exercícios graduais focados em operadores, decisões e ciclos (`for`/`while`).
+   -  Criação inicial do documento.
+   -  Secções: operadores aritméticos, comparação, lógicos, pertinência/identidade, atribuições compostas, truthiness, `if/elif/else`, `while`, `for`, `range` e indentação.
+   -  Adicionados 12 exercícios graduais focados em operadores, decisões e ciclos (`for`/`while`).

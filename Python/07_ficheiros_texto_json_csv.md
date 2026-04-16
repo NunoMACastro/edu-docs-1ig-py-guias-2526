@@ -439,9 +439,9 @@ Cria um programa que:
 -   Leia o ficheiro `numeros.json` do exercício anterior usando `json.load`;
 -   Calcule e mostre:
 
-    -   o maior número;
-    -   o menor número;
-    -   a média dos números.
+   -  o maior número;
+   -  o menor número;
+   -  a média dos números.
 
 -   Depois, pede ao utilizador um número e verifica se está no ficheiro.
 
@@ -473,9 +473,9 @@ Escreve um programa que:
 Escreve um programa que:
 
 -   pede ao utilizador para inserir os seus dados pessoais:
-    -   nome (string);
-    -   idade (inteiro);
-    -   email (string);
+   -  nome (string);
+   -  idade (inteiro);
+   -  email (string);
 -   guarda esses dados num dicionário;
 -   escreve esse dicionário num ficheiro `dados_pessoais.json` usando `json.dump`.
 
@@ -522,17 +522,17 @@ for utilizador in utilizadores:
 Escreve um programa que:
 
 -   define uma função `adicionar_tarefa(titulo, descricao)` que:
-    -   lê o ficheiro `tarefas.json` (se existir);
-    -   acrescenta uma nova tarefa (dicionário com `titulo` e `descricao`) a uma lista de tarefas;
-    -   guarda a lista atualizada de tarefas no ficheiro;
+   -  lê o ficheiro `tarefas.json` (se existir);
+   -  acrescenta uma nova tarefa (dicionário com `titulo` e `descricao`) a uma lista de tarefas;
+   -  guarda a lista atualizada de tarefas no ficheiro;
 -   define uma função `mostrar_tarefas()` que:
-    -   lê o ficheiro `tarefas.json`;
-    -   mostra todas as tarefas numeradas;
+   -  lê o ficheiro `tarefas.json`;
+   -  mostra todas as tarefas numeradas;
 -   no programa principal, cria um menu de navegação simples com 3 opções:
 
-    -   adicionar tarefa;
-    -   mostrar tarefas;
-    -   sair.
+   -  adicionar tarefa;
+   -  mostrar tarefas;
+   -  sair.
 
 ---
 
@@ -541,17 +541,17 @@ Escreve um programa que:
 Escreve um programa que:
 
 -   define uma função `adicionar_contacto(nome, telefone)` que:
-    -   lê o ficheiro `contactos.json` (se existir);
-    -   acrescenta um novo contacto (dicionário com `nome` e `telefone`) a uma lista de contactos;
-    -   guarda a lista atualizada de contactos no ficheiro;
+   -  lê o ficheiro `contactos.json` (se existir);
+   -  acrescenta um novo contacto (dicionário com `nome` e `telefone`) a uma lista de contactos;
+   -  guarda a lista atualizada de contactos no ficheiro;
 -   define uma função `mostrar_contactos()` que:
-    -   lê o ficheiro `contactos.json`;
-    -   mostra todos os contactos numerados;
+   -  lê o ficheiro `contactos.json`;
+   -  mostra todos os contactos numerados;
 -   no programa principal, cria um menu de navegação simples com 4 opções:
-    -   adicionar contacto;
-    -   mostrar contactos;
-    -   procurar contacto por nome;
-    -   sair.
+   -  adicionar contacto;
+   -  mostrar contactos;
+   -  procurar contacto por nome;
+   -  sair.
 
 ---
 
@@ -560,26 +560,26 @@ Escreve um programa que:
 Escreve um programa que:
 
 -   define uma função `adicionar_nota(aluno, disciplina, nota)` que:
-    -   lê o ficheiro `notas.json` (se existir);
-    -   acrescenta uma nova nota (dicionário com `aluno`, `disciplina` e `nota`) a uma lista de notas;
-    -   guarda a lista atualizada de notas no ficheiro;
+   -  lê o ficheiro `notas.json` (se existir);
+   -  acrescenta uma nova nota (dicionário com `aluno`, `disciplina` e `nota`) a uma lista de notas;
+   -  guarda a lista atualizada de notas no ficheiro;
 -   define uma função `mostrar_notas()` que:
-    -   lê o ficheiro `notas.json`;
-    -   mostra todas as notas numeradas;
+   -  lê o ficheiro `notas.json`;
+   -  mostra todas as notas numeradas;
 -   define uma função `calcular_media(aluno)` que:
-    -   lê o ficheiro `notas.json`;
-    -   calcula e retorna a média das notas do aluno especificado;
+   -  lê o ficheiro `notas.json`;
+   -  calcula e retorna a média das notas do aluno especificado;
 -   no programa principal, cria um menu de navegação simples com 5 opções:
-    -   adicionar nota;
-    -   mostrar notas;
-    -   calcular média de um aluno;
-    -   mostrar aluno com melhor média;
-    -   sair.
+   -  adicionar nota;
+   -  mostrar notas;
+   -  calcular média de um aluno;
+   -  mostrar aluno com melhor média;
+   -  sair.
 
 ---
 
 ## 7. Changelog
 
 -   **2025-11-26 · v1.0**
-    -   Criação inicial do ficheiro com introdução a ficheiros de texto, JSON e CSV.
+   -  Criação inicial do ficheiro com introdução a ficheiros de texto, JSON e CSV.
 ```
