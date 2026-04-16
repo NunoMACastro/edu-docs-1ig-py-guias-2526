@@ -1220,3 +1220,42 @@ for i in range(20):
     - a média dos números
     - os números acima da média
 3. Chame a função com a lista de números para mostrar os resultados.
+
+# Ficheiros JSON
+
+## Exercício 47
+
+Cria um programa que:
+
+1. Tenha um dicionário com o teu nome, idade e cidade.
+2. Guarde esse dicionário num ficheiro JSON.
+
+## Exercício 48
+
+Cria um programa que:
+
+1. Leia o ficheiro JSON do exercício anterior e mostre o conteúdo, ou seja, o dicionário com o teu nome, idade e cidade.
+
+## Exercício 49
+
+Cria um programa que:
+
+1. Tenha um dicionário de produtos, onde cada chave é o nome do produto e o valor é outro dicionário com:
+    - `"preco"` (float)
+    - `"stock"` (int)
+
+ou seja:
+
+```python
+
+produtos = {
+    "Camisa": {"preco": 19.99, "stock": 50},
+    "Calças": {"preco": 39.99, "stock": 30},
+    "Ténis": {"preco": 59.99, "stock": 20}
+}
+```
+
+2. Guarde esse dicionário num ficheiro JSON.
+3. Leia o ficheiro JSON e mostre o conteúdo, ou seja, o dicionário de produtos com os seus preços e stocks.
+4. Cria uma função que receba o dicionário de produtos e um produto e diga o preço e o stock desse produto, ou uma mensagem se o produto não existir.
+5. Chama a função para mostrar o preço e o stock de um produto à tua escolha.
