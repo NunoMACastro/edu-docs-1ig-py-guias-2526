@@ -1361,3 +1361,21 @@ produtos = {
 3. Leia o ficheiro JSON e mostre o conteúdo, ou seja, o dicionário de produtos com os seus preços e stocks.
 4. Cria uma função que receba o dicionário de produtos e um produto e diga o preço e o stock desse produto, ou uma mensagem se o produto não existir.
 5. Chama a função para mostrar o preço e o stock de um produto à tua escolha.
+
+# Exercício 52
+
+Cria um programa que:
+
+1. Tenha um dicionário de alunos, onde cada chave é o nome do aluno e o valor é outro dicionário com as disciplinas e as respetivas notas, por exemplo:
+
+```python
+alunos = {
+    "Ana": {"Matemática": 17, "Português": 15},
+    "João": {"Matemática": 12, "Português": 14}
+}
+```
+
+2. Guarde esse dicionário num ficheiro JSON.
+3. Leia o ficheiro JSON e mostre o conteúdo, ou seja, o dicionário de alunos com as suas disciplinas e notas.
+4. Cria uma função que receba o dicionário de alunos e mostre a média de cada aluno, a média de cada disciplina, o melhor aluno e os alunos em risco.
+5. Chama a função para mostrar os resultados.
