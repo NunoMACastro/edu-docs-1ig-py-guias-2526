@@ -1362,6 +1362,30 @@ produtos = {
 4. Cria uma função que receba o dicionário de produtos e um produto e diga o preço e o stock desse produto, ou uma mensagem se o produto não existir.
 5. Chama a função para mostrar o preço e o stock de um produto à tua escolha.
 
+> Resolução:
+
+```python
+import json
+
+produtos =  v
+
+with open("produtos.json", "w") as f:
+    json.dump(produtos, f)
+
+with open("produtos.json", "r") as f:
+    produtos_carregados = json.load(f)
+
+def mostrar_produto(produtos, produto):
+    if produto in produtos:
+        preco = produtos[produto]["preco"]
+        stock = produtos[produto]["stock"]
+        print(f"O produto {produto} tem preço {preco} e stock {stock}.")
+    else:
+        print(f"O produto {produto} não existe.")
+
+mostrar_produto(produtos_carregados, "Camisa")
+```
+
 # Exercício 52
 
 Cria um programa que:
@@ -1379,3 +1403,77 @@ alunos = {
 3. Leia o ficheiro JSON e mostre o conteúdo, ou seja, o dicionário de alunos com as suas disciplinas e notas.
 4. Cria uma função que receba o dicionário de alunos e mostre a média de cada aluno, a média de cada disciplina, o melhor aluno e os alunos em risco.
 5. Chama a função para mostrar os resultados.
+
+> Resolução:
+
+```python
+import json
+
+alunos = {
+    "Ana": {"Matemática": 17, "Português": 15},
+    "João": {"Matemática": 12, "Português": 14},
+    "Maria": {"Matemática": 9, "Português": 8},
+    "Pedro": {"Matemática": 18, "Português": 19}
+}
+
+with open("alunos.json", "w") as f:
+    json.dump(alunos, f)
+
+with open("alunos.json", "r") as f:
+    alunos_carregados = json.load(f)
+
+def calcular_medias(alunos):
+    medias_alunos = {}
+    for aluno, disciplinas in alunos.items():
+        media = sum(disciplinas.values()) / len(disciplinas)
+        medias_alunos[aluno] = media
+        print(f"A média do aluno {aluno} é: {media}.")
+
+    medias_disciplinas = {}
+    for disciplinas in alunos.values():
+        for disciplina, nota in disciplinas.items():
+            if disciplina not in medias_disciplinas:
+                medias_disciplinas[disciplina] = []
+            medias_disciplinas[disciplina].append(nota)
+
+    for disciplina, notas in medias_disciplinas.items():
+        media = sum(notas) / len(notas)
+        print(f"A média da disciplina {disciplina} é: {media}.")
+
+    melhor_aluno = max(medias_alunos, key=medias_alunos.get)
+    print(f"O melhor aluno é: {melhor_aluno} com média {medias_alunos[melhor_aluno]}.")
+    alunos_em_risco = []
+    for aluno, media in medias_alunos.items():
+        if media < 10:
+            alunos_em_risco.append(aluno)
+
+    if alunos_em_risco:
+        print("Alunos em risco (média inferior a 10):")
+        for aluno in alunos_em_risco:
+            print(aluno)
+    else:
+        print("Não há alunos em risco.")
+
+calcular_medias(alunos_carregados)
+```
+
+# Modulos
+
+## Exercício 53
+
+Cria um programa que:
+
+1. Tenha um módulo com uma função que receba um número e diga se é par ou não.
+2. Importe o módulo e chame a função para um pedido ao utilizador.
+
+## Exercício 54
+
+1. Ainda no mesmo módulo, cria uma função para cada uma das operações matemáticas básicas (soma, subtração, multiplicação e divisão) que receba dois números e mostre o resultado.
+2. Importe o módulo e chame as funções para dois números pedidos ao utilizador.
+
+## Exercício 55
+
+Cria um programa que:
+
+1. Tenha um módulo com uma função que receba uma lista de números e mostre o número máximo, mínimo e a média dos números da lista.
+2. Importe o módulo e chame a função para uma lista de 5 números pedidos ao utilizador.
