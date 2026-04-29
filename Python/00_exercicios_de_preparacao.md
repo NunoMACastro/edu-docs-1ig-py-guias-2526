@@ -347,7 +347,32 @@ def mostrar_alunos(alunos):
 mostrar_alunos(alunos)
 ```
 
-14. Pede ao utilizador para introduzir o nome, idade e cidade. Guarda estes dados num ficheiro JSON com o formato de um dicionário.
+14. Cria uma função que recebe uma lista de listas em que cada sublista representa um aluno com o formato `[nome, idade, cidade]`. A função deve mostrar os dados de cada aluno de forma organizada.
+
+> Resolução:
+
+```python
+
+def mostrar_alunos(alunos):
+    for aluno in alunos:
+        nome = aluno[0]
+        idade = aluno[1]
+        cidade = aluno[2]
+
+        print(f"Nome: {nome}")
+        print(f"Idade: {idade}")
+        print(f"Cidade: {cidade}")
+        print()
+
+lista_alunos = [
+    ["Ana", 15, "Lisboa"],
+    ["Bruno", 16, "Porto"],
+    ["Carla", 17, "Coimbra"]
+]
+mostrar_alunos(lista_alunos)
+```
+
+15. Pede ao utilizador para introduzir o nome, idade e cidade. Guarda estes dados num ficheiro JSON com o formato de um dicionário.
 
 > Resolução:
 
@@ -366,7 +391,7 @@ with open("dados.json", "w", encoding="utf-8") as ficheiro:
 print("Dados guardados com sucesso.")
 ```
 
-15. Lê o ficheiro JSON criado no exercício anterior e imprime os dados de forma organizada.
+16. Lê o ficheiro JSON criado no exercício anterior e imprime os dados de forma organizada.
 
 > Resolução:
 
@@ -381,7 +406,7 @@ print(f"Idade: {dados['idade']}")
 print(f"Cidade: {dados['cidade']}")
 ```
 
-16. Cria um módulo `math_utils.py` com as funções `soma(a, b)`, `subtracao(a, b)`, `multiplicacao(a, b)` e `divisao(a, b)`.
+17. Cria um módulo `math_utils.py` com as funções `soma(a, b)`, `subtracao(a, b)`, `multiplicacao(a, b)` e `divisao(a, b)`.
     Usa-o no ficheiro `main.py` com `import math_utils` e números pedidos ao utilizador.
 
 > Resolução:
@@ -422,7 +447,7 @@ print(f"Multiplicação: {math_utils.multiplicacao(num1, num2)}")
 print(f"Divisão: {math_utils.divisao(num1, num2)}")
 ```
 
-17. Cria um módulo `texto_utils.py` com a função `contar_vogais(texto)` e usa `from texto_utils import contar_vogais` num ficheiro principal.
+18. Cria um módulo `texto_utils.py` com a função `contar_vogais(texto)` e usa `from texto_utils import contar_vogais` num ficheiro principal.
 
 > Resolução:
 
