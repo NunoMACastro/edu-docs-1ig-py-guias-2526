@@ -71,7 +71,7 @@ Ponto importante:
 
 > O CPU não executa texto Python diretamente.  
 > Ele executa o **interpretador Python**, e é esse interpretador que “faz acontecer” as ações do teu código.
-> Ou seja, o código que tu escreves vive numa "bolha" que é o interpretador. O Interpretador é o que tem acesso direto ao sistema operativo e à CPU, e o teu código é traduzido para algo que o interpretador consegue entender e executar.
+> Ou seja, o código que tu escreves vive numa "bolha" que é o interpretador. O interpretador é um programa real, já compilado para código de máquina, que é executado pela CPU e que pede serviços ao sistema operativo quando precisa de ações como ler ficheiros, escrever no ecrã ou usar a rede.
 
 ---
 
@@ -79,7 +79,7 @@ Ponto importante:
 
 ### Compilar
 
-Compilar significa, em programação, transformar o código fonte de um determinado nível de abstração (ex.: Python) para outro nível (ex.: código máquina ou bytecode) **antes** de executar.
+Compilar significa, em programação, transformar o código fonte de um determinado nível de abstração (ex.: Python) para outro nível (ex.: código de máquina ou bytecode) **antes** de executar.
 
 - traduz código fonte para um formato executável **antes** de correr;
 - tende a gerar artefactos de compilação (objetos/executável).
@@ -106,10 +106,13 @@ Ou seja: chamar Python “só interpretado” é uma simplificação útil, mas 
 
 Fluxo mental:
 
-`código fonte (.py)`  
-→ `bytecode`  
-→ `PVM executa`  
-→ `efeitos no programa (prints, cálculos, ficheiros, rede...)`
+```text
+código fonte (.py)
+-> bytecode
+-> PVM/interpretador executa o bytecode
+-> CPU executa o código de máquina do interpretador
+-> efeitos no programa (prints, cálculos, ficheiros, rede...)
+```
 
 Isto explica:
 
@@ -127,7 +130,18 @@ Isto explica:
 - não é código-fonte legível;
 - não é instrução nativa final da CPU.
 
-Basicamente é uma linguagem de baixo nível que a PVM entende e executa. A PVM vai ler o bytecode e transformar as instruções numa série de operações que o sistema operativo e a CPU conseguem executar.
+Basicamente, é uma linguagem de baixo nível para a **máquina virtual do Python**, não para o processador físico.
+
+A PVM lê esse bytecode e decide que rotinas internas do interpretador deve executar.
+
+Isto é uma diferença muito importante:
+
+> A PVM não transforma cada instrução de bytecode numa instrução única da CPU.
+> A PVM executa o bytecode usando o interpretador Python, e o interpretador já é um programa nativo que a CPU consegue executar.
+
+Quando a operação é puramente interna, como somar dois inteiros pequenos ou chamar uma função Python, o interpretador faz trabalho em memória e nos seus próprios objetos.
+
+Quando a operação precisa do sistema, como abrir um ficheiro, escrever no terminal ou usar rede, o interpretador pede ajuda ao sistema operativo através de chamadas ao sistema.
 
 A pasta `__pycache__` guarda ficheiros `.pyc` (quando aplicável) para acelerar arranques futuros.
 
@@ -140,79 +154,43 @@ def soma(a, b):
 print(soma(2, 3))
 ```
 
-Quando executamos este código, ele vai ser compilado em ByteCode, que vai resultar em algo como:
+Quando executamos este código, Python pode gerar bytecode parecido com isto para a função `soma`:
 
 ```text
-global _start
-
-section .data
-    args dq 1, 2, 3, 4
-    n    dq 4
-    newline db 10
-
-section .bss
-    buf resb 32
-
-section .text
-
-soma:
-    xor rax, rax
-    xor rcx, rcx
-.loop:
-    cmp rcx, rdi
-    jge .done
-    add rax, [rsi + rcx*8]
-    inc rcx
-    jmp .loop
-.done:
-    ret
-
-utoa_rax_to_buf:
-    lea rdi, [buf + 31]
-    mov byte [rdi], 0
-    mov rbx, 10
-    cmp rax, 0
-    jne .convert
-    dec rdi
-    mov byte [rdi], '0'
-    mov rsi, rdi
-    mov rdx, 1
-    ret
-.convert:
-.loop2:
-    xor rdx, rdx
-    div rbx
-    add dl, '0'
-    dec rdi
-    mov [rdi], dl
-    cmp rax, 0
-    jne .loop2
-    mov rsi, rdi
-    lea rdx, [buf + 31]
-    sub rdx, rsi
-    ret
-
-_start:
-    mov rdi, [n]
-    lea rsi, [args]
-    call soma
-    call utoa_rax_to_buf
-    mov rax, 1
-    mov rdi, 1
-    syscall
-    mov rax, 1
-    mov rdi, 1
-    lea rsi, [newline]
-    mov rdx, 1
-    syscall
-    mov rax, 60
-    xor rdi, rdi
-    syscall
+LOAD_FAST 0 (a)
+LOAD_FAST 1 (b)
+BINARY_OP 0 (+)
+RETURN_VALUE
 ```
 
-Se reparares, este código, embora pareça mais complicado para nós humanos, é uma divisão de uma tarefa mais complexa (o código original) em operações mais simpless (soma, conversão de inteiro para string, escrita na saída, etc.) que a máquina virtual do Python pode entender e executar.
+O aspeto exato pode mudar entre versões do Python, mas a ideia é esta:
 
-Sempre que compilamos um bloco de código, ele vai ser convertido numa linguagem de mais baixo nível que, por norma, é uma decomposição em operações mais simples. Eventualmente essas operações simples vão ser traduzidas para chamadas ao sistema operativo e instruções de máquina que o CPU pode executar.
+- `LOAD_FAST 0 (a)` carrega a referência associada ao parâmetro `a`;
+- `LOAD_FAST 1 (b)` carrega a referência associada ao parâmetro `b`;
+- `BINARY_OP 0 (+)` aplica a operação `+`;
+- `RETURN_VALUE` devolve o resultado da função.
+
+Este bytecode ainda não é assembly x86, ARM ou RISC-V. Também não é código de máquina. É um conjunto de instruções da PVM.
+
+Agora vem o ponto que costuma confundir:
+
+```text
+bytecode Python
+-> interpretador Python executa esse bytecode
+-> CPU executa o código de máquina do interpretador
+```
+
+Ou seja:
+
+- o bytecode diz à PVM "que passo Python deve acontecer";
+- o interpretador tem código nativo que implementa esse passo;
+- a CPU executa esse código nativo;
+- se for necessário aceder ao sistema operativo, o interpretador faz uma chamada ao sistema.
+
+Exemplo:
+
+- somar `2 + 3` pode ser resolvido por rotinas internas do interpretador;
+- fazer `print(...)` acaba por envolver o sistema operativo, porque escrever no terminal/ecrã é uma operação de I/O.
 
 ---
 
@@ -235,20 +213,80 @@ Analogia simples:
 
 ## 7. ISA (Instruction Set Architecture)
 
-A ISA é o conjunto de instruções que o CPU entende diretamente.
+A ISA é o conjunto de instruções de máquina que uma família de CPUs consegue executar diretamente.
 
-Depois do código Python ser compilado para bytecode, ele é injetado e exectuado pela PVM. A PVM, por sua vez, vai interpretar o bytecode e comunicar com o Sistema Operativo para realizar as ações necessárias (como alocar memória, ler/escrever ficheiros, etc.).
+Exemplos:
 
-A seguir, o SO vai fazer a ponte de ligação entre essas ações e as instruções de máquina que o CPU entende. Essas instruções estão definidas pela ISA do CPU (ex.: x86, ARM).
+- x86-64;
+- ARM64;
+- RISC-V.
 
-Ou seja, a ISA é basicamente um conjunto de comandos simples que o CPU pode executar diretamente.
-Por exemplo, no nosso programa com a função `soma`vai ser decomposto em operações simples que existem na ISA, como:
+Neste tema, há dois níveis de instruções que não devemos misturar.
 
-- carregar valores em registos;
-- realizar operações de adição;
-- escrever resultados na memória;
-- chamar funções do sistema operativo para imprimir resultados, etc.
-  O CPU não tem uma instrução “soma de listas” ou “imprime string”, mas tem instruções para manipular dados e chamar o sistema operativo, e é isso que a PVM usa para implementar as funcionalidades do Python.
+### 7.1 Instruções da PVM
+
+São instruções como:
+
+```text
+LOAD_FAST
+BINARY_OP
+RETURN_VALUE
+```
+
+Estas são instruções do mundo Python. Quem as entende é a PVM, que faz parte do interpretador.
+
+A CPU física não recebe diretamente `LOAD_FAST` como instrução nativa.
+
+### 7.2 Instruções da CPU
+
+São instruções de máquina da ISA real do processador.
+
+Exemplos conceptuais:
+
+```text
+carregar valor para registo
+somar valores
+comparar valores
+saltar para outro endereço
+ler/escrever memória
+entrar no kernel através de uma syscall
+```
+
+Estas instruções são representadas em código de máquina, ou seja, em bits que a CPU descodifica segundo a ISA.
+
+### 7.3 A ligação correta entre Python, SO, ISA e CPU
+
+A ligação correta é:
+
+```text
+código Python
+-> bytecode Python
+-> PVM/interpretador executa o bytecode
+-> CPU executa código de máquina do interpretador
+-> quando necessário, o interpretador pede serviços ao SO/kernel
+```
+
+Portanto:
+
+- a ISA não converte bytecode Python;
+- o SO não traduz automaticamente cada operação Python para instruções de máquina;
+- a CPU executa código de máquina compatível com a sua ISA;
+- o interpretador Python é o programa nativo que implementa o significado do bytecode.
+
+No nosso programa com a função `soma`, o CPU não tem uma instrução especial chamada "executar função Python soma".
+
+O que acontece é mais parecido com isto:
+
+1. a PVM lê bytecode como `LOAD_FAST`, `BINARY_OP` e `RETURN_VALUE`;
+2. o interpretador executa rotinas internas para cada passo;
+3. essas rotinas internas já estão compiladas para código de máquina;
+4. a CPU executa essas instruções de máquina;
+5. se houver `print`, ficheiros ou rede, o interpretador pede serviços ao sistema operativo.
+
+Esta distinção evita uma confusão muito comum:
+
+> Python não é convertido diretamente para ISA a cada linha.
+> Python é executado por um interpretador, e esse interpretador é que corre na CPU.
 
 ## 8. Diagrama sobre todo o processo usando Python
 
@@ -283,7 +321,7 @@ Por exemplo, no nosso programa com a função `soma`vai ser decomposto em opera�
 │ b) compilação para BYTECODE (.pyc)                                          │
 └───────────────┬─────────────────────────────────────────────────────────────┘
                 │
-                │ (Opcional: guarda bytecode em **pycache** para acelerar)
+                │ (Opcional: guarda bytecode em __pycache__ para acelerar)
                 v
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 5) BYTECODE (instruções da PVM)                                             │
@@ -308,12 +346,14 @@ Por exemplo, no nosso programa com a função `soma`vai ser decomposto em opera�
                 │ Quem executa bytecode é o interpretador (programa nativo).
                 v
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 7) CPU (ISA: x86/ARM, etc.)                                                 │
-│ O CPU só entende INSTRUÇÕES DE MÁQUINA (assembly) da sua ISA.               │
+│ 7) CPU (ISA: x86-64/ARM64, etc.)                                            │
+│ O CPU só executa INSTRUÇÕES DE MÁQUINA da sua ISA.                          │
+│ Assembly é apenas uma representação textual próxima dessas instruções.       │
 │                                                                             │
 │ O que o CPU executa mesmo é:                                                │
-│ - o interpretador Python (código máquina)                                   │
-│ - + chamadas ao Sistema Operativo                                           │
+│ - código de máquina do interpretador Python                                 │
+│ - código de máquina de bibliotecas nativas                                  │
+│ - código de máquina do kernel quando há chamadas ao sistema                 │
 │                                                                             │
 │ Ou seja: o CPU "percebe" o teu programa Python porque executa               │
 │ um programa (interpretador) que IMPLEMENTA o significado do Python.         │
@@ -1165,6 +1205,9 @@ Responde:
 ## 19. Resumo final
 
 - Python não executa texto fonte diretamente; executa via **bytecode + PVM**.
+- Bytecode Python não é código de máquina da CPU.
+- A CPU executa o interpretador Python, que já está compilado para código de máquina da ISA da máquina.
+- A ISA define as instruções que a CPU entende; não converte bytecode Python.
 - Cada chamada de função cria um **frame** na stack.
 - Objetos vivem tipicamente no **heap**; frames guardam referências locais.
 - `return` remove o frame chamado, mas objetos podem continuar vivos se forem referenciados fora.
@@ -1181,3 +1224,4 @@ Responde:
 
 - **2026-02-04**: versão inicial do módulo 04.
 - **2026-02-05**: v2 (mapa mental + observação com ferramentas + debug + exercícios).
+- **2026-05-19**: corrigida a explicação sobre bytecode, ISA, CPU e sistema operativo; substituído o exemplo que parecia assembly por bytecode Python conceptual.

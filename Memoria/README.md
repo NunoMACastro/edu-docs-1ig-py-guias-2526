@@ -61,7 +61,7 @@ Estes ficheiros foram escritos para alunos em fase inicial, com explicações mu
 
 ### `06_do_codigo_a_execucao_real_so_cpu_isa.md`
 
-**Objetivo:** ligar tudo numa visão de sistema: do código-fonte até à execução real no CPU, com papel do sistema operativo, loader, processo/thread, ISA e ciclo de vida de ficheiros.
+**Objetivo:** ligar tudo numa visão de sistema: do código-fonte até à execução real no CPU, com papel do sistema operativo/kernel, loader, processo/thread, ISA, código de máquina, syscalls e ciclo de vida de ficheiros.
 
 ---
 

@@ -95,7 +95,7 @@
     - D) Erro de ROM
 
 14. Qual opção representa melhor o percurso de execução em Python?
-    - A) `.py` -> bytecode -> PVM -> instruções no CPU
+    - A) `.py` -> bytecode -> PVM/interpretador -> CPU executa código nativo do interpretador
     - B) `.py` -> ROM -> cache -> CPU
     - C) `.py` -> SSD -> CPU sem interpretação
     - D) `.py` -> BIOS -> GC -> CPU
@@ -196,7 +196,7 @@ Após o último `del`, a afirmação mais correta é:
 
 ## Parte C - Desenvolvimento (3 perguntas)
 
-21. Explica o caminho de execução de um programa Python, desde o ficheiro `.py` até à execução no CPU, incluindo: compilação para bytecode, PVM/interpretador e ciclo fetch-decode-execute.
+21. Explica o caminho de execução de um programa Python, desde o ficheiro `.py` até à execução no CPU, incluindo: compilação para bytecode, PVM/interpretador, código de máquina, ISA e ciclo fetch-decode-execute. Deixa claro que a ISA define instruções, mas não converte bytecode Python.
 
 22. Explica, com exemplo, a diferença entre stack (frames de chamadas) e heap (objetos), e como referências ligam estas duas partes no raciocínio em Python.
 

@@ -66,7 +66,7 @@
 
 9. Qual sequência descreve melhor o modelo de execução do Python?
     - A) Código-fonte (.py) -> código de máquina direto -> execução
-    - B) Código-fonte (.py) -> bytecode -> PVM/interpretador -> CPU
+    - B) Código-fonte (.py) -> bytecode -> PVM/interpretador -> CPU executa o interpretador
     - C) Código-fonte (.py) -> ROM -> cache -> SSD
     - D) Código-fonte (.py) -> BIOS -> execução sem sistema operativo
 
@@ -130,7 +130,7 @@ Converte os seguintes números **decimais** para binário:
 
 22. Em Python, explica o que pode acontecer quando duas variáveis referenciam a mesma lista (alias). Usa um pequeno exemplo e descreve os possíveis efeitos laterais.
 
-23. Descreve o caminho de execução de um programa desde o código-fonte até à execução no CPU, incluindo pelo menos: sistema operativo, loader, processo, instruções e ciclo fetch-decode-execute.
+23. Descreve o caminho de execução de um programa desde o código-fonte até à execução no CPU, incluindo pelo menos: sistema operativo, loader, processo, código de máquina, ISA e ciclo fetch-decode-execute. Na resposta, explica também porque é que a ISA **não** é uma peça que converte instruções.
 
 24. Desenvolve, da forma mais detalhada que conseguires, todo o processo de utilização da RAM por parte de um programa. Tópicos obrigatórios: alocação de memória, stack vs heap, referências, e libertação de memória.
 
