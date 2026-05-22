@@ -1,11 +1,9 @@
-# Memória (10.º Ano) - 03 · Gestão de Memória em Python: Referências, Mutabilidade e Garbage Collection
+# Memória (10.º Ano) - 04 · Referências, Mutabilidade e Garbage Collection em Python
 
 > **Objetivo deste ficheiro**  
 > Compreender, de forma realmente clara, como Python gere memória: o que é uma referência, o que muda entre objetos mutáveis e imutáveis, e como funciona o Garbage Collector.
 
 ---
-
-**Pré-requisitos:** [`04_heap_stack_frames_e_execucao_python.md`](04_heap_stack_frames_e_execucao_python.md)
 
 ## Índice
 
@@ -25,6 +23,36 @@
 
 ## 1. Ideia principal: Python gere memória automaticamente
 
+Antes de entrarmos nos detalhes, recupera o desenho mental do módulo anterior:
+
+```text
+frame atual:
+  nome -> referência
+
+heap:
+  objeto real
+```
+
+Em Python, quase tudo o que manipulas no código é um objeto. Os nomes que escreves no programa permitem chegar a esses objetos.
+
+Por isso, quando dizes:
+
+```python
+valores = [10, 20, 30]
+```
+
+o modelo mental certo para este nível é:
+
+```text
+frame atual:
+  valores ───────┐
+                 ▼
+heap:
+  objeto lista [10, 20, 30]
+```
+
+Este módulo aprofunda precisamente essa ligação entre nomes, objetos, referências e limpeza de memória.
+
 Em linguagens como C, o programador costuma gerir memória de forma manual (alocar/libertar).  
 Em Python, a gestão é automática na maioria dos casos.
 
@@ -40,7 +68,7 @@ Essa remoção automática acontece através de mecanismos como:
 
 ---
 
-## 2. O que é, na realidade uma variável em Python?
+## 2. Variável não é "caixa de valor" em Python
 
 Em Python, uma variável é **um nome que aponta para um objeto na memória**.
 Pensa num "rótulo" que referencia um objeto. Exemplo: `python x = 10 ` Aqui, `x` é um nome que aponta para o objeto inteiro `10` na memória.
@@ -371,21 +399,14 @@ Conclusão prática:
 - Contagem de referências + Garbage Collector garantem limpeza.
 - Compreender referências evita muitos erros com listas e dicionários.
 
-### Ligação com o módulo 06
+### Do Python ao sistema
 
 No Python, estes mecanismos aparecem em alto nível (confortáveis para programar).  
 No nível do sistema, o processo continua a depender de CPU, sistema operativo e instruções de máquina.
-
-Para essa visão completa, consulta:
-
-- `Memoria/06_do_codigo_a_execucao_real_so_cpu_isa.md`
-
----
-
-**A seguir:** [`05_estruturas_dinamicas_e_complexidade.md`](05_estruturas_dinamicas_e_complexidade.md)
 
 ---
 
 ## 11. Changelog
 
 - **2026-02-04**: versão inicial do módulo 03.
+- **2026-05-22**: adicionado esquema inicial sobre frame, referência e heap.

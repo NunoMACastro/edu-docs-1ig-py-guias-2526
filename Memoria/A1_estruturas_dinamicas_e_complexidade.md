@@ -1,15 +1,13 @@
-# Memória (10.º Ano) - 05 · Estruturas Dinâmicas e Complexidade (Big-O)
+# Anexo A1 · Estruturas Dinâmicas e Complexidade (Big-O)
 
 > **Objetivo deste ficheiro**  
-> Introduzir estruturas dinâmicas de dados e a noção de complexidade de forma conceptual, com foco em perceber "quando usar o quê" e "porque pode ficar lento".
+> Introduzir estruturas dinâmicas de dados e a noção de complexidade de forma conceptual, usando ideias já estudadas sobre objetos, referências, crescimento dinâmico e organização de dados.
 
 ---
 
-**Pré-requisitos:** [`03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`](03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md)
-
 ## Índice
 
-- [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
+- [0. O que vais aprender](#0-o-que-vais-aprender)
 - [1. Estruturas estáticas vs dinâmicas](#1-estruturas-estáticas-vs-dinâmicas)
 - [2. Pilha (Stack)](#2-pilha-stack)
 - [3. Fila (Queue)](#3-fila-queue)
@@ -26,14 +24,25 @@
 
 ---
 
-## 0. Como usar este ficheiro
+## 0. O que vais aprender
 
-Este ficheiro é teórico.  
+As estruturas de dados são formas de organizar informação para resolver problemas.
+
+Neste anexo vamos usar ideias como objetos, referências, listas, crescimento dinâmico e organização de dados para perceber como diferentes estruturas guardam e procuram informação.
+
 O objetivo não é "decorar fórmulas", mas sim:
 
 - perceber comportamento das estruturas;
 - compreender impacto de escolhas no desempenho;
 - desenvolver raciocínio para futuros exercícios/projetos.
+
+Sempre que aparecerem nós, listas ligadas, árvores ou dicionários, lembra-te do modelo do módulo `04`:
+
+```text
+nome -> referência -> objeto
+```
+
+Muitas estruturas dinâmicas são, no fundo, formas organizadas de ligar objetos através de referências.
 
 ---
 
@@ -65,13 +74,15 @@ Ou seja:
 
 Isto explica porque a `list` é tão usada.
 
+Ligação ao módulo `04`: quando uma lista cresce, o Python está a gerir objetos e referências por ti. Tu escreves `append`, mas por baixo existe gestão de memória feita pelo runtime.
+
 ---
 
 ## 2. Pilha (Stack)
 
 Regra principal: **LIFO** (Last In, First Out).
 
-> Nota: no Módulo 04 falámos de call stack/stack frames (execução). Aqui "pilha/stack" é a estrutura de dados. Mesma ideia LIFO, contextos diferentes.
+> Nota: no módulo 03 falámos de call stack/stack frames (execução). Aqui "pilha/stack" é a estrutura de dados. Mesma ideia LIFO, contextos diferentes.
 
 Operações típicas:
 
@@ -177,6 +188,8 @@ Nota: tal como na pilha, pesquisar não é a operação de foco da fila.
 ## 4. Lista ligada (Linked List)
 
 Numa lista ligada, os elementos (nós) estão ligados por referências.
+
+Esta é uma das ligações mais diretas ao módulo `04`: cada nó é um objeto e cada ligação para o próximo nó é uma referência.
 
 Cada nó costuma ter:
 
@@ -656,10 +669,7 @@ Legenda:
 - Árvores modelam hierarquia.
 - Dicionários são muito úteis para acesso por chave.
 - Big-O ajuda a antecipar desempenho quando os dados crescem.
-
----
-
-**A seguir:** [Rota de estudo recomendada](README.md#rota-de-estudo-recomendada)
+- Big-O não mede "segundos exatos" nem mede apenas memória; descreve a tendência de crescimento do custo, seja de tempo ou, quando indicado, de espaço.
 
 ---
 
@@ -667,4 +677,5 @@ Legenda:
 
 - **2026-02-24**: adicionada subsecção com gráficos Mermaid para as classes `O(1)`, `O(log n)`, `O(n)`, `O(n log n)` e `O(n^2)` em Big-O.
 - **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order, reforço pedagógico da complexidade, comparação `sort` vs BST, tabela de estruturas compostas e tabela-resumo de utilização.
-- **2026-02-04**: versão inicial do módulo 05.
+- **2026-02-04**: versão inicial sobre estruturas dinâmicas e complexidade.
+- **2026-05-22**: atualizado título para anexo A1 e adicionadas ligações explícitas a objetos e referências.

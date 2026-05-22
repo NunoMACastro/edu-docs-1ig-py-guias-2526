@@ -5,11 +5,9 @@
 
 ---
 
-**Pré-requisitos:** nenhum (início da rota recomendada).
-
 ## Índice
 
-- [1. Porque este módulo vem antes dos outros](#1-porque-este-módulo-vem-antes-dos-outros)
+- [1. Do hardware à memória](#1-do-hardware-à-memória)
 - [2. Do mundo físico ao digital](#2-do-mundo-físico-ao-digital)
 - [3. Transístor: o "interruptor inteligente"](#3-transístor-o-interruptor-inteligente)
 - [4. Portas lógicas: o primeiro nível de "pensamento"](#4-portas-lógicas-o-primeiro-nível-de-pensamento)
@@ -26,16 +24,18 @@
 
 ---
 
-## 1. Porque este módulo vem antes dos outros
+## 1. Do hardware à memória
 
-Sem esta base, vários conceitos parecem surgir "do nada":
+Para compreender memória em programação, é útil começar pelo nível físico e digital do computador.
+
+Vários conceitos importantes dependem desta base:
 
 - referência;
 - endereço de memória;
 - stack/heap;
 - garbage collection.
 
-Com esta base, tudo encaixa:
+Ao longo deste ficheiro vamos ligar estas ideias:
 
 - percebes onde os dados vivem;
 - como são lidos/escritos;
@@ -71,7 +71,7 @@ Com dois níveis bem separados, é muito mais fácil distinguir corretamente.
 Agora a tua pergunta-chave:  
 **"Ok, transístor é um interruptor. E depois?"**
 
-Excelente pergunta.
+Excelente pergunta. :)
 
 O transístor é um componente eletrónico que pode:
 
@@ -242,6 +242,8 @@ Tem partes com funções diferentes.
 
 ### ALU (Arithmetic Logic Unit)
 
+Aqui fica apenas a ideia curta. A explicação detalhada da ALU aparece no módulo [`05_do_python_a_execucao_real_so_cpu_isa_alu.md`](05_do_python_a_execucao_real_so_cpu_isa_alu.md), quando já tivermos contexto sobre CPU, ISA e execução real.
+
 Faz operações aritméticas e lógicas:
 
 - soma;
@@ -370,11 +372,8 @@ Esta é a fundação para entender memória e execução de programas nos próxi
 
 ---
 
-**A seguir:** [`01_memoria_do_computador_cache_primaria_secundaria.md`](01_memoria_do_computador_cache_primaria_secundaria.md)
-
----
-
 ## 14. Changelog
 
 - **2026-02-04**: versão inicial do módulo 00.
-- **2026-02-04**: reforço pedagógico com explicações de utilidade, portas lógicas, fluxo de leitura/escrita e ponte para Python.
+- **2026-02-04**: adicionadas explicações sobre utilidade, portas lógicas, leitura/escrita e ponte para Python.
+- **2026-05-22**: atualizada nota introdutória da ALU.

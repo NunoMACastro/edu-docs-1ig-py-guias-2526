@@ -1,28 +1,30 @@
-# Memória (10.º Ano) - 02 · RAM, ROM, Binário, Bytes e Endereços
+# Memória (10.º Ano) - 02 · Bits, Binário, Bytes e Endereços
 
 > **Objetivo deste ficheiro**  
-> Entender, com calma e sem saltos, os conceitos fundamentais de RAM e ROM, sistema binário, bytes, unidades de memória e noções básicas de endereçamento.
+> Entender, com calma e sem saltos, como a informação é representada em bits, como funciona o sistema binário, o que são bytes e porque os endereços são essenciais para localizar dados em memória.
 
 ---
 
-**Pré-requisitos:** [`01_memoria_do_computador_cache_primaria_secundaria.md`](01_memoria_do_computador_cache_primaria_secundaria.md)
-
 ## Índice
 
-- [1. RAM vs ROM (diferença essencial)](#1-ram-vs-rom-diferença-essencial)
+- [1. Recordação breve: RAM e ROM](#1-recordação-breve-ram-e-rom)
 - [2. O que é um bit? O que é um byte?](#2-o-que-é-um-bit-o-que-é-um-byte)
 - [3. Sistema binário (base 2)](#3-sistema-binário-base-2)
 - [4. Converter decimal para binário](#4-converter-decimal-para-binário)
 - [5. Converter binário para decimal](#5-converter-binário-para-decimal)
 - [6. Texto em código binário (noção inicial)](#6-texto-em-código-binário-noção-inicial)
-- [7. Endereço de memória (visão simples)](#7-endereço-de-memória-visão-simples)
+- [7. Endereço de memória](#7-endereço-de-memória)
 - [8. Exercícios de consolidação (binário)](#8-exercícios-de-consolidação-binário)
 - [9. Resumo final](#9-resumo-final)
 - [10. Changelog](#10-changelog)
 
 ---
 
-## 1. RAM vs ROM (diferença essencial)
+## 1. Recordação breve: RAM e ROM
+
+No módulo anterior vimos RAM e ROM com mais detalhe.
+
+Aqui vamos apenas recordar a diferença essencial, porque ela ajuda a perceber onde a informação vive quando falamos de bits e endereços.
 
 ### RAM (Random Access Memory)
 
@@ -36,6 +38,14 @@
 - memória de leitura usada para guardar informação essencial do sistema;
 - normalmente não volátil;
 - contém firmware/instruções base de arranque.
+
+Neste ficheiro, o foco já não é comparar tipos de memória. O foco é responder a estas perguntas:
+
+- Como representamos informação usando `0` e `1`?
+- O que é um byte?
+- Como convertemos números entre decimal e binário?
+- O que significa um endereço de memória?
+- Porque é que um nome em Python não deve ser pensado como uma "caixa" física?
 
 ---
 
@@ -279,6 +289,23 @@ Analogia:
 
 Sem endereço, o processador não sabe onde buscar o dado.
 
+Esta ponte é importante para o próximo módulo:
+
+```text
+endereço de memória
+-> ideia de localização
+-> referência
+-> nome em Python que aponta para um objeto
+```
+
+Quando escreveres:
+
+```python
+x = [10, 20, 30]
+```
+
+o nome `x` não é uma caixa que contém fisicamente a lista inteira. Para o nosso modelo mental, `x` é um nome que permite chegar ao objeto lista que vive em memória.
+
 ### 7.1 Binário (dados) vs binário (instruções)
 
 Neste ponto convém fixar uma distinção muito importante:
@@ -296,7 +323,7 @@ Exemplo didático:
 - uma sequência pode representar a letra `A` (dado);
 - outra sequência pode representar "somar valores" (instrução da CPU).
 
-Para aprofundar a ponte "binário -> código de máquina -> execução", consulta [`06_do_codigo_a_execucao_real_so_cpu_isa.md`](06_do_codigo_a_execucao_real_so_cpu_isa.md).
+Para aprofundar a ponte "binário -> código de máquina -> execução", consulta mais tarde [`05_do_python_a_execucao_real_so_cpu_isa_alu.md`](05_do_python_a_execucao_real_so_cpu_isa_alu.md).
 
 ---
 
@@ -397,13 +424,11 @@ Completa:
 - Binário usa base 2 e potências de 2.
 - Conversão decimal/binário é essencial para compreender memória.
 - Endereço de memória é a localização exata de um dado na RAM.
-
----
-
-**A seguir:** [`06_do_codigo_a_execucao_real_so_cpu_isa.md`](06_do_codigo_a_execucao_real_so_cpu_isa.md)
+- Em Python, esta ideia prepara o conceito de referência: nomes apontam para objetos.
 
 ---
 
 ## 10. Changelog
 
 - **2026-02-04**: versão inicial do módulo 02 com exercícios e resoluções.
+- **2026-05-22**: atualizado foco para bits, binário, bytes e endereços; RAM/ROM passou a recordação breve.

@@ -1,16 +1,14 @@
-# Memória (10.º Ano) - 06 · Do Código à Execução Real: SO, Kernel, CPU e ISA
+# Memória (10.º Ano) - 05 · Do Python à Execução Real: SO, CPU, ISA e ALU
 
 > **Objetivo deste ficheiro**  
-> Perceber, com calma e sem saltos, o caminho completo desde o código escrito por uma pessoa até à execução real no computador.
-> Vamos ligar código-fonte, compilador/interpretador, sistema operativo, kernel, loader, processo, ISA, código de máquina e CPU.
+> Perceber, com calma e sem saltos, como aquilo que escrevemos em Python se liga à execução real no computador.
+> Vamos ligar código-fonte, bytecode, interpretador, sistema operativo, kernel, loader, processo, ISA, código de máquina, CPU, ALU e compatibilidade entre processadores/sistemas operativos.
 
 ---
 
-**Pré-requisitos:** [`02_ram_rom_binario_bytes_enderecos.md`](02_ram_rom_binario_bytes_enderecos.md)
-
 ## Índice
 
-- [0. Como usar este ficheiro](#0-como-usar-este-ficheiro)
+- [0. O que vais aprender](#0-o-que-vais-aprender)
 - [1. Ideia principal: quem executa é sempre a CPU](#1-ideia-principal-quem-executa-é-sempre-a-cpu)
 - [2. O caminho geral: do código à execução](#2-o-caminho-geral-do-código-à-execução)
 - [3. Código-fonte, bytecode, assembly e código de máquina](#3-código-fonte-bytecode-assembly-e-código-de-máquina)
@@ -22,27 +20,31 @@
 - [9. Processo vs thread](#9-processo-vs-thread)
 - [10. Modo utilizador, modo kernel e chamadas de sistema](#10-modo-utilizador-modo-kernel-e-chamadas-de-sistema)
 - [11. Como a CPU processa uma instrução](#11-como-a-cpu-processa-uma-instrução)
-- [12. Mini tabela ISA (nível introdutório)](#12-mini-tabela-isa-nível-introdutório)
-- [13. Exemplo: executar um programa simples](#13-exemplo-executar-um-programa-simples)
-- [14. Exemplo: executar Python](#14-exemplo-executar-python)
-- [15. Caso real: abrir um programa](#15-caso-real-abrir-um-programa)
-- [16. Caso real: abrir, editar e guardar um ficheiro](#16-caso-real-abrir-editar-e-guardar-um-ficheiro)
-- [17. Erros comuns de interpretação](#17-erros-comuns-de-interpretação)
-- [18. O que isto muda no teu raciocínio de programador](#18-o-que-isto-muda-no-teu-raciocínio-de-programador)
-- [19. Resumo final](#19-resumo-final)
-- [20. Changelog](#20-changelog)
+- [12. A ALU em detalhe](#12-a-alu-em-detalhe)
+- [13. Processadores, fabricantes e arquiteturas](#13-processadores-fabricantes-e-arquiteturas)
+- [14. Sistemas operativos e compatibilidade](#14-sistemas-operativos-e-compatibilidade)
+- [15. Mini tabela ISA (nível introdutório)](#15-mini-tabela-isa-nível-introdutório)
+- [16. Exemplo: executar um programa simples](#16-exemplo-executar-um-programa-simples)
+- [17. Exemplo: executar Python](#17-exemplo-executar-python)
+- [18. Caso real: abrir um programa](#18-caso-real-abrir-um-programa)
+- [19. Caso real: abrir, editar e guardar um ficheiro](#19-caso-real-abrir-editar-e-guardar-um-ficheiro)
+- [20. Erros comuns de interpretação](#20-erros-comuns-de-interpretação)
+- [21. O que isto muda no teu raciocínio de programador](#21-o-que-isto-muda-no-teu-raciocínio-de-programador)
+- [22. Resumo final](#22-resumo-final)
+- [23. Changelog](#23-changelog)
 
 ---
 
-## 0. Como usar este ficheiro
+## 0. O que vais aprender
 
-Este módulo é de integração. Junta vários níveis:
+Este tema junta vários níveis que aparecem quando um programa passa do código escrito por uma pessoa para execução real no computador:
 
 - linguagem de programação;
 - ficheiros no disco;
 - sistema operativo;
 - memória;
 - CPU;
+- ALU;
 - ISA;
 - código de máquina.
 
@@ -799,7 +801,458 @@ Para este módulo, fica com a ideia:
 
 ---
 
-## 12. Mini tabela ISA (nível introdutório)
+## 12. A ALU em detalhe
+
+ALU significa **Arithmetic Logic Unit**.
+
+Em português, podemos traduzir como **Unidade Aritmética e Lógica**.
+
+É uma parte da CPU responsável por executar operações como:
+
+- somar;
+- subtrair;
+- comparar;
+- aplicar operações lógicas;
+- aplicar operações bit a bit.
+
+Mas atenção a uma ideia muito importante:
+
+> A ALU não "pensa" como uma pessoa. A ALU recebe bits, aplica circuitos lógicos e produz bits.
+
+Quando escreves:
+
+```python
+resultado = 5 + 3
+```
+
+tu pensas em números, variáveis e significado.
+
+Num nível muito mais baixo, o computador trabalha com representações em bits:
+
+```text
+5  -> 0101
+3  -> 0011
+8  -> 1000
+```
+
+Na realidade, os processadores modernos usam muitos mais bits, como 32 ou 64 bits, mas este exemplo pequeno ajuda a visualizar.
+
+### 12.1 Onde a ALU encaixa dentro da CPU
+
+A CPU tem várias partes. Para este nível, pensa nestas quatro:
+
+- **unidade de controlo**: coordena o que deve acontecer;
+- **registos**: pequenas memórias muito rápidas dentro da CPU;
+- **ALU**: faz operações aritméticas e lógicas;
+- **cache**: guarda dados/instruções usados com frequência para reduzir esperas.
+
+Esquema simplificado:
+
+```text
+                  CPU
+┌─────────────────────────────────────┐
+│                                     │
+│  Unidade de controlo                │
+│        │                            │
+│        ▼                            │
+│  Registos ───► ALU ───► Registos    │
+│        ▲        │                   │
+│        │        └──► Flags/estado   │
+│        │                            │
+│      Cache                          │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+A unidade de controlo não faz a soma. A ALU também não decide sozinha o que fazer. O processo simplificado é:
+
+1. a CPU busca uma instrução;
+2. a CPU descodifica essa instrução segundo a ISA;
+3. a unidade de controlo percebe que operação é necessária;
+4. os valores são colocados em registos;
+5. a ALU recebe esses valores;
+6. a ALU calcula;
+7. o resultado volta para um registo;
+8. algumas flags podem ser atualizadas.
+
+### 12.2 Exemplo obrigatório: soma
+
+Código humano:
+
+```text
+resultado = 5 + 3
+```
+
+Modelo simplificado:
+
+```text
+5 está num registo
+3 está noutro registo
+a unidade de controlo pede ADD
+a ALU soma os bits
+o resultado 8 fica num registo
+```
+
+Esquema:
+
+```text
+Registo A ─┐
+           ├──> ALU ───> Resultado
+Registo B ─┘        │
+                    └──> Flags: zero, carry, overflow, negative
+```
+
+Outro esquema, agora ligado à instrução:
+
+```text
+Instrução ADD
+-> unidade de controlo descodifica
+-> seleciona operação da ALU
+-> envia valores dos registos
+-> ALU calcula
+-> resultado volta para registo
+```
+
+A ALU não sabe que isto veio de uma variável chamada `resultado`. Também não sabe que o aluno queria "somar dois números". Ela apenas recebe sinais elétricos/bits e produz outros sinais elétricos/bits.
+
+### 12.3 Operações aritméticas
+
+Operações aritméticas são operações sobre números.
+
+Exemplos:
+
+| Operação | Ideia | Exemplo conceptual |
+| -------- | ----- | ------------------ |
+| `ADD`    | somar | `5 + 3`            |
+| `SUB`    | subtrair | `10 - 4`        |
+| incremento | aumentar 1 | contador + 1 |
+| decremento | diminuir 1 | contador - 1 |
+
+Nem todas as CPUs expõem exatamente as mesmas instruções com os mesmos nomes, mas a ideia é esta:
+
+> a ISA define instruções; a CPU descodifica; a ALU executa a operação aritmética quando necessário.
+
+### 12.4 Operações lógicas
+
+Operações lógicas trabalham com verdadeiro/falso ou com bits.
+
+Exemplos conceptuais:
+
+| Operação | Ideia |
+| -------- | ----- |
+| `AND` | verdadeiro se ambos forem verdadeiros |
+| `OR` | verdadeiro se pelo menos um for verdadeiro |
+| `NOT` | inverte |
+| `XOR` | verdadeiro se forem diferentes |
+
+Em baixo nível, estas operações podem ser aplicadas bit a bit.
+
+Exemplo:
+
+```text
+  1100
+AND 1010
+  ----
+  1000
+```
+
+Isto parece estranho no início, mas é a mesma base das portas lógicas estudadas no módulo `00`.
+
+### 12.5 Exemplo obrigatório: comparação
+
+Agora imagina este código:
+
+```python
+if idade >= 18:
+    print("Maior de idade")
+```
+
+Para uma pessoa, isto significa:
+
+> se a idade for pelo menos 18, escreve uma mensagem.
+
+Mas a CPU não entende "maior de idade".
+
+Num modelo simplificado, acontece algo deste género:
+
+1. o valor de `idade` chega a um registo;
+2. o valor `18` chega a outro registo ou aparece como valor imediato;
+3. a CPU executa uma instrução conceptual de comparação, como `CMP`;
+4. a ALU compara os valores;
+5. a CPU atualiza flags;
+6. uma instrução de salto condicional decide se o bloco do `if` deve ser executado.
+
+Esquema:
+
+```text
+idade ─────┐
+           ├──> ALU compara ───> flags
+18 ────────┘
+                              │
+                              ▼
+                    salto condicional
+```
+
+As flags são pequenos sinais internos que registam informação sobre o resultado.
+
+Exemplos de flags:
+
+- **zero flag**: indica se o resultado foi zero;
+- **carry flag**: pode indicar transporte numa operação aritmética;
+- **overflow flag**: indica estouro numérico em certos contextos;
+- **negative/sign flag**: indica sinal negativo em certas representações.
+
+Não é necessário decorar todos estes detalhes. O essencial é perceber:
+
+> Comparar também é uma operação concreta sobre bits. O `if` de alto nível depende, no fundo, de comparações, flags e saltos.
+
+### 12.6 ALU, FPU e unidades modernas
+
+A ALU não é a única unidade de execução numa CPU moderna.
+
+Muitas CPUs também têm:
+
+- **FPU** (*Floating Point Unit*): especializada em números reais/decimais aproximados, como `3.14`;
+- **unidades SIMD/vectoriais**: conseguem aplicar operações parecidas a vários dados ao mesmo tempo;
+- unidades especializadas para carregamento/escrita de memória;
+- mecanismos internos muito avançados para executar instruções de forma eficiente.
+
+Para o 10.º ano, o modelo principal deve ficar assim:
+
+```text
+Unidade de controlo decide
+-> registos fornecem valores
+-> ALU calcula/compara quando a operação é aritmética ou lógica
+-> resultado/flags atualizam o estado da CPU
+```
+
+### 12.7 O erro comum sobre a ALU
+
+Erro:
+
+> "A ALU é o cérebro do computador."
+
+Correção:
+
+> A ALU é uma parte importante da CPU, mas não é a CPU inteira. Ela calcula e compara. A unidade de controlo coordena, os registos guardam valores imediatos, a cache aproxima dados da CPU, e o sistema completo envolve memória, sistema operativo e muitos outros componentes.
+
+---
+
+## 13. Processadores, fabricantes e arquiteturas
+
+Nesta altura é normal surgirem perguntas como:
+
+```text
+Intel, AMD e Apple são todos processadores?
+Windows corre em qualquer um?
+Porque alguns programas têm versão para Intel e Apple Silicon?
+```
+
+Vamos separar conceitos.
+
+### 13.1 Fabricante não é exatamente o mesmo que arquitetura
+
+**Intel**, **AMD**, **Apple**, **Qualcomm** e **MediaTek** são nomes associados a empresas/famílias de processadores.
+
+Mas quando falamos de compatibilidade de programas, uma pergunta fundamental é:
+
+> Que ISA/arquitetura este processador usa?
+
+A ISA define o conjunto de instruções que a CPU consegue executar diretamente.
+
+Exemplos importantes:
+
+- **x86-64**: comum em muitos PCs Windows, Linux e Macs Intel antigos;
+- **ARM64**: comum em smartphones, tablets e Macs recentes com Apple Silicon;
+- **RISC-V**: arquitetura aberta usada em ensino, investigação e alguns sistemas.
+
+Tabela simplificada:
+
+| Fabricante / família | Exemplo | ISA comum | Onde aparece |
+| -------------------- | ------- | --------- | ------------ |
+| Intel | Core i5/i7/i9 | x86-64 | PCs Windows, Linux, Macs antigos |
+| AMD | Ryzen | x86-64 | PCs Windows, Linux |
+| Apple | M1/M2/M3/M4 | ARM64 | Macs recentes |
+| Qualcomm/MediaTek | Snapdragon/etc. | ARM64 | smartphones, tablets, alguns PCs |
+
+### 13.2 Intel vs AMD
+
+Quando alguém compara Intel e AMD em computadores pessoais, muitas vezes está a comparar fabricantes diferentes que usam a mesma família principal de ISA: **x86-64**.
+
+Isto significa que, em muitos casos:
+
+- um programa compilado para Windows x86-64 pode correr num PC com CPU Intel;
+- o mesmo programa pode correr num PC com CPU AMD;
+- desde que o sistema operativo e as bibliotecas necessárias sejam compatíveis.
+
+Claro que os processadores podem ter diferenças internas de desempenho, consumo, cache, número de núcleos, extensões e geração. Mas a compatibilidade base existe porque a ISA é comum.
+
+### 13.3 Intel Mac vs Apple Silicon Mac
+
+Nos Macs antigos, a Apple usou processadores Intel x86-64.
+
+Nos Macs recentes, a Apple usa Apple Silicon, como M1, M2, M3 e M4, baseados em ARM64.
+
+Aqui a mudança é maior, porque não é apenas trocar fabricante mantendo a mesma ISA principal. Há uma mudança de arquitetura:
+
+```text
+Mac antigo: Intel -> x86-64
+Mac recente: Apple Silicon -> ARM64
+```
+
+Consequência:
+
+> código de máquina x86-64 não é automaticamente código de máquina ARM64.
+
+Por isso, alguns programas precisam de versões diferentes:
+
+- versão para Intel/x86-64;
+- versão para Apple Silicon/ARM64;
+- versão universal, quando o fabricante inclui suporte para ambas.
+
+No macOS existe também uma tecnologia chamada **Rosetta 2**, que ajuda muitos programas x86-64 a correr em Apple Silicon através de tradução. Mas isso não muda a ideia base:
+
+> x86-64 e ARM64 são ISAs diferentes.
+
+### 13.4 E Python no meio disto?
+
+Python ajuda a esconder parte desta complexidade.
+
+Um ficheiro Python pode ser o mesmo:
+
+```python
+print("Olá")
+```
+
+Mas o interpretador Python instalado tem de ser adequado à plataforma:
+
+```text
+ficheiro .py
+-> interpretador Python para Windows x86-64
+-> ou interpretador Python para macOS ARM64
+-> ou interpretador Python para Linux x86-64
+```
+
+O teu código Python é portável até certo ponto, mas a execução real continua a depender de:
+
+- sistema operativo;
+- arquitetura/ISA;
+- versão do Python;
+- bibliotecas usadas;
+- permissões e recursos disponíveis.
+
+---
+
+## 14. Sistemas operativos e compatibilidade
+
+O sistema operativo é o software que gere o computador enquanto os programas correm.
+
+Exemplos:
+
+- Windows;
+- macOS;
+- Linux.
+
+O sistema operativo gere:
+
+- processos;
+- memória;
+- ficheiros;
+- permissões;
+- drivers;
+- entrada/saída;
+- rede;
+- dispositivos;
+- escalonamento da CPU.
+
+### 14.1 O mesmo processador pode correr sistemas diferentes?
+
+Às vezes, sim.
+
+Por exemplo, muitos PCs x86-64 podem correr:
+
+- Windows;
+- várias distribuições Linux;
+- outros sistemas, se houver suporte.
+
+Mas isto depende de drivers, firmware, compatibilidade e suporte do sistema operativo.
+
+### 14.2 O mesmo sistema operativo pode existir para arquiteturas diferentes?
+
+Também sim.
+
+Exemplos:
+
+- Windows existe principalmente em x86-64 e também tem versões ARM64;
+- macOS atual corre em Apple Silicon ARM64;
+- versões antigas de macOS correram em Intel x86-64;
+- Linux existe para muitas arquiteturas, incluindo x86-64, ARM64 e outras.
+
+Isto mostra que "Windows", "macOS" ou "Linux" não são a mesma coisa que "Intel", "AMD" ou "Apple Silicon".
+
+São níveis diferentes:
+
+```text
+Sistema operativo: Windows / macOS / Linux
+Processador/família: Intel / AMD / Apple / Qualcomm
+ISA/arquitetura: x86-64 / ARM64 / RISC-V
+```
+
+### 14.3 Três níveis de compatibilidade
+
+Uma aplicação depende, pelo menos, de três níveis:
+
+1. **sistema operativo**;
+2. **arquitetura/ISA**;
+3. **bibliotecas/runtime**.
+
+Exemplo obrigatório:
+
+```text
+Um programa Windows x86-64 não corre diretamente num Mac Apple Silicon só porque ambos são computadores.
+Há diferenças de sistema operativo e de ISA.
+```
+
+Outro exemplo obrigatório:
+
+```text
+Um ficheiro Python pode ser o mesmo em Windows, macOS e Linux.
+Mas cada sistema precisa de um interpretador Python adequado ao seu sistema operativo e processador.
+```
+
+Esquema:
+
+```text
+Código Python (.py)
+        │
+        ▼
+Interpretador Python para aquele SO + arquitetura
+        │
+        ▼
+Código de máquina compatível com a ISA da CPU
+        │
+        ▼
+CPU executa instruções
+```
+
+### 14.4 Porque isto interessa a um programador?
+
+Mesmo que estejas a escrever Python, convém saber isto porque:
+
+- algumas bibliotecas têm partes nativas compiladas;
+- instalar pacotes pode depender do sistema operativo;
+- certas bibliotecas têm versões diferentes para Windows/macOS/Linux;
+- programas que usam ficheiros, rede, janelas ou hardware dependem do sistema;
+- desempenho pode mudar entre arquiteturas;
+- erros de instalação muitas vezes são erros de compatibilidade.
+
+Frase de resumo:
+
+> O código que escreves pode parecer igual, mas a execução real depende do interpretador, do sistema operativo e da CPU que existe por baixo.
+
+---
+
+## 15. Mini tabela ISA (nível introdutório)
 
 > Isto é conceptual. Não é para decorar assembly.
 
@@ -821,7 +1274,7 @@ O que interessa perceber:
 
 ---
 
-## 13. Exemplo: executar um programa simples
+## 16. Exemplo: executar um programa simples
 
 Imagina este código numa linguagem compilada:
 
@@ -882,7 +1335,7 @@ A CPU:
 
 ---
 
-## 14. Exemplo: executar Python
+## 17. Exemplo: executar Python
 
 Agora vamos usar Python, porque é o contexto mais próximo destes materiais.
 
@@ -949,7 +1402,7 @@ Por isso:
 
 ---
 
-## 15. Caso real: abrir um programa
+## 18. Caso real: abrir um programa
 
 Exemplo: abrir um editor de texto.
 
@@ -974,7 +1427,7 @@ Repara no detalhe:
 
 ---
 
-## 16. Caso real: abrir, editar e guardar um ficheiro
+## 19. Caso real: abrir, editar e guardar um ficheiro
 
 Exemplo: abrir e editar `trabalho.docx`.
 
@@ -1029,7 +1482,7 @@ Só depois de uma escrita bem-sucedida é que existe persistência real no armaz
 
 ---
 
-## 17. Erros comuns de interpretação
+## 20. Erros comuns de interpretação
 
 ### Erro 1: "A ISA converte instruções"
 
@@ -1092,7 +1545,7 @@ O kernel também é software compilado para código de máquina. A CPU executa i
 
 ---
 
-## 18. O que isto muda no teu raciocínio de programador
+## 21. O que isto muda no teu raciocínio de programador
 
 Compreender este percurso ajuda-te a perceber que linguagens de alto nível são camadas de abstração.
 
@@ -1129,7 +1582,7 @@ Mas ajuda-te a entender:
 
 ---
 
-## 19. Resumo final
+## 22. Resumo final
 
 - Código-fonte é escrito por humanos.
 - A CPU não executa código-fonte diretamente.
@@ -1143,6 +1596,10 @@ Mas ajuda-te a entender:
 - O loader prepara o programa para execução.
 - A CPU executa o ciclo `fetch -> decode -> execute`.
 - No `decode`, a CPU interpreta os bits da instrução segundo a ISA.
+- A ALU executa operações aritméticas e lógicas, como somas, comparações e operações bit a bit.
+- Intel, AMD, Apple Silicon e outros processadores podem ter diferenças de fabricante, arquitetura e ISA.
+- Windows, macOS e Linux são sistemas operativos; não são a mesma coisa que a arquitetura do processador.
+- Uma aplicação depende de compatibilidade entre sistema operativo, ISA/arquitetura e bibliotecas/runtime.
 - Programas normais correm em modo utilizador.
 - Operações sensíveis são pedidas ao kernel através de chamadas de sistema.
 - Em Python, a CPU executa o interpretador; o interpretador executa o bytecode Python.
@@ -1153,11 +1610,8 @@ Frase final para decorar:
 
 ---
 
-**A seguir:** [`04_heap_stack_frames_e_execucao_python.md`](04_heap_stack_frames_e_execucao_python.md)
+## 23. Changelog
 
----
-
-## 20. Changelog
-
-- **2026-02-04**: versão inicial do módulo 06 (execução real, SO, CPU, ISA e ficheiros).
+- **2026-02-04**: versão inicial sobre execução real, SO, CPU, ISA e ficheiros.
 - **2026-05-19**: clarificada a diferença entre ISA, código de máquina, CPU, SO e kernel; adicionadas explicações sobre syscalls, modos de execução e correção explícita da ideia de que "a ISA converte instruções".
+- **2026-05-22**: acrescentadas secções sobre ALU, famílias de processadores, arquiteturas e compatibilidade entre sistemas operativos.

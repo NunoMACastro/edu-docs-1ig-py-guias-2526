@@ -1,22 +1,21 @@
-# Memória (10.º Ano) - 04 · Heap, Stack, Frames e Execução de Código Python (v2)
+# Memória (10.º Ano) - 03 · Heap, Stack, Frames e Execução de Código Python
 
 > **Objetivo deste ficheiro**  
-> Entender, passo a passo, como um programa Python é preparado e executado, onde vivem os dados durante a execução (**stack** e **heap**), e o que acontece em chamadas de função, retorno e recursão.  
+> Entender, passo a passo, como um programa Python usa memória durante a execução: onde vivem os dados (**heap**), onde ficam os contextos das funções (**stack/frames**) e o que acontece em chamadas de função, retorno e recursão.  
 > No fim, deves conseguir “ver” mentalmente o que está a acontecer quando o teu código corre — e usar isso para **depurar erros** com mais confiança.
 
 ---
 
-**Pré-requisitos:** [`06_do_codigo_a_execucao_real_so_cpu_isa.md`](06_do_codigo_a_execucao_real_so_cpu_isa.md)
-
 ## Índice
 
+- [0. Da memória ao Python](#0-da-memória-ao-python)
 - [1. O mapa geral: processo, código, stack e heap](#1-o-mapa-geral-processo-código-stack-e-heap)
 - [2. O que realmente acontece quando corres um `.py`](#2-o-que-realmente-acontece-quando-corres-um-py)
 - [3. Compilar vs interpretar](#3-compilar-vs-interpretar)
 - [4. Python: modelo híbrido (fonte -> bytecode -> execução)](#4-python-modelo-híbrido-fonte---bytecode---execução)
 - [5. Bytecode e pasta `__pycache__`](#5-bytecode-e-pasta-__pycache__)
 - [6. PVM: o "motor" de execução do Python](#6-pvm-o-motor-de-execução-do-python)
-- [7. ISA (Instruction Set Architecture)](#7-isa-instruction-set-architecture)
+- [7. Ponte curta: ISA, CPU real e sistema operativo](#7-ponte-curta-isa-cpu-real-e-sistema-operativo)
 - [8. Diagrama sobre todo o processo usando Python](#8-diagrama-sobre-todo-o-processo-usando-python)
 - [9. Memória de execução: stack vs heap (versão mais detalhada)](#9-memória-de-execução-stack-vs-heap-versão-mais-detalhada)
 - [10. Stack frames: o que um frame contém (versão mais detalhada)](#10-stack-frames-o-que-um-frame-contém-versão-mais-detalhada)
@@ -30,6 +29,32 @@
 - [18. Exercícios de consolidação](#18-exercícios-de-consolidação)
 - [19. Resumo final](#19-resumo-final)
 - [20. Changelog](#20-changelog)
+
+---
+
+## 0. Da memória ao Python
+
+Um programa Python também precisa de memória para correr.
+
+Antes de olharmos para código concreto, fixa estas ideias:
+
+- o computador representa informação em bits;
+- existem vários tipos de memória;
+- dados e instruções podem estar guardados em posições/endereço de memória;
+- durante a execução, Python cria objetos, chama funções e mantém estado temporário.
+
+Neste ficheiro, o foco está no que acontece quando um programa Python está a correr:
+
+```text
+quando corro Python
+-> que processo é criado?
+-> onde ficam os objetos?
+-> o que acontece quando chamo uma função?
+-> porque uma lista pode continuar viva depois de uma função terminar?
+-> como o traceback mostra a stack?
+```
+
+Esta visão ajuda a transformar código aparentemente abstrato em algo que conseguimos desenhar: nomes, referências, objetos, frames, stack e heap.
 
 ---
 
@@ -211,7 +236,11 @@ Analogia simples:
 
 ---
 
-## 7. ISA (Instruction Set Architecture)
+## 7. Ponte curta: ISA, CPU real e sistema operativo
+
+Para compreender stack, heap e frames em Python, convém guardar uma ideia correta sobre a execução real:
+
+> Python não é executado diretamente pela CPU como texto `.py`. A CPU executa o interpretador Python, e o interpretador executa o bytecode Python.
 
 A ISA é o conjunto de instruções de máquina que uma família de CPUs consegue executar diretamente.
 
@@ -1030,7 +1059,7 @@ O frame de `criar` desaparece, mas a lista continua porque `z` aponta para ela.
 - um objeto vive enquanto houver **referências** para ele;
 - se ficar sem referências, torna-se elegível para limpeza (contagem de referências + GC).
 
-> Nota: aqui a ligação é ao mapa stack/heap/frames; os detalhes de refcount e ciclos estão no Módulo 03.
+> Nota: aqui a ligação é ao mapa stack/heap/frames; os detalhes de refcount e ciclos estão no módulo 04.
 
 ---
 
@@ -1216,12 +1245,9 @@ Responde:
 
 ---
 
-**A seguir:** [`03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md`](03_gestao_de_memoria_em_python_referencias_mutabilidade_gc.md)
-
----
-
 ## 20. Changelog
 
 - **2026-02-04**: versão inicial do módulo 04.
 - **2026-02-05**: v2 (mapa mental + observação com ferramentas + debug + exercícios).
 - **2026-05-19**: corrigida a explicação sobre bytecode, ISA, CPU e sistema operativo; substituído o exemplo que parecia assembly por bytecode Python conceptual.
+- **2026-05-22**: atualizado título e adicionada abertura sobre memória e execução de Python.
