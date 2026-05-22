@@ -245,6 +245,7 @@ Cada nó (na versão binária):
 - nó filho;
 - folha (nó sem filhos);
 - subárvore.
+- BST (Binary Search Tree): árvore binária com propriedade de ordenação (filho esquerdo < pai < filho direito).
 
 ### Aplicações
 
