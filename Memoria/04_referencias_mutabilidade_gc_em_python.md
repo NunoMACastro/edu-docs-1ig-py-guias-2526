@@ -8,7 +8,7 @@
 ## Índice
 
 - [1. Ideia principal: Python gere memória automaticamente](#1-ideia-principal-python-gere-memória-automaticamente)
-- [2. Variável não é "caixa de valor" em Python](#2-variável-não-é-caixa-de-valor-em-python)
+- [2. O que é uma variável em Python](#2-variável-não-é-caixa-de-valor-em-python)
 - [3. Referências na prática](#3-referências-na-prática)
 - [4. Mutável vs imutável](#4-mutável-vs-imutável)
 - [5. Cópia, alias e efeitos laterais](#5-cópia-alias-e-efeitos-laterais)
@@ -68,7 +68,7 @@ Essa remoção automática acontece através de mecanismos como:
 
 ---
 
-## 2. Variável não é "caixa de valor" em Python
+## 2. O que é uma variável em Python
 
 Em Python, uma variável é **um nome que aponta para um objeto na memória**.
 Pensa num "rótulo" que referencia um objeto. Exemplo: `python x = 10 ` Aqui, `x` é um nome que aponta para o objeto inteiro `10` na memória.
