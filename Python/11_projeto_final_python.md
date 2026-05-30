@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Projeto Final (10.º IG) - Jogo de Perguntas (Quiz) em Python
 
 **Duração:** 2–3 semanas  
@@ -328,3 +330,5 @@ Entregar o link do repositório GitHub com:
 ### Entrega do projeto final
 
 Todos os ficheiros e o md de planificação devem ser entregues via Guithub até à data definida pelo professor.
+
+![Footer](../Images/Footer.png)

@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Anexo A1 · Estruturas Dinâmicas e Complexidade (Big-O)
 
 > **Objetivo deste ficheiro**  
@@ -679,3 +681,5 @@ Legenda:
 - **2026-02-23**: adicionados esquemas (ASCII), exemplos de inserção/pesquisa, passo a passo de inserção de lista não ordenada em BST, ordenação in-order, reforço pedagógico da complexidade, comparação `sort` vs BST, tabela de estruturas compostas e tabela-resumo de utilização.
 - **2026-02-04**: versão inicial sobre estruturas dinâmicas e complexidade.
 - **2026-05-22**: atualizado título para anexo A1 e adicionadas ligações explícitas a objetos e referências.
+
+![Footer](../Images/Footer.png)

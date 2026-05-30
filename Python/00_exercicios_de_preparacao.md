@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Python (10.º Ano) - 00 · Exercicios de preparação
 
 > **Objetivo deste ficheiro**  
@@ -475,3 +477,5 @@ resultado = contar_vogais(texto)
 
 print(f"Número de vogais: {resultado}")
 ```
+
+![Footer](../Images/Footer.png)

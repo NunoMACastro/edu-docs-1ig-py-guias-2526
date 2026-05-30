@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Formulário de Apoio · Python (10.º Ano)
 
 > Ficha de consulta rápida para testes.
@@ -345,3 +347,5 @@ rd.shuffle(nums)  # altera a lista no local
 - Mantém registos (JSON/CSV) atualizados e consistentes ao longo da execução.
 
 Boa preparação!
+
+![Footer](../Images/Footer.png)

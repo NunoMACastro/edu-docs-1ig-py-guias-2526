@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Memória (10.º Ano) - 03 · Heap, Stack, Frames e Execução de Código Python
 
 > **Objetivo deste ficheiro**  
@@ -1251,3 +1253,5 @@ Responde:
 - **2026-02-05**: v2 (mapa mental + observação com ferramentas + debug + exercícios).
 - **2026-05-19**: corrigida a explicação sobre bytecode, ISA, CPU e sistema operativo; substituído o exemplo que parecia assembly por bytecode Python conceptual.
 - **2026-05-22**: atualizado título e adicionada abertura sobre memória e execução de Python.
+
+![Footer](../Images/Footer.png)

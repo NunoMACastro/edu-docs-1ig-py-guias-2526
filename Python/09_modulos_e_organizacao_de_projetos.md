@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Python (10.º Ano) - 09 · Módulos e Organização de Projetos
 
 > **Objetivo deste ficheiro**  
@@ -419,3 +421,5 @@ Objetivo: um mini gestor de tarefas simples (adicionar, listar, remover).
 ## 10) Changelog
 
 -   `Data a definir` · Criação inicial do ficheiro com introdução a módulos, imports e organização de projetos.
+
+![Footer](../Images/Footer.png)

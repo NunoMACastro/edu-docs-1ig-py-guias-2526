@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Memória (10.º Ano) - 05 · Do Python à Execução Real: SO, CPU, ISA e ALU
 
 > **Objetivo deste ficheiro**  
@@ -1615,3 +1617,5 @@ Frase final para decorar:
 - **2026-02-04**: versão inicial sobre execução real, SO, CPU, ISA e ficheiros.
 - **2026-05-19**: clarificada a diferença entre ISA, código de máquina, CPU, SO e kernel; adicionadas explicações sobre syscalls, modos de execução e correção explícita da ideia de que "a ISA converte instruções".
 - **2026-05-22**: acrescentadas secções sobre ALU, famílias de processadores, arquiteturas e compatibilidade entre sistemas operativos.
+
+![Footer](../Images/Footer.png)

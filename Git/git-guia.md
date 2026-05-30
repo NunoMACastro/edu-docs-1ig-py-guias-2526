@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Guia Completo de Comandos Git (10.º ao 12.º Ano)
 
 > **Objetivo:**  
@@ -363,3 +365,5 @@ git push origin ficha6
 > ```bash
 > git checkout -b ficha6
 > ```
+
+![Footer](../Images/Footer.png)

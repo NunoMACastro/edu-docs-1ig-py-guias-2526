@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Memória (10.º Ano) - 00 · Fundamentos: Hardware, Bits, CPU e Endereços de Memória
 
 > **Objetivo deste ficheiro**  
@@ -377,3 +379,5 @@ Esta é a fundação para entender memória e execução de programas nos próxi
 - **2026-02-04**: versão inicial do módulo 00.
 - **2026-02-04**: adicionadas explicações sobre utilidade, portas lógicas, leitura/escrita e ponte para Python.
 - **2026-05-22**: atualizada nota introdutória da ALU.
+
+![Footer](../Images/Footer.png)

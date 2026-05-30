@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Ficha de Exercicios - Preparacao (Python 10.º Ano)
 
 ## A) Escolha multipla (4 perguntas)
@@ -72,3 +74,5 @@ D) `with open("ficheiro.txt", "x") as f:`
 - Organiza o programa em funcoes.
 
 > A resolução deve ser entregue ao professor no final da aula.
+
+![Footer](../Images/Footer.png)

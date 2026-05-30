@@ -1,3 +1,5 @@
+![Header](Images/Header.png)
+
 # Projeto de Recuperação do Módulo 1 - 2025/2026
 
 Realiza um trabalho de investigação, no formato que preferires (`PowerPoint`, `Word`, manuscrito, etc.), sobre os seguintes conceitos:
@@ -20,3 +22,5 @@ Depois de terminado, o trabalho deve ser enviado por e-mail para o professor: `n
 > - Conhecimentos adquiridos pelos alunos: 40%
 
 O trabalho será apresentado e explicado ao professor numa data a indicar.
+
+![Footer](Images/Footer.png)

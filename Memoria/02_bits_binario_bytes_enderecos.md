@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Memória (10.º Ano) - 02 · Bits, Binário, Bytes e Endereços
 
 > **Objetivo deste ficheiro**  
@@ -432,3 +434,5 @@ Completa:
 
 - **2026-02-04**: versão inicial do módulo 02 com exercícios e resoluções.
 - **2026-05-22**: atualizado foco para bits, binário, bytes e endereços; RAM/ROM passou a recordação breve.
+
+![Footer](../Images/Footer.png)

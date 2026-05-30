@@ -1,3 +1,5 @@
+![Header](../../Images/Header.png)
+
 # Quiz intermédio 02 - Compilar e interpretar código e o papel do bytecode em Python
 
 ## 1. Descreve, por palavras tuas e da forma mais detalhada que conseguires, o que é compilar e interpretar código, e qual a diferença entre ambos os processos.
@@ -13,3 +15,5 @@
 **Consulta:** `Memoria/03_heap_stack_frames_e_execucao_python.md`, capítulos 4, 5, 6, 7 e 8; `Memoria/05_do_python_a_execucao_real_so_cpu_isa_alu.md`, capítulos 2, 3 e 17.
 
 ### Data de entrega: 2024-05-19 até às 15:05
+
+![Footer](../../Images/Footer.png)

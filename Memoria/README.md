@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 [Voltar ao README principal](../README.md)
 
 # Memória · 10.º Ano (Informática de Gestão)
@@ -103,3 +105,5 @@ Este anexo pode ser estudado depois do módulo `04`, porque já usa referências
 - **2026-02-04**: Adicionado módulo `00` de fundamentos (hardware, CPU, RAM, endereços).
 - **2026-02-04**: Adicionado módulo `06` com a visão completa de execução real (SO, CPU, ISA e ficheiros).
 - **2026-05-22**: Reorganizada a pasta numa rota principal (`00` a `05`) e num anexo complementar `A1`; atualizada a narrativa pedagógica do módulo.
+
+![Footer](../Images/Footer.png)

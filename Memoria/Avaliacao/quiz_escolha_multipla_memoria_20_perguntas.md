@@ -1,3 +1,5 @@
+![Header](../../Images/Header.png)
+
 # Quiz de escolha múltipla - Memória e execução de programas
 
 ## Matéria incluída
@@ -166,3 +168,5 @@
 18. B
 19. A
 20. C
+
+![Footer](../../Images/Footer.png)

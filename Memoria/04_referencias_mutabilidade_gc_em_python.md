@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Memória (10.º Ano) - 04 · Referências, Mutabilidade e Garbage Collection em Python
 
 > **Objetivo deste ficheiro**  
@@ -410,3 +412,5 @@ No nível do sistema, o processo continua a depender de CPU, sistema operativo e
 
 - **2026-02-04**: versão inicial do módulo 03.
 - **2026-05-22**: adicionado esquema inicial sobre frame, referência e heap.
+
+![Footer](../Images/Footer.png)

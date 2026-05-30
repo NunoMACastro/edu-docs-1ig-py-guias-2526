@@ -1,3 +1,5 @@
+![Header](Images/Header.png)
+
 # Material de Apoio - Informática de Gestão
 
 Materiais de apoio para aulas de Informática de Gestão (10.º ano). O repositório
@@ -15,3 +17,5 @@ está dividido em quatro áreas principais: Python, Memória, Git e Markdown.
   stacks, com notas de boas práticas.
 - [Guia de Markdown](MarkDown/markdown-guia.md) - referência prática para
   escrever documentação e relatórios.
+
+![Footer](Images/Footer.png)

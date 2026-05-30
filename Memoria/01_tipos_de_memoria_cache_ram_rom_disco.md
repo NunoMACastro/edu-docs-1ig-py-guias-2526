@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Memória (10.º Ano) - 01 · Tipos de Memória: Cache, RAM, ROM e Disco
 
 > **Objetivo deste ficheiro**  
@@ -369,3 +371,5 @@ Para nível inicial, basta lembrares:
 
 - **2026-02-04**: versão inicial do módulo 01.
 - **2026-05-22**: adicionadas secções sobre RAM, ROM, hierarquia de memória e fluxo de dados.
+
+![Footer](../Images/Footer.png)

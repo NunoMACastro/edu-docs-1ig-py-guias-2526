@@ -1,3 +1,5 @@
+![Header](../../Images/Header.png)
+
 # Quiz intermédio 04 - Revisão geral: memória e execução de programas
 
 ## 1. Explica como um computador representa informação usando bits. Na tua resposta, inclui a ideia de dois estados físicos, transístores, portas lógicas, bits, bytes e exemplos de representação de números, texto e imagens.
@@ -44,3 +46,5 @@ print(c)
 ## 8. Explica o que acontece quando um programa é aberto e começa a executar no computador. Na tua resposta, inclui o papel do sistema operativo, kernel, loader, processo, thread, modo utilizador, modo kernel, chamadas de sistema, código de máquina, ISA e ciclo `fetch -> decode -> execute`.
 
 **Consulta:** `Memoria/05_do_python_a_execucao_real_so_cpu_isa_alu.md`, capítulos 1 a 11; `Memoria/00_fundamentos_hardware_bits_cpu_memoria.md`, capítulos 8, 9, 10 e 11.
+
+![Footer](../../Images/Footer.png)

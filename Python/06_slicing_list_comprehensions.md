@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Python (10.º Ano) - 06 · Slicing e List Comprehensions
 
 > **Objetivo deste ficheiro**  
@@ -752,3 +754,5 @@ Sugestão:
    -  Secções essenciais: revisão de sequências, índices, slicing básico, slicing em strings, introdução a list comprehensions e comprehensions com filtro.
    -  Secções extra: slicing com passo e índices negativos, comprehensions com `if/else`, outras comprehensions (sets, dicts, generators).
    -  Adicionados exercícios graduais (slicing básico, comprehensions, misto slicing+comprehension, desafios).
+
+![Footer](../Images/Footer.png)

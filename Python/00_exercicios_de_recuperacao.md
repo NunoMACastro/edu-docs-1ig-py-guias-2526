@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Python (10.º Ano) - 00 · Exercicios de recuperação
 
 > **Objetivo deste ficheiro**  
@@ -1477,3 +1479,5 @@ Cria um programa que:
 
 1. Tenha um módulo com uma função que receba uma lista de números e mostre o número máximo, mínimo e a média dos números da lista.
 2. Importe o módulo e chame a função para uma lista de 5 números pedidos ao utilizador.
+
+![Footer](../Images/Footer.png)

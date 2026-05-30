@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 # Python (10.º Ano) - 10 · Estruturas e Algoritmos Clássicos
 
 > **Objetivo deste ficheiro**  
@@ -376,3 +378,5 @@ Cria um programa que:
 ## 10) Changelog
 
 - `Data a definir` · Criação inicial do ficheiro com pesquisa linear, bubble/selection sort e eficiência básica.
+
+![Footer](../Images/Footer.png)

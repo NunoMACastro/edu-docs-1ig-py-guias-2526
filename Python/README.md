@@ -1,3 +1,5 @@
+![Header](../Images/Header.png)
+
 [Voltar ao README principal](../README.md)
 
 **Índice**
@@ -492,3 +494,5 @@ Para correr um exemplo:
     - botão de _Run_ do editor.
 
 ---
+
+![Footer](../Images/Footer.png)
