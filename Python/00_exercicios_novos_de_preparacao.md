@@ -1166,3 +1166,110 @@ print(relatorio)
 ```
 
 ![Footer](../Images/Footer.png)
+
+#### Exercício 33 - Gestor de despesas pessoais
+
+**Matéria:** [Funções](./04_funcoes_do_basico_ao_avancado.md), [Ficheiros JSON](./07_ficheiros_texto_json_csv.md), [Listas e dicionários](./03_listas_dicionarios_estruturas_aninhadas.md), [Seleção e repetição](./02_operadores_e_controlo_de_fluxo_if_ciclos.md)
+
+Vamos criar um programa para gerir as despesas pessoais que são guardadas num ficheiro json.
+
+As despesas devem ter o formato de lista de dicionários, em que cada elemento da lista é um dicionário com o seguinte formato:
+
+```json
+{
+    "descricao": "Almoço",
+    "categoria": "Alimentação",
+    "valor": 8.5
+}
+```
+
+O programa deve executar as seguintes funções:
+
+- Listar despesas
+- Adicionar despesas
+- Calcular o gasto total das despesas
+- Os dados devem ficar guardados.
+
+O programa deve ter um menu com as opções do género:
+
+```bash
+****** Despesas Pro Max ******
+
+1 - Listar todas as despesas
+2 - Adicionar nova despesa
+3 - Ver o total das despesas
+4 - Sair
+```
+
+> Resolução:
+
+```python
+
+import json
+
+def ler_despesas(caminho):
+    with open(caminho, "r", encoding="utf-8") as ficheiro:
+        despesas = json.load(ficheiro)
+    return despesas
+
+def guardar_despesas(despesas, caminho):
+    with open(caminho, "w", encoding="utf-8") as ficheiro
+        json.dump(despesas, ficheiro, ensure_ascii=False, indent=4)
+
+def listar_despesas(despesas):
+    if len(despesas) == 0:
+        print("Não existem despesas registadas.")
+    else:
+        for despesa in despesas:
+            print(f"Descrição: {despesa['descricao']}")
+            print(f"Categoria: {despesa['categoria']}")
+            print(f"Valor: {despesa['valor']}€")
+            print("-" * 30)
+
+def adicionar_despesa(despesas, descricao, categoria, valor):
+    nova_despesa = {
+        "descricao": descricao,
+        "categoria": categoria,
+        "valor": valor
+    }
+    despesas.append(nova_despesa)
+
+def calcular_total(despesas):
+    total = 0
+    for despesa in despesas:
+        total += despesa["valor"]
+    return total
+
+def mostrar_menu():
+    print("\n****** Despesas Pro Max ******")
+    print("1 - Listar todas as despesas")
+    print("2 - Adicionar nova despesa")
+    print("3 - Ver o total das despesas")
+    print("4 - Sair")
+
+# Programa principal
+caminho_ficheiro = "despesas.json"
+despesas = ler_despesas(caminho_ficheiro)
+opcao = ""
+
+while opcao != "4":
+    mostrar_menu()
+    opcao = input("Escolha uma opção: ")
+
+    if opcao == "1":
+        listar_despesas(despesas)
+    elif opcao == "2":
+        descricao = input("Introduza a descrição da despesa: ")
+        categoria = input("Introduza a categoria da despesa: ")
+        valor = float(input("Introduza o valor da despesa: "))
+        adicionar_despesa(despesas, descricao, categoria, valor)
+        print("Despesa adicionada com sucesso.")
+    elif opcao == "3":
+        total = calcular_total(despesas)
+        print(f"O total das despesas é: {total:.2f}€")
+    elif opcao == "4":
+        guardar_despesas(despesas, caminho_ficheiro)
+        print("Despesas guardadas. Programa terminado.")
+    else:
+        print("Opção inválida.")
+```
