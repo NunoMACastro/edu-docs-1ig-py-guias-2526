@@ -1007,13 +1007,10 @@ O programa deve estar organizado em funções. Usa `while` para manter o menu at
 import json
 
 def ler_tarefas(caminho):
-    try:
-        with open(caminho, "r", encoding="utf-8") as ficheiro:
-            tarefas = json.load(ficheiro)
+    with open(caminho, "r", encoding="utf-8") as ficheiro:
+        tarefas = json.load(ficheiro)
 
-        return tarefas
-    except FileNotFoundError:
-        return []
+    return tarefas
 
 def guardar_tarefas(tarefas, caminho):
     with open(caminho, "w", encoding="utf-8") as ficheiro:
